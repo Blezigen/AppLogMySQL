@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace AppLogMySQL
 {
@@ -59,8 +60,9 @@ namespace AppLogMySQL
                     sqlCom.ExecuteNonQuery();
                     dataAdapter.Fill(dataValues);
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
+                    MessageBox.Show(e.Message);
                     return null;
                 }
                 finally
@@ -94,99 +96,81 @@ namespace AppLogMySQL
         /// </summary>
         public static class AccountData
         {
-            public static Exception outOfPreperty;
-
-            /// <summary>
-            /// Прошоел ли проверку
-            /// </summary>
-            public static bool isValidate = false;
-            /// <summary>
-            /// Полное имя
-            /// </summary>
-            public static string _full_name = "";
-            /// <summary>
-            /// Адресс места жительства
-            /// </summary>
-            public static string _legal_adress = "";
-            /// <summary>
-            /// Телефоный номер
-            /// </summary>
-            public static string _telphone = "+7(666)666-66-66";
-            /// <summary>
-            /// Права доступа
-            /// </summary>
-            public static string _type = "guest";
-            /// <summary>
-            /// Номер аккаунта
-            /// </summary>
-            public static int _id = -1;
-            /// <summary>
-            /// Пол Мужской или Женский
-            /// </summary>
-            public static string _gender = "Мужской";
-
-            /// <summary>
-            /// Присваивает аккаунту дефолтное значаение
-            /// </summary>
-            /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+            private static Byte[] Avatar;
+            public static Dictionary<string, object> data = new Dictionary<string, object>();
             public static void SetDefault(){
-                _id = -1;//
-                isValidate = false;//
-                _full_name = "";
-                _legal_adress = "";
-                _telphone = "+7(666)666-66-66";
-                _type = "guest";//
-                _gender = "Мужской";
+                data.Clear();
+            }
+
+            public static Bitmap getAvatar()
+            {
+                if (Avatar != null)
+                {
+                    MemoryStream mStream = new MemoryStream();
+                    byte[] pData = Avatar;
+                    mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+                    Bitmap bm = new Bitmap(mStream, false);
+                    mStream.Dispose();
+                    return bm;
+                }
+                return null;
             }
 
             /// <summary>
             ///     Заполняет аккаунт даными
             /// </summary>
             /// <param name="table"> 
-            ///         Достает первое значение из DataTable и потом распределяет все его колонки:
-            ///         [ _id = Values on Column "id_unit" ]
-            ///         [ _type = Values on Column "type_account" ]
-            ///         [ _full_name = Values on Column "full_name" ]
-            ///         [ _legal_adress = Values on Column "adress" ]
-            ///         [ _telphone = Values on Column "tephone" ]
-            ///         [ _gender = Values on Row "gender" and parse(w=>"женский",m=>"мужской") ]
+            ///         Достает первое значение из DataTable и потом распределяет все его колонки в data:
             /// </param>
             public static void FillData(DataTable table)
             {
-                if (table.Columns.Contains("validator"))
-                    AccountData.isValidate = Int32.Parse(table.Rows[0]["validator"].ToString()) == 1;
-                else throw new Exception("Ошибка запроса!");
-                if (AccountData.isValidate){
-                    if (table.Columns.Contains("id_unit")) 
-                        AccountData._id = Int32.Parse(table.Rows[0]["id_unit"].ToString()); 
-                    if (table.Columns.Contains("type_account")) 
-                        AccountData._type = table.Rows[0]["type_account"].ToString(); 
-                    if (table.Columns.Contains("full_name")) 
-                        AccountData._full_name = table.Rows[0]["full_name"].ToString(); 
-                    if (table.Columns.Contains("adress")) 
-                        AccountData._legal_adress = table.Rows[0]["adress"].ToString(); 
-                    if (table.Columns.Contains("tephone")) 
-                        AccountData._telphone = table.Rows[0]["tephone"].ToString(); 
+                SetDefault();
+                if (table != null)
+                {
+                    foreach (DataColumn column in table.Columns)
+                    {
+                        if (column.ColumnName != "account_image")
+                        {
+                            data[column.ColumnName] = table.Rows[0][column.ColumnName];
+                        }
+                        else
+                        {
+                            try{
+                                Avatar = (Byte[])(table.Rows[0][column.ColumnName]);
+                            }catch (System.InvalidCastException){
+                                Avatar = null;
+                            }
+                        }
+                    }
                 }
                 else
                 {
-                    SetDefault();
-                    throw new Exception("Неправильный логин пароль!");
+                    MessageBox.Show("Не удалось получить данные аккаунта!!!");
                 }
-                    
                 
             }
 
-            public static bool FillData(string login, string password){
-                FillData(DataConnection.sqlQueryGetData(String.Format("call getAccountData('{0}','{1}')", login, password)));
-                return isValidate;
+            public static Dictionary<string, object> loginAccount(string login, string password)
+            {
+                var SuccesLogin = new Dictionary<string, object>();
+                try
+                {
+                    DataTable loginAnswer = DataConnection.sqlQueryGetData(String.Format("call loginAccount('{0}','{1}')", login, password));
+                    SuccesLogin["is_valid"] = int.Parse(loginAnswer.Rows[0]["validator"].ToString()) == 1;
+                    SuccesLogin["message"] = loginAnswer.Rows[0]["message"].ToString();
+                    if ((bool)SuccesLogin["is_valid"])
+                    {
+                        DataTable dt = DataConnection.sqlQueryGetData("call getBasicAccountData()");
+                        FillData(dt);
+                    }
+                    return SuccesLogin;
+                }
+                finally
+                {
+
+                }
             }
         };
-
-        public static class ListLogData
-        {
-
-        }
 
         public class PanelControllData
         {

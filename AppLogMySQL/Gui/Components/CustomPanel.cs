@@ -15,7 +15,7 @@ namespace AppLogMySQL.Gui.Components
     [Designer(typeof(CustomPanelDesigner))]
     public class CustomPanel : Panel
     {
-        private Color _borderColor = Color.Black;
+        private Color _borderColor = Color.Transparent;
 
         [Browsable(true)]
         public Color BorderColor

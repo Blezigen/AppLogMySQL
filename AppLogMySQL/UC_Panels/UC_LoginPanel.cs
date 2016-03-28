@@ -163,14 +163,17 @@ namespace AppLogMySQL.UC_Panels
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (DataCollection.AccountData.FillData(loginEdit.Text, passwordEdit.Text))
+            var resultLogin = DataCollection.AccountData.loginAccount(loginEdit.Text, passwordEdit.Text);
+            if ((bool)resultLogin["is_valid"])
             {
-                AddLogValue J = new AddLogValue();
-                J.Show();
-                //UC_Panels.UC_ControllPanel p = new UC_Panels.UC_ControllPanel();
-                //p.OnLoad();
-               // DataCollection._NextForm(p);
+                //AddLogValue J = new AddLogValue();
+                //J.Show();
+                UC_Panels.UC_ControllPanel p = new UC_Panels.UC_ControllPanel();
+                p.OnLoad();
+                DataCollection._NextForm(p);
             }
+            else
+                MessageBox.Show((string)resultLogin["message"]);
         }
 
         private void UC_LoginPanel_Load(object sender, EventArgs e)

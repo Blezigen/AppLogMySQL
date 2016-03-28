@@ -58,27 +58,27 @@ namespace AppLogMySQL.UC_Panels
         private void comboBoxDiscipline_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataCollection.PanelControllData.selected_discipline_logs = comboBoxDiscipline.SelectedIndex;
-            DisplayDataInGrid(DataCollection.queryGetListLogsData(DataCollection.AccountData._id), LogList.dataGridViewLogs);
+            //DisplayDataInGrid(DataCollection.queryGetListLogsData(DataCollection.AccountData._id), LogList.dataGridViewLogs);
         }
 
         private void comboBoxGroup_SelectionChangeCommitted(object sender, EventArgs e)
         {
             DataCollection.PanelControllData.selected_group_logs = comboBoxGroup.SelectedIndex;
-            DisplayDataInGrid(DataCollection.queryGetListLogsData(DataCollection.AccountData._id), LogList.dataGridViewLogs);
+            //DisplayDataInGrid(DataCollection.queryGetListLogsData(DataCollection.AccountData._id), LogList.dataGridViewLogs);
         }
 
         private void buttonShowLogs_Click(object sender, EventArgs e)
         {
             this.panelLogFilter.Visible = !this.panelLogFilter.Visible;
             this.Invalidate();
-            if (DataCollection.AccountData._type == "worker" && this.panelLogFilter.Visible)
+            /*if (DataCollection.AccountData._type == "worker" && this.panelLogFilter.Visible)
             {
                 Console.WriteLine("StartForming");
                 panelControlls.Controls.Clear();
                 panelControlls.Controls.Add(LogList);
                 DataCollection.GroupCollection = DataCollection.queryGetGroupsData();
                 DataCollection.DisciplineCollection = DataCollection.queryGetDisciplineData();
-                DisplayDataInGrid(DataCollection.queryGetListLogsData(DataCollection.AccountData._id), LogList.dataGridViewLogs);
+                //DisplayDataInGrid(DataCollection.queryGetListLogsData(DataCollection.AccountData._id), LogList.dataGridViewLogs);
                 DisplayDataGroupComboBox(DataCollection.GroupCollection, comboBoxGroup, "group_name");
                 DisplayDataGroupComboBox(DataCollection.DisciplineCollection, comboBoxDiscipline, "discipline_name");
                 //DisplayDataGroupComboBox(DataCollection.queryGetGroupsData(DataCollection.account._id), GroupComboBox);
@@ -87,7 +87,7 @@ namespace AppLogMySQL.UC_Panels
             {
                 panelControlls.Controls.Clear();
                 panelControlls.Controls.Add(UserProfile);
-            }
+            }*/
         }
 
         private void buttonClearD_Click(object sender, EventArgs e)

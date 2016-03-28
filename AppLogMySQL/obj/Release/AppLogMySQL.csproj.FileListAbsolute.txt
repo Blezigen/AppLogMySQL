@@ -1,0 +1,17 @@
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\bin\Release\AppLogMySQL.exe.config
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.MainForm.resources
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Panels.PanelLogin.resources
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Properties.Resources.resources
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.ResourceApplication.resources
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.csproj.GenerateResource.Cache
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\bin\Release\AppLogMySQL.exe
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\bin\Release\AppLogMySQL.pdb
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\bin\Release\GraphicsInterface.dll
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\bin\Release\GraphicsInterface.pdb
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.csprojResolveAssemblyReference.cache
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.exe
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.pdb
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Panels.UC_ControllPanel.resources
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.ControllPanel.UserControls.CP_LogList.resources
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.ControllPanel.UserControls.CP_SelectedLog.resources
+C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.ControllPanel.UserControls.CP_UserProfile.resources

@@ -64,7 +64,7 @@
             this.ListDataProfile.BorderColor = System.Drawing.Color.Transparent;
             this.ListDataProfile.Location = new System.Drawing.Point(18, 62);
             this.ListDataProfile.Name = "ListDataProfile";
-            this.ListDataProfile.Size = new System.Drawing.Size(625, 399);
+            this.ListDataProfile.Size = new System.Drawing.Size(625, 320);
             this.ListDataProfile.TabIndex = 0;
             // 
             // CP_UserProfile
@@ -76,7 +76,7 @@
             this.Controls.Add(this.labelTitle);
             this.Font = new System.Drawing.Font("HelveticaNeueCyr", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "CP_UserProfile";
-            this.Size = new System.Drawing.Size(900, 500);
+            this.Size = new System.Drawing.Size(900, 400);
             this.Load += new System.EventHandler(this.CP_UserProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProfileImage)).EndInit();
             this.ResumeLayout(false);

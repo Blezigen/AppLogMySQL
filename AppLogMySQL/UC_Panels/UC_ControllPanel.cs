@@ -110,7 +110,12 @@ namespace AppLogMySQL.UC_Panels
         {
             UserProfile = new ControllPanel.UserControls.CP_UserProfile();
             LogList = new ControllPanel.UserControls.CP_LogList();
+            UserProfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                                | System.Windows.Forms.AnchorStyles.Right)));
             panelControlls.Controls.Clear();
+            UserProfile.Location = new Point(1, 1);
+            //UserProfile.BackColor = Color.Red;
+            UserProfile.Size = new System.Drawing.Size(panelControlls.Width - 2, panelControlls.Height - 5);
             panelControlls.Controls.Add(UserProfile);
             OnLoad();
         }

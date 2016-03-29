@@ -97,6 +97,11 @@ namespace AppLogMySQL
             Close();
         }
 
+        private void ap_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

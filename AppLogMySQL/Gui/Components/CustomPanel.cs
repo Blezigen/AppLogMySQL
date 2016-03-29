@@ -23,6 +23,7 @@ namespace AppLogMySQL.Gui.Components
             set
             {
                 _borderColor = value;
+
                 this.Invalidate();
             }
             get{ return _borderColor; }
@@ -35,15 +36,14 @@ namespace AppLogMySQL.Gui.Components
 
         protected override void OnPaint(PaintEventArgs e)
         {
-           
+           // base.OnPaint(e);
             using (SolidBrush brush = new SolidBrush(BackColor))
                 e.Graphics.FillRectangle(brush, ClientRectangle);
 
             Pen n = new Pen(_borderColor);
             n.Color = _borderColor;
-            e.Graphics.DrawRectangle(n, 0, 0, ClientSize.Width - 1, ClientSize.Height - 1);
+            e.Graphics.DrawRectangle(n, 0, 0, ClientSize.Width-1, ClientSize.Height-1);
         }
-
     }
     internal class CustomPanelDesigner : ControlDesigner
     {

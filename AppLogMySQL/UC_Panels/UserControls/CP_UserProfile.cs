@@ -71,7 +71,7 @@ namespace AppLogMySQL.ControllPanel.UserControls
         }
         private void CP_UserProfile_Load(object sender, EventArgs e)
         {
-            this.Dock = DockStyle.Fill;
+            
             if (DataCollection.AccountData.getAvatar()!=null)
             {
                 this.ProfileImage.Image = DataCollection.AccountData.getAvatar();

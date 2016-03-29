@@ -125,6 +125,7 @@
             this.ap.Name = "ap";
             this.ap.Size = new System.Drawing.Size(926, 461);
             this.ap.TabIndex = 0;
+            this.ap.Load += new System.EventHandler(this.ap_Load);
             // 
             // MainForm
             // 
@@ -135,6 +136,7 @@
             this.Controls.Add(this.logoPicture);
             this.Controls.Add(this.ap);
             this.Controls.Add(this.panelTitle);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Form1";

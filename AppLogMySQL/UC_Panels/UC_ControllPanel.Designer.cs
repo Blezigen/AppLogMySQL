@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelControlls = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonExitSystem = new System.Windows.Forms.Button();
+            this.buttonHelp = new System.Windows.Forms.Button();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.panelControlls = new AppLogMySQL.Gui.Components.CustomPanel();
+            this.panel1 = new AppLogMySQL.Gui.Components.CustomPanel();
             this.button4 = new System.Windows.Forms.Button();
             this.buttonShowAdministrator = new System.Windows.Forms.Button();
             this.buttonShowModerator = new System.Windows.Forms.Button();
             this.buttonShowTeachMaterials = new System.Windows.Forms.Button();
             this.buttonShowStudentControll = new System.Windows.Forms.Button();
             this.buttonShowCuriculumb = new System.Windows.Forms.Button();
-            this.panelLogFilter = new System.Windows.Forms.Panel();
-            this.panelContainer = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.panelLogFilter = new AppLogMySQL.Gui.Components.CustomPanel();
+            this.panelContainer = new AppLogMySQL.Gui.Components.CustomPanel();
+            this.panel10 = new AppLogMySQL.Gui.Components.CustomPanel();
             this.comboBoxDiscipline = new System.Windows.Forms.ComboBox();
             this.buttonClearD = new System.Windows.Forms.Button();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.panelGroupComboBox = new System.Windows.Forms.Panel();
+            this.panelGroupComboBox = new AppLogMySQL.Gui.Components.CustomPanel();
             this.comboBoxGroup = new System.Windows.Forms.ComboBox();
             this.buttonClearG = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonShowLogs = new System.Windows.Forms.Button();
             this.buttonShowWeekLog = new System.Windows.Forms.Button();
-            this.buttonExitSystem = new System.Windows.Forms.Button();
-            this.buttonHelp = new System.Windows.Forms.Button();
-            this.labelTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelLogFilter.SuspendLayout();
             this.panelContainer.SuspendLayout();
@@ -59,12 +59,47 @@
             this.panelGroupComboBox.SuspendLayout();
             this.SuspendLayout();
             // 
+            // buttonExitSystem
+            // 
+            this.buttonExitSystem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonExitSystem.Font = new System.Drawing.Font("Proxima Nova Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonExitSystem.Location = new System.Drawing.Point(789, 11);
+            this.buttonExitSystem.Name = "buttonExitSystem";
+            this.buttonExitSystem.Size = new System.Drawing.Size(99, 29);
+            this.buttonExitSystem.TabIndex = 33;
+            this.buttonExitSystem.Text = "Выход";
+            this.buttonExitSystem.UseVisualStyleBackColor = true;
+            this.buttonExitSystem.Click += new System.EventHandler(this.buttonExitSystem_Click);
+            // 
+            // buttonHelp
+            // 
+            this.buttonHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonHelp.Font = new System.Drawing.Font("Proxima Nova Rg", 12F);
+            this.buttonHelp.Location = new System.Drawing.Point(681, 11);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(99, 29);
+            this.buttonHelp.TabIndex = 32;
+            this.buttonHelp.Text = "Помощь";
+            this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Visible = false;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Proxima Nova Rg", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(12, 11);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(220, 33);
+            this.labelTitle.TabIndex = 31;
+            this.labelTitle.Text = "Личный кабинет";
+            // 
             // panelControlls
             // 
             this.panelControlls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControlls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelControlls.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(159)))), ((int)(((byte)(141)))));
+            this.panelControlls.ForeColor = System.Drawing.Color.Black;
             this.panelControlls.Location = new System.Drawing.Point(219, 46);
             this.panelControlls.Name = "panelControlls";
             this.panelControlls.Size = new System.Drawing.Size(671, 405);
@@ -74,7 +109,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(159)))), ((int)(((byte)(141)))));
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.buttonShowAdministrator);
             this.panel1.Controls.Add(this.buttonShowModerator);
@@ -93,9 +128,9 @@
             // 
             this.button4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button4.Font = new System.Drawing.Font("Proxima Nova Rg", 9.749999F);
-            this.button4.Location = new System.Drawing.Point(0, 373);
+            this.button4.Location = new System.Drawing.Point(0, 375);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(198, 30);
+            this.button4.Size = new System.Drawing.Size(200, 30);
             this.button4.TabIndex = 4;
             this.button4.Text = "Настройки";
             this.button4.UseVisualStyleBackColor = true;
@@ -107,7 +142,7 @@
             this.buttonShowAdministrator.Font = new System.Drawing.Font("Proxima Nova Rg", 9.749999F);
             this.buttonShowAdministrator.Location = new System.Drawing.Point(0, 313);
             this.buttonShowAdministrator.Name = "buttonShowAdministrator";
-            this.buttonShowAdministrator.Size = new System.Drawing.Size(198, 30);
+            this.buttonShowAdministrator.Size = new System.Drawing.Size(200, 30);
             this.buttonShowAdministrator.TabIndex = 6;
             this.buttonShowAdministrator.Text = "Администрирование";
             this.buttonShowAdministrator.UseVisualStyleBackColor = true;
@@ -120,7 +155,7 @@
             this.buttonShowModerator.Font = new System.Drawing.Font("Proxima Nova Rg", 9.749999F);
             this.buttonShowModerator.Location = new System.Drawing.Point(0, 283);
             this.buttonShowModerator.Name = "buttonShowModerator";
-            this.buttonShowModerator.Size = new System.Drawing.Size(198, 30);
+            this.buttonShowModerator.Size = new System.Drawing.Size(200, 30);
             this.buttonShowModerator.TabIndex = 7;
             this.buttonShowModerator.Text = "Модерирование";
             this.buttonShowModerator.UseVisualStyleBackColor = true;
@@ -133,7 +168,7 @@
             this.buttonShowTeachMaterials.Font = new System.Drawing.Font("Proxima Nova Rg", 9.749999F);
             this.buttonShowTeachMaterials.Location = new System.Drawing.Point(0, 253);
             this.buttonShowTeachMaterials.Name = "buttonShowTeachMaterials";
-            this.buttonShowTeachMaterials.Size = new System.Drawing.Size(198, 30);
+            this.buttonShowTeachMaterials.Size = new System.Drawing.Size(200, 30);
             this.buttonShowTeachMaterials.TabIndex = 5;
             this.buttonShowTeachMaterials.Text = "Методические материалы";
             this.buttonShowTeachMaterials.UseVisualStyleBackColor = true;
@@ -145,7 +180,7 @@
             this.buttonShowStudentControll.Font = new System.Drawing.Font("Proxima Nova Rg", 9.749999F);
             this.buttonShowStudentControll.Location = new System.Drawing.Point(0, 223);
             this.buttonShowStudentControll.Name = "buttonShowStudentControll";
-            this.buttonShowStudentControll.Size = new System.Drawing.Size(198, 30);
+            this.buttonShowStudentControll.Size = new System.Drawing.Size(200, 30);
             this.buttonShowStudentControll.TabIndex = 8;
             this.buttonShowStudentControll.Text = "Контроль успеваемости";
             this.buttonShowStudentControll.UseVisualStyleBackColor = true;
@@ -157,23 +192,25 @@
             this.buttonShowCuriculumb.Font = new System.Drawing.Font("Proxima Nova Rg", 9.749999F);
             this.buttonShowCuriculumb.Location = new System.Drawing.Point(0, 193);
             this.buttonShowCuriculumb.Name = "buttonShowCuriculumb";
-            this.buttonShowCuriculumb.Size = new System.Drawing.Size(198, 30);
+            this.buttonShowCuriculumb.Size = new System.Drawing.Size(200, 30);
             this.buttonShowCuriculumb.TabIndex = 3;
             this.buttonShowCuriculumb.Text = "Учебные планы";
             this.buttonShowCuriculumb.UseVisualStyleBackColor = true;
             // 
             // panelLogFilter
             // 
+            this.panelLogFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(168)))), ((int)(((byte)(68)))));
             this.panelLogFilter.Controls.Add(this.panelContainer);
             this.panelLogFilter.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogFilter.Location = new System.Drawing.Point(0, 60);
             this.panelLogFilter.Name = "panelLogFilter";
-            this.panelLogFilter.Size = new System.Drawing.Size(198, 133);
+            this.panelLogFilter.Size = new System.Drawing.Size(200, 133);
             this.panelLogFilter.TabIndex = 9;
             this.panelLogFilter.Visible = false;
             // 
             // panelContainer
             // 
+            this.panelContainer.BorderColor = System.Drawing.Color.Transparent;
             this.panelContainer.Controls.Add(this.panel10);
             this.panelContainer.Controls.Add(this.buttonRefresh);
             this.panelContainer.Controls.Add(this.label4);
@@ -186,6 +223,7 @@
             // 
             // panel10
             // 
+            this.panel10.BorderColor = System.Drawing.Color.Transparent;
             this.panel10.Controls.Add(this.comboBoxDiscipline);
             this.panel10.Controls.Add(this.buttonClearD);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
@@ -246,6 +284,7 @@
             // 
             // panelGroupComboBox
             // 
+            this.panelGroupComboBox.BorderColor = System.Drawing.Color.Transparent;
             this.panelGroupComboBox.Controls.Add(this.comboBoxGroup);
             this.panelGroupComboBox.Controls.Add(this.buttonClearG);
             this.panelGroupComboBox.Dock = System.Windows.Forms.DockStyle.Top;
@@ -299,7 +338,7 @@
             this.buttonShowLogs.Font = new System.Drawing.Font("Proxima Nova Rg", 9.749999F);
             this.buttonShowLogs.Location = new System.Drawing.Point(0, 30);
             this.buttonShowLogs.Name = "buttonShowLogs";
-            this.buttonShowLogs.Size = new System.Drawing.Size(198, 30);
+            this.buttonShowLogs.Size = new System.Drawing.Size(200, 30);
             this.buttonShowLogs.TabIndex = 2;
             this.buttonShowLogs.Text = "Журналы";
             this.buttonShowLogs.UseVisualStyleBackColor = true;
@@ -312,49 +351,16 @@
             this.buttonShowWeekLog.Font = new System.Drawing.Font("Proxima Nova Rg", 9.749999F);
             this.buttonShowWeekLog.Location = new System.Drawing.Point(0, 0);
             this.buttonShowWeekLog.Name = "buttonShowWeekLog";
-            this.buttonShowWeekLog.Size = new System.Drawing.Size(198, 30);
+            this.buttonShowWeekLog.Size = new System.Drawing.Size(200, 30);
             this.buttonShowWeekLog.TabIndex = 1;
             this.buttonShowWeekLog.Text = "Расписание";
             this.buttonShowWeekLog.UseVisualStyleBackColor = true;
-            // 
-            // buttonExitSystem
-            // 
-            this.buttonExitSystem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExitSystem.Font = new System.Drawing.Font("Proxima Nova Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonExitSystem.Location = new System.Drawing.Point(789, 11);
-            this.buttonExitSystem.Name = "buttonExitSystem";
-            this.buttonExitSystem.Size = new System.Drawing.Size(99, 29);
-            this.buttonExitSystem.TabIndex = 33;
-            this.buttonExitSystem.Text = "Выход";
-            this.buttonExitSystem.UseVisualStyleBackColor = true;
-            this.buttonExitSystem.Click += new System.EventHandler(this.buttonExitSystem_Click);
-            // 
-            // buttonHelp
-            // 
-            this.buttonHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonHelp.Font = new System.Drawing.Font("Proxima Nova Rg", 12F);
-            this.buttonHelp.Location = new System.Drawing.Point(681, 11);
-            this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(99, 29);
-            this.buttonHelp.TabIndex = 32;
-            this.buttonHelp.Text = "Помощь";
-            this.buttonHelp.UseVisualStyleBackColor = true;
-            this.buttonHelp.Visible = false;
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Proxima Nova Rg", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(12, 11);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(220, 33);
-            this.labelTitle.TabIndex = 31;
-            this.labelTitle.Text = "Личный кабинет";
             // 
             // UC_ControllPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(234)))));
             this.Controls.Add(this.panelControlls);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonExitSystem);
@@ -376,22 +382,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panelControlls;
-        private System.Windows.Forms.Panel panel1;
+        private Gui.Components.CustomPanel panel1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button buttonShowAdministrator;
         private System.Windows.Forms.Button buttonShowModerator;
         private System.Windows.Forms.Button buttonShowTeachMaterials;
         private System.Windows.Forms.Button buttonShowStudentControll;
         private System.Windows.Forms.Button buttonShowCuriculumb;
-        private System.Windows.Forms.Panel panelLogFilter;
-        private System.Windows.Forms.Panel panelContainer;
-        private System.Windows.Forms.Panel panel10;
+        private Gui.Components.CustomPanel panelLogFilter;
+        private Gui.Components.CustomPanel panelContainer;
+        private Gui.Components.CustomPanel panel10;
         private System.Windows.Forms.ComboBox comboBoxDiscipline;
         private System.Windows.Forms.Button buttonClearD;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panelGroupComboBox;
+        private Gui.Components.CustomPanel panelGroupComboBox;
         private System.Windows.Forms.ComboBox comboBoxGroup;
         private System.Windows.Forms.Button buttonClearG;
         private System.Windows.Forms.Label label3;
@@ -400,5 +405,6 @@
         private System.Windows.Forms.Button buttonExitSystem;
         private System.Windows.Forms.Button buttonHelp;
         private System.Windows.Forms.Label labelTitle;
+        private Gui.Components.CustomPanel panelControlls;
     }
 }

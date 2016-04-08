@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using MySql.Data.MySqlClient;
+using AppLogMySQL.Components.Graphics;
+
 
 namespace AppLogMySQL
 {
     public partial class MainForm : Form
     {
         public MySqlConnection connection;
-
         private bool isFullScreen() {
             if (Screen.PrimaryScreen.Bounds.Width == this.Width && Screen.PrimaryScreen.Bounds.Height == this.Height)
             {
@@ -45,18 +46,17 @@ namespace AppLogMySQL
         public MainForm()
         {
             InitializeComponent();
-            FormBorderStyle = FormBorderStyle.None;
-            DataCollection._NextForm = ap.NextPanel;
-            DataCollection._PrevForm = ap.PrevPanel;
-            DataCollection.DataConnection.initialiseConnection();
-            UC_Panels.UC_LoginPanel p = new UC_Panels.UC_LoginPanel();
-            DataCollection._NextForm(p);
+
+            Components.Data.DataManager.global_states = stateManager;
+            Components.Data.DataManager.generalForm = this;
+            Components.Data.DataManager.initialisation();
+
+            stateManager.state_Change("Authorization");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DataCollection.mainFormer = this;
-            labelTitle.Font = new Font("Proxima Nova", 9, FontStyle.Regular);
+            labelTitle.Font = Components.Data.DataManager.PROXIMA_NOVA_9R;
             labelTitle.ForeColor = Color.FromArgb(243,237,210);
             this.labelTitle.MouseDown += delegate
             {

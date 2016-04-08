@@ -60,14 +60,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddLogValue.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Components\Data\AccountManager.cs" />
+    <Compile Include="Components\Data\DataManager.cs" />
+    <Compile Include="Components\Graphics\StateManager.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddLogValue.Designer.cs">
-      <DependentUpon>AddLogValue.cs</DependentUpon>
+    <Compile Include="Components\Graphics\StateManager.Designer.cs">
+      <DependentUpon>StateManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataCollection.cs" />
-    <Compile Include="Gui\Components\CustomPanel.cs" />
+    <Compile Include="Components\Graphics\States\State_UserAuthorization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\States\State_UserAuthorization.Designer.cs">
+      <DependentUpon>State_UserAuthorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Graphics\States\SubStates\SubStates_Schedules.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\States\SubStates\SubStates_Schedules.Designer.cs">
+      <DependentUpon>SubStates_Schedules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\MySql\MySQLManager.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\BasicSetQuery.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\BasicSelectQuery.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_GetSchedules.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_GetAllGroups.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_LoginAccount.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_GetBasicAccountData.cs" />
+    <Compile Include="Components\Graphics\Controls\CustomPanel.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_SetGroup.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,88 +100,70 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceApplication.resx</DependentUpon>
     </Compile>
-    <Compile Include="UC_Panels\CDGV_Controls\CDGV_AddDate.cs">
+    <Compile Include="Components\Graphics\Controls\UC_AnimatorPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_Panels\CDGV_Controls\CDGV_AddDate.Designer.cs">
-      <DependentUpon>CDGV_AddDate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_Panels\CDGV_Controls\CDGV_AddEvaluation.cs">
+    <Compile Include="Components\Graphics\States\State_ControllPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_Panels\CDGV_Controls\CDGV_AddEvaluation.Designer.cs">
-      <DependentUpon>CDGV_AddEvaluation.cs</DependentUpon>
+    <Compile Include="Components\Graphics\States\State_ControllPanel.Designer.cs">
+      <DependentUpon>State_ControllPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_Panels\UC_AnimatorPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_Panels\UC_ControllPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_Panels\UC_ControllPanel.Designer.cs">
-      <DependentUpon>UC_ControllPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_Panels\UC_CustomDataGridView.cs">
+    <Compile Include="Components\Graphics\Controls\UC_CustomDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UC_Panels\UC_TransparentControl.cs">
+    <Compile Include="Components\Graphics\Controls\UC_TransparentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_Panels\UserControls\CP_LogList.cs">
+    <Compile Include="Components\Graphics\States\SubStates\SubStates_LogList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_Panels\UserControls\CP_LogList.Designer.cs">
-      <DependentUpon>CP_LogList.cs</DependentUpon>
+    <Compile Include="Components\Graphics\States\SubStates\SubStates_LogList.Designer.cs">
+      <DependentUpon>SubStates_LogList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_Panels\UserControls\CP_SelectedLog.cs">
+    <Compile Include="Components\Graphics\States\SubStates\SubStates_SelectedLog.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_Panels\UserControls\CP_SelectedLog.Designer.cs">
-      <DependentUpon>CP_SelectedLog.cs</DependentUpon>
+    <Compile Include="Components\Graphics\States\SubStates\SubStates_SelectedLog.Designer.cs">
+      <DependentUpon>SubStates_SelectedLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_Panels\UserControls\CP_UserProfile.cs">
+    <Compile Include="Components\Graphics\States\SubStates\SubStates_UserProfile.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_Panels\UserControls\CP_UserProfile.Designer.cs">
-      <DependentUpon>CP_UserProfile.cs</DependentUpon>
+    <Compile Include="Components\Graphics\States\SubStates\SubStates_UserProfile.Designer.cs">
+      <DependentUpon>SubStates_UserProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UC_Panels\UC_LoginPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <EmbeddedResource Include="AddLogValue.resx">
-      <DependentUpon>AddLogValue.cs</DependentUpon>
+    <EmbeddedResource Include="Components\Graphics\StateManager.resx">
+      <DependentUpon>StateManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\States\State_UserAuthorization.resx">
+      <DependentUpon>State_UserAuthorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\States\SubStates\SubStates_Schedules.resx">
+      <DependentUpon>SubStates_Schedules.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_Panels\CDGV_Controls\CDGV_AddDate.resx">
-      <DependentUpon>CDGV_AddDate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_Panels\CDGV_Controls\CDGV_AddEvaluation.resx">
-      <DependentUpon>CDGV_AddEvaluation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_Panels\UC_AnimatorPanel.resx">
+    <EmbeddedResource Include="Components\Graphics\Controls\UC_AnimatorPanel.resx">
       <DependentUpon>UC_AnimatorPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_Panels\UC_CustomDataGridView.resx">
+    <EmbeddedResource Include="Components\Graphics\Controls\UC_CustomDataGridView.resx">
       <DependentUpon>UC_CustomDataGridView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_Panels\UC_LoginPanel.resx">
-      <DependentUpon>UC_LoginPanel.cs</DependentUpon>
+    <EmbeddedResource Include="Components\Graphics\States\State_ControllPanel.resx">
+      <DependentUpon>State_ControllPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_Panels\UC_ControllPanel.resx">
-      <DependentUpon>UC_ControllPanel.cs</DependentUpon>
+    <EmbeddedResource Include="Components\Graphics\States\SubStates\SubStates_LogList.resx">
+      <DependentUpon>SubStates_LogList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_Panels\UserControls\CP_LogList.resx">
-      <DependentUpon>CP_LogList.cs</DependentUpon>
+    <EmbeddedResource Include="Components\Graphics\States\SubStates\SubStates_SelectedLog.resx">
+      <DependentUpon>SubStates_SelectedLog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_Panels\UserControls\CP_SelectedLog.resx">
-      <DependentUpon>CP_SelectedLog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_Panels\UserControls\CP_UserProfile.resx">
-      <DependentUpon>CP_UserProfile.cs</DependentUpon>
+    <EmbeddedResource Include="Components\Graphics\States\SubStates\SubStates_UserProfile.resx">
+      <DependentUpon>SubStates_UserProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -186,29 +189,32 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Gui\Resources\AppIco.ico" />
-    <None Include="Gui\Resources\AppIco.psd" />
-    <None Include="Gui\Resources\ArrowBottom.png" />
-    <None Include="Gui\Resources\ArrowLeft.png" />
-    <None Include="Gui\Resources\ArrowRight.png" />
-    <None Include="Gui\Resources\ArrowTop.png" />
-    <None Include="Gui\Resources\Close.png" />
-    <None Include="Gui\Resources\Cloze.psd" />
-    <None Include="Gui\Resources\Logo Partner.png" />
-    <None Include="Gui\Resources\logo.png" />
-    <None Include="Gui\Resources\logo.psd" />
-    <None Include="Gui\Resources\Maximaze.png" />
-    <None Include="Gui\Resources\MiniLogo.png" />
-    <None Include="Gui\Resources\Minimazed.png" />
-    <None Include="Gui\Resources\Minimazed.psd" />
-    <None Include="Gui\Resources\Normalizate.png" />
-    <None Include="Gui\Resources\SizeChanger.psd" />
+    <None Include="Resources\AppIco.ico" />
+    <None Include="Resources\AppIco.psd" />
+    <None Include="Resources\ArrowBottom.png" />
+    <None Include="Resources\ArrowLeft.png" />
+    <None Include="Resources\ArrowRight.png" />
+    <None Include="Resources\ArrowTop.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\Cloze.psd" />
+    <None Include="Resources\Logo Partner.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\logo.psd" />
+    <None Include="Resources\Maximaze.png" />
+    <None Include="Resources\MiniLogo.png" />
+    <None Include="Resources\Minimazed.png" />
+    <None Include="Resources\Minimazed.psd" />
+    <None Include="Resources\Normalizate.png" />
+    <None Include="Resources\SizeChanger.psd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DefaulAvatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\MySql\InsertQuerys\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

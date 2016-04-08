@@ -35,7 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SizeChanger = new System.Windows.Forms.PictureBox();
             this.logoPicture = new AppLogMySQL.UC_Panels.UC_TransparentControl();
-            this.ap = new AppLogMySQL.UC_Panels.UC_AnimatorPanel();
+            this.stateManager = new AppLogMySQL.Components.Graphics.States.StateManager();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,7 +53,7 @@
             this.panelTitle.Location = new System.Drawing.Point(0, 0);
             this.panelTitle.Margin = new System.Windows.Forms.Padding(0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(926, 30);
+            this.panelTitle.Size = new System.Drawing.Size(1100, 30);
             this.panelTitle.TabIndex = 4;
             // 
             // labelTitle
@@ -65,7 +65,7 @@
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(106)))), ((int)(((byte)(97)))));
             this.labelTitle.Location = new System.Drawing.Point(47, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(786, 30);
+            this.labelTitle.Size = new System.Drawing.Size(960, 30);
             this.labelTitle.TabIndex = 3;
             this.labelTitle.Text = "Электронный журнал успеваемости";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -74,7 +74,7 @@
             // 
             this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CloseButton.Image = global::AppLogMySQL.ResourceApplication.Close;
-            this.CloseButton.Location = new System.Drawing.Point(899, 3);
+            this.CloseButton.Location = new System.Drawing.Point(1073, 3);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(24, 24);
             this.CloseButton.TabIndex = 2;
@@ -85,7 +85,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::AppLogMySQL.ResourceApplication.Minimazed;
-            this.pictureBox1.Location = new System.Drawing.Point(839, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(1013, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.TabIndex = 1;
@@ -96,7 +96,7 @@
             // 
             this.SizeChanger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SizeChanger.Image = global::AppLogMySQL.ResourceApplication.Maximaze;
-            this.SizeChanger.Location = new System.Drawing.Point(869, 3);
+            this.SizeChanger.Location = new System.Drawing.Point(1043, 3);
             this.SizeChanger.Name = "SizeChanger";
             this.SizeChanger.Size = new System.Drawing.Size(24, 24);
             this.SizeChanger.TabIndex = 0;
@@ -118,27 +118,29 @@
             this.logoPicture.TabIndex = 0;
             this.logoPicture.TranspKey = System.Drawing.Color.White;
             // 
-            // ap
+            // stateManager
             // 
-            this.ap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ap.Location = new System.Drawing.Point(0, 30);
-            this.ap.Name = "ap";
-            this.ap.Size = new System.Drawing.Size(926, 461);
-            this.ap.TabIndex = 0;
-            this.ap.Load += new System.EventHandler(this.ap_Load);
+            this.stateManager.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stateManager.Location = new System.Drawing.Point(0, 30);
+            this.stateManager.Name = "stateManager";
+            this.stateManager.Size = new System.Drawing.Size(1100, 670);
+            this.stateManager.TabIndex = 0;
+            this.stateManager.Load += new System.EventHandler(this.ap_Load);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(926, 491);
+            this.ClientSize = new System.Drawing.Size(1100, 700);
             this.Controls.Add(this.logoPicture);
-            this.Controls.Add(this.ap);
+            this.Controls.Add(this.stateManager);
             this.Controls.Add(this.panelTitle);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelTitle.ResumeLayout(false);
@@ -151,7 +153,7 @@
 
         #endregion
 
-        private AppLogMySQL.UC_Panels.UC_AnimatorPanel ap;
+        private AppLogMySQL.Components.Graphics.States.StateManager stateManager;
         private System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.PictureBox SizeChanger;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -1,41 +1,21 @@
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\bin\Debug\AppLogMySQL.exe.config
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\bin\Debug\AppLogMySQL.exe
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\bin\Debug\AppLogMySQL.pdb
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Properties.Resources.resources
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.csproj.GenerateResource.Cache
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.exe
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.pdb
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.ResourceApplication.resources
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.MainForm.resources
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.ControllPanel.UserControls.CP_UserProfile.resources
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.ControllPanel.UserControls.CP_LogList.resources
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.ControllPanel.UserControls.CP_SelectedLog.resources
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.UC_Panels.UC_LoginPanel.resources
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.UC_Panels.UC_ControllPanel.resources
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.UC_Panels.UC_AnimatorPanel.resources
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.UC_Panels.CDGV_Controls.CDGV_AddDate.resources
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.UC_Panels.UC_CustomDataGridView.resources
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.UC_Panels.CDGV_Controls.CDGV_AddEvaluation.resources
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.csprojResolveAssemblyReference.cache
-C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.AddLogValue.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\bin\Debug\AppLogMySQL.exe.config
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.exe
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.pdb
 D:\Projects\AppLogMySQL\AppLogMySQL\bin\Debug\AppLogMySQL.exe
 D:\Projects\AppLogMySQL\AppLogMySQL\bin\Debug\AppLogMySQL.pdb
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.csprojResolveAssemblyReference.cache
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.StateManager.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.State_UserAuthorization.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_Curiculumbs.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_Schedules.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Windows.EditSchedulesDateOfWeek.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.MainForm.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.UC_Panels.UC_AnimatorPanel.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.UC_Panels.UC_CustomDataGridView.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.State_ControllPanel.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_LogList.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_SelectedLog.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_UserProfile.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Properties.Resources.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.ResourceApplication.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.csproj.GenerateResource.Cache
-D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.exe
-D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.pdb
-D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_LogList.resources
-D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_SelectedLog.resources
-D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_Schedules.resources
-D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.csprojResolveAssemblyReference.cache
-D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_Curiculumbs.resources
-D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Windows.EditSchedulesDateOfWeek.resources

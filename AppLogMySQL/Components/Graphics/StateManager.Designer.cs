@@ -36,6 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "StateManager";
             this.Size = new System.Drawing.Size(598, 473);
+            this.Resize += new System.EventHandler(this.StateManager_Resize);
             this.ResumeLayout(false);
 
         }

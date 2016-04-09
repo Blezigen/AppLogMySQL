@@ -22,7 +22,7 @@ namespace AppLogMySQL.Components.MySql.SelectQuerys
         public override bool run(MySQLManager _connection)
         {
             query_str = string.Format("selectGroup({0})", group);
- 	         return base.run(_connection);
+ 	        return base.run(_connection);
         }
     }
 }

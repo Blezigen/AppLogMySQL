@@ -39,5 +39,14 @@ namespace AppLogMySQL.Components.Graphics.States
             prevState = currentState;
             currentState = state;
         }
+
+        private void StateManager_Resize(object sender, EventArgs e)
+        {
+            if (currentState != "")
+            {
+                states[currentState].Width = this.Width;
+                states[currentState].Height = this.Height;
+            }
+        }
     }
 }

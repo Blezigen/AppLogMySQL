@@ -18,6 +18,8 @@ namespace AppLogMySQL.Components.Graphics.Windows
         Dictionary<String,object> Disciplines;
         public int group;
         public int sch_day;
+
+        private bool showHideOption;
         public EditSchedulesDateOfWeek()
         {
             InitializeComponent();
@@ -34,11 +36,12 @@ namespace AppLogMySQL.Components.Graphics.Windows
                 this.WndProc(ref msg);
                 Invalidate();
             };
-            fill();
+            fillDataGrid();
+            fillComboBoxes();
         }
 
 
-        void fill() {
+        void fillDataGrid() {
             MySql.SelectQuerys.SQuery_GetSchedules query_Shudels = new MySql.SelectQuerys.SQuery_GetSchedules();
             MySql.SelectQuerys.SQuery_Set_Group set_group_query = new MySql.SelectQuerys.SQuery_Set_Group(group);
             MySql.SelectQuerys.SQuery_GetAffordableDisciplineByGroup query = new MySql.SelectQuerys.SQuery_GetAffordableDisciplineByGroup();
@@ -51,9 +54,7 @@ namespace AppLogMySQL.Components.Graphics.Windows
             List<string> stringlist = new List<string>();
             stringlist.Add("Пустой урок");
             foreach (KeyValuePair<string, object> val in Disciplines)
-            {
                 stringlist.Add(val.Value.ToString());
-            }
             DataGridViewComboBoxColumn combo = (DataGridViewComboBoxColumn)SchedulesDayData.Columns[1];
             combo.DataSource = stringlist;
 
@@ -72,17 +73,67 @@ namespace AppLogMySQL.Components.Graphics.Windows
                     ifki = true;
                 }
             if (ifki)
-            {
                 foreach (DictionaryEntry vals in rowa)
-                {
                     setSelectedIndex((DataGridViewComboBoxCell)SchedulesDayData.Rows[int.Parse(vals.Key.ToString()) - 1].Cells[1], vals.Value);
-                    // d.Rows[int.Parse(vals.Key.ToString())].Cells[1].Value = .ToString();
-                }
-            }
-                //setSelectedIndex((DataGridViewComboBoxCell)SchedulesDayData.Rows[i].Cells[1], 0);
 
         }
+        void fillComboBoxes()
+        {
+            MySql.SelectQuerys.SQuery_GetLoadPolitic query_lp = new MySql.SelectQuerys.SQuery_GetLoadPolitic();
+            MySql.SelectQuerys.SQuery_Set_Group query_g = new MySql.SelectQuerys.SQuery_Set_Group(group);
+            MySql.SelectQuerys.SQuery_Set_Discipline query_d = new MySql.SelectQuerys.SQuery_Set_Discipline(0);
 
+            List<string> stringlist = new List<string>();
+            Dictionary<string, object> lp = new Dictionary<string, object>();
+            query_g.run(Data.DataManager._connection);
+            for (int i = 0; i < 7; i++ )
+            {
+                stringlist.Clear();
+                ComboBox c = (this.Controls.Find(string.Format("comboBox{0}", (i + 1)), false)[0]) as ComboBox;
+                if (getSelectedIndex((DataGridViewComboBoxCell)SchedulesDayData.Rows[i].Cells[1]) > 0)
+                { 
+                    query_d.Discipline = int.Parse(Disciplines.ElementAt(getSelectedIndex((DataGridViewComboBoxCell)SchedulesDayData.Rows[i].Cells[1])- 1).Key);
+                    query_d.run(Data.DataManager._connection);
+                    query_lp.run(Data.DataManager._connection);
+                    lp = query_lp.getFormatData();
+                    foreach (KeyValuePair<string,object> val in lp){
+                        stringlist.Add(val.Value.ToString());
+                    }
+                    c.DataSource = stringlist;
+                }
+
+            }
+            /*    query_Shudels.run(Data.DataManager._connection);
+            query.run(AppLogMySQL.Components.Data.DataManager._connection);
+            Disciplines = query.getFormatData();
+            Dictionary<string, object> oldData = query_Shudels.getFormatData();
+
+            List<string> stringlist = new List<string>();
+            stringlist.Add("Пустой урок");
+            foreach (KeyValuePair<string, object> val in Disciplines)
+                stringlist.Add(val.Value.ToString());
+            DataGridViewComboBoxColumn combo = (DataGridViewComboBoxColumn)SchedulesDayData.Columns[1];
+            combo.DataSource = stringlist;
+
+
+            SchedulesDayData.Rows.Clear();
+            for (int i = 1; i <= 7; i++)
+                SchedulesDayData.Rows.Add(i.ToString(), "");
+            for (int i = 0; i <= 6; i++)
+                setSelectedIndex((DataGridViewComboBoxCell)SchedulesDayData.Rows[i].Cells[1], 0);
+            IDictionary rowa = oldData as IDictionary;
+            bool ifki = false;
+            foreach (KeyValuePair<string, object> val in oldData)
+                if (val.Key == sch_day.ToString())
+                {
+                    rowa = (IDictionary)val.Value;
+                    ifki = true;
+                }
+            if (ifki)
+                foreach (DictionaryEntry vals in rowa)
+                    setSelectedIndex((DataGridViewComboBoxCell)SchedulesDayData.Rows[int.Parse(vals.Key.ToString()) - 1].Cells[1], vals.Value);*/
+
+        }
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Close();
@@ -173,6 +224,21 @@ namespace AppLogMySQL.Components.Graphics.Windows
                 ComboBox comboBox = e.Control as ComboBox;
                 comboBox.SelectedIndexChanged += new EventHandler(comboBox_SelectedIndexChanged);
             }
+        }
+
+        private void EditSchedulesDateOfWeek_Shown(object sender, EventArgs e)
+        {
+            showHideOption = false;
+            Width = 250;
+        }
+
+        private void EditButton2_Click(object sender, EventArgs e)
+        {
+            showHideOption = !showHideOption;
+            if (showHideOption)
+                this.Width = 500;
+            else
+                this.Width = 250;
         }
     }
 }

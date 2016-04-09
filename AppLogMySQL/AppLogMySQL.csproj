@@ -99,6 +99,7 @@
     <Compile Include="Components\MySql\SelectQuerys\BasicSetQuery.cs" />
     <Compile Include="Components\MySql\SelectQuerys\BasicSelectQuery.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_GetAffordableDisciplineByGroup.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_GetLoadPolitic.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_GetSchedules.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_GetAllGroups.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_LoginAccount.cs" />

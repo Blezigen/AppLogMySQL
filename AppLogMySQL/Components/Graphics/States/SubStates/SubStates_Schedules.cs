@@ -23,7 +23,7 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
         {
             foreach (DictionaryEntry vals in rowa)
             {
-                d.Rows[int.Parse(vals.Key.ToString())].Cells[1].Value = vals.Value.ToString();
+                d.Rows[int.Parse(vals.Key.ToString())-1].Cells[1].Value = vals.Value.ToString();
             }
         }
 
@@ -34,11 +34,9 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
                 d.Rows.Add(i.ToString(), string.Empty);
 
         }
-        private void comboBoxGroups_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MySql.SelectQuerys.SQuery_SetGroup set_group_query = new MySql.SelectQuerys.SQuery_SetGroup();
+        void fill() {
+            MySql.SelectQuerys.SQuery_Set_Group set_group_query = new MySql.SelectQuerys.SQuery_Set_Group(comboBoxGroups.SelectedIndex + 1);
             MySql.SelectQuerys.SQuery_GetSchedules query = new MySql.SelectQuerys.SQuery_GetSchedules();
-            set_group_query.SelectedGroup = (comboBoxGroups.SelectedIndex+1).ToString();
             set_group_query.run(Data.DataManager._connection);
             query.run(Data.DataManager._connection);
             Dictionary<string, object> da = query.getFormatData();
@@ -60,8 +58,12 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
                     case "5": { fillContainer(SchedulesDayData5, (IDictionary)val.Value); break; }
                     case "6": { fillContainer(SchedulesDayData6, (IDictionary)val.Value); break; }
                 }
-              
+
             }
+        }
+        private void comboBoxGroups_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fill();
           
         }
 
@@ -80,6 +82,58 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
             ClearContainer(SchedulesDayData4);
             ClearContainer(SchedulesDayData5);
             ClearContainer(SchedulesDayData6);
+            this.Width = Parent.Width;
+            this.Height = Parent.Height;
+            
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            AppLogMySQL.Components.Data.DataManager.substate_states.state_Change("UserProfile");
+        }
+
+        void showEdit(int weekday)
+        {
+             Windows.EditSchedulesDateOfWeek ev = new Windows.EditSchedulesDateOfWeek();
+            ev.group = comboBoxGroups.SelectedIndex + 1;
+            ev.sch_day = weekday;
+            ev.ShowDialog();
+        }
+
+        private void EditButton1_Click(object sender, EventArgs e)
+        {
+            showEdit(1);
+            fill();
+        }
+
+        private void EditButton2_Click(object sender, EventArgs e)
+        {
+            showEdit(2);
+            fill();
+        }
+
+        private void EditButton3_Click(object sender, EventArgs e)
+        {
+            showEdit(3);
+            fill();
+        }
+
+        private void EditButton4_Click(object sender, EventArgs e)
+        {
+            showEdit(4);
+            fill();
+        }
+
+        private void EditButton5_Click(object sender, EventArgs e)
+        {
+            showEdit(5);
+            fill();
+        }
+
+        private void EditButton6_Click(object sender, EventArgs e)
+        {
+            showEdit(6);
+            fill();
         }
     }
 }

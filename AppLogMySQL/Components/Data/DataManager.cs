@@ -14,7 +14,7 @@ namespace AppLogMySQL.Components.Data
         public static MySQLManager _connection;
         public static AccountManager _account;
         public static AppLogMySQL.Components.Graphics.States.StateManager global_states;
-
+        public static AppLogMySQL.Components.Graphics.States.StateManager substate_states;
         public static void initialisation()
         {
             _connection = new MySQLManager();

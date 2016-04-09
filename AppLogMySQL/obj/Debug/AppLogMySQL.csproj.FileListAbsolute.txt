@@ -37,3 +37,5 @@ D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.St
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_SelectedLog.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_Schedules.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.csprojResolveAssemblyReference.cache
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_Curiculumbs.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Windows.EditSchedulesDateOfWeek.resources

@@ -62,7 +62,7 @@ namespace AppLogMySQL.Components.MySql
                 sqlCom.ExecuteNonQuery();
                 dataAdapter.Fill(dataValues);
             }
-            catch (MySqlException e)
+            catch (MySqlException)
             {
                 throw new Exception("FALSE PERMISION");
             }

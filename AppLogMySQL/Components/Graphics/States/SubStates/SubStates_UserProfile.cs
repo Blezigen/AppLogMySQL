@@ -70,7 +70,8 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
             ListDataProfile.Controls.Add(Item);
             index++;
         }
-        public void Load()
+
+        public void LoadProfile()
         {
             if (DataManager._account.getAvatar()!=null)
             {
@@ -84,6 +85,11 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
                 if (row.Key.ToString() != "account_image")
                 AddNewRow(row.Key.ToString(),row.Value.ToString());
             }
+        }
+
+        private void SubStates_UserProfile_Load(object sender, EventArgs e)
+        {
+            LoadProfile();
         }
     }
 }

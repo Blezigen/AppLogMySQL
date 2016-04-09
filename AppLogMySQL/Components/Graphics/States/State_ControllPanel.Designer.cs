@@ -31,7 +31,7 @@
             this.buttonExitSystem = new System.Windows.Forms.Button();
             this.buttonHelp = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.panelControlls = new AppLogMySQL.Components.Graphics.Controls.CustomPanel();
+            this.panelControlls = new StateManager();
             this.panel1 = new AppLogMySQL.Components.Graphics.Controls.CustomPanel();
             this.button4 = new System.Windows.Forms.Button();
             this.buttonShowAdministrator = new System.Windows.Forms.Button();
@@ -98,7 +98,7 @@
             this.panelControlls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControlls.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(159)))), ((int)(((byte)(141)))));
+            //this.panelControlls.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(159)))), ((int)(((byte)(141)))));
             this.panelControlls.ForeColor = System.Drawing.Color.Black;
             this.panelControlls.Location = new System.Drawing.Point(219, 46);
             this.panelControlls.Name = "panelControlls";
@@ -244,7 +244,6 @@
             this.comboBoxDiscipline.Name = "comboBoxDiscipline";
             this.comboBoxDiscipline.Size = new System.Drawing.Size(163, 24);
             this.comboBoxDiscipline.TabIndex = 3;
-            this.comboBoxDiscipline.SelectedIndexChanged += new System.EventHandler(this.comboBoxDiscipline_SelectedIndexChanged);
             // 
             // buttonClearD
             // 
@@ -305,7 +304,6 @@
             this.comboBoxGroup.Name = "comboBoxGroup";
             this.comboBoxGroup.Size = new System.Drawing.Size(163, 24);
             this.comboBoxGroup.TabIndex = 3;
-            this.comboBoxGroup.SelectedIndexChanged += new System.EventHandler(this.comboBoxGroup_SelectionChangeCommitted);
             // 
             // buttonClearG
             // 
@@ -405,6 +403,6 @@
         private System.Windows.Forms.Button buttonExitSystem;
         private System.Windows.Forms.Button buttonHelp;
         private System.Windows.Forms.Label labelTitle;
-        private Components.Graphics.Controls.CustomPanel panelControlls;
+        private StateManager panelControlls;
     }
 }

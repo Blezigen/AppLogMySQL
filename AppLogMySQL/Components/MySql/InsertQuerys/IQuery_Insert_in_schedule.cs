@@ -5,12 +5,11 @@ using System.Text;
 
 namespace AppLogMySQL.Components.MySql.SelectQuerys
 {
-    class SQuery_SetGroup : BasicSetQuery
+    class IQuery_Insert_in_schedule : BasicSetQuery
     {
-        public string SelectedGroup;
         public override bool run(MySQLManager _connection)
         {
-            query_str = string.Format("selectGroup({0})", SelectedGroup);
+            query_str = "insert_in_schedule()";
  	         return base.run(_connection);
         }
     }

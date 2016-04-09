@@ -13,7 +13,7 @@ namespace AppLogMySQL.Components.Graphics.States
     {
         private string currentState = "";
         private string prevState = "";
-        private static Dictionary<string, UserControl> states;
+        private Dictionary<string, UserControl> states;
         public StateManager()
         {
             states = new Dictionary<string,UserControl>();
@@ -31,7 +31,7 @@ namespace AppLogMySQL.Components.Graphics.States
 
         public void add_State(string name, UserControl _state)
         {
-            states[name] = _state;
+            states.Add(name, _state);
         }
         public void state_Change(string state){
             this.Controls.Clear();

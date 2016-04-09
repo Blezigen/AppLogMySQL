@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Components\Data\AccountManager.cs" />
     <Compile Include="Components\Data\DataManager.cs" />
+    <Compile Include="Components\Graphics\Controls\CustomComboBox.cs" />
     <Compile Include="Components\Graphics\StateManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -74,21 +75,39 @@
     <Compile Include="Components\Graphics\States\State_UserAuthorization.Designer.cs">
       <DependentUpon>State_UserAuthorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Graphics\States\SubStates\SubStates_Curiculumbs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\States\SubStates\SubStates_Curiculumbs.Designer.cs">
+      <DependentUpon>SubStates_Curiculumbs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Graphics\States\SubStates\SubStates_Schedules.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\Graphics\States\SubStates\SubStates_Schedules.Designer.cs">
       <DependentUpon>SubStates_Schedules.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Graphics\Windows\EditSchedulesDateOfWeek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Windows\EditSchedulesDateOfWeek.Designer.cs">
+      <DependentUpon>EditSchedulesDateOfWeek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\MySql\InsertQuerys\BasicInsertQuery.cs" />
+    <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_in_schedule.cs" />
     <Compile Include="Components\MySql\MySQLManager.cs" />
     <Compile Include="Components\MySql\SelectQuerys\BasicSetQuery.cs" />
     <Compile Include="Components\MySql\SelectQuerys\BasicSelectQuery.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_GetAffordableDisciplineByGroup.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_GetSchedules.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_GetAllGroups.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_LoginAccount.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_GetBasicAccountData.cs" />
     <Compile Include="Components\Graphics\Controls\CustomPanel.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_SetGroup.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Set_Para.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Set_Discipline.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Set_WeekDay.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Set_Group.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,8 +160,14 @@
     <EmbeddedResource Include="Components\Graphics\States\State_UserAuthorization.resx">
       <DependentUpon>State_UserAuthorization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\States\SubStates\SubStates_Curiculumbs.resx">
+      <DependentUpon>SubStates_Curiculumbs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\States\SubStates\SubStates_Schedules.resx">
       <DependentUpon>SubStates_Schedules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\Windows\EditSchedulesDateOfWeek.resx">
+      <DependentUpon>EditSchedulesDateOfWeek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -213,8 +238,9 @@
   <ItemGroup>
     <None Include="Resources\DefaulAvatar.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Components\MySql\InsertQuerys\" />
+    <None Include="Resources\EditLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

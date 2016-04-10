@@ -22,6 +22,7 @@ namespace AppLogMySQL.Components.Graphics.Windows
         SQuery_Set_Discipline query_d;
         SQuery_Set_WeekDay query_wd;
         SQuery_Set_Para query_p;
+        SQuery_Set_Teacher query_t;
 
         SQuery_GetSchedules query_s;
         SQuery_GetAffordableDisciplineByGroup query_ADBG;
@@ -111,6 +112,7 @@ namespace AppLogMySQL.Components.Graphics.Windows
             query_wd = new SQuery_Set_WeekDay(sch_day);
             query_p = new SQuery_Set_Para(0);
             query_d = new SQuery_Set_Discipline(0);
+            query_t = new SQuery_Set_Teacher(0);
 
             query_ADBG = new SQuery_GetAffordableDisciplineByGroup();
             query_lp = new SQuery_GetLoadPolitic();
@@ -119,9 +121,6 @@ namespace AppLogMySQL.Components.Graphics.Windows
 
         private void EditSchedulesDateOfWeek_Load(object sender, EventArgs e)
         {
-            
-            fillDataGrid();
-            fillComboBoxes();
         }
 
         void fillDataGrid() {
@@ -190,6 +189,7 @@ namespace AppLogMySQL.Components.Graphics.Windows
             {
                 if (stringlist[i] != "")
                 {
+                    
                     query_d.Discipline = int.Parse(stringlist[i]);
                     query_p.Para = i + 1;
                 }
@@ -198,6 +198,7 @@ namespace AppLogMySQL.Components.Graphics.Windows
                     query_d.Discipline = 0;
                     query_p.Para = i + 1;
                 }
+                query_t.run(DataManager._connection);
                 query_p.run(DataManager._connection);
                 query_d.run(DataManager._connection);
                 insert_isch.run(DataManager._connection);
@@ -207,6 +208,10 @@ namespace AppLogMySQL.Components.Graphics.Windows
         private void EditSchedulesDateOfWeek_Shown(object sender, EventArgs e)
         {
             showHideOption = false;
+            query_g.Group = group;
+            query_wd.Weekday = sch_day;
+            fillDataGrid();
+            fillComboBoxes();
             Width = 250;
         }
 

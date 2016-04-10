@@ -97,7 +97,7 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
 
         void showEdit(int weekday)
         {
-             Windows.EditSchedulesDateOfWeek ev = new Windows.EditSchedulesDateOfWeek();
+            Windows.EditSchedulesDateOfWeek ev = new Windows.EditSchedulesDateOfWeek();
             ev.group = comboBoxGroups.SelectedIndex + 1;
             ev.sch_day = weekday;
             ev.ShowDialog();

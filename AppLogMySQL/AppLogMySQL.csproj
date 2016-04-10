@@ -96,7 +96,7 @@
     <Compile Include="Components\MySql\InsertQuerys\BasicInsertQuery.cs" />
     <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_in_schedule.cs" />
     <Compile Include="Components\MySql\MySQLManager.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\BasicSetQuery.cs" />
+    <Compile Include="Components\MySql\SetQuerys\BasicSetQuery.cs" />
     <Compile Include="Components\MySql\SelectQuerys\BasicSelectQuery.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_GetAffordableDisciplineByGroup.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_GetLoadPolitic.cs" />
@@ -105,10 +105,11 @@
     <Compile Include="Components\MySql\SelectQuerys\SQuery_LoginAccount.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_GetBasicAccountData.cs" />
     <Compile Include="Components\Graphics\Controls\CustomPanel.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_Set_Para.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_Set_Discipline.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_Set_WeekDay.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_Set_Group.cs" />
+    <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Teacher.cs" />
+    <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Para.cs" />
+    <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Discipline.cs" />
+    <Compile Include="Components\MySql\SetQuerys\SQuery_Set_WeekDay.cs" />
+    <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Group.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

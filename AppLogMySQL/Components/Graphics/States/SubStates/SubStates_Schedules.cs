@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
+using AppLogMySQL.Components.MySql.SelectQuerys;
+using AppLogMySQL.Components.MySql.SetQuerys;
+
 
 namespace AppLogMySQL.Components.Graphics.States.SubStates
 {
@@ -35,8 +38,8 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
 
         }
         void fill() {
-            MySql.SelectQuerys.SQuery_Set_Group set_group_query = new MySql.SelectQuerys.SQuery_Set_Group(comboBoxGroups.SelectedIndex + 1);
-            MySql.SelectQuerys.SQuery_GetSchedules query = new MySql.SelectQuerys.SQuery_GetSchedules();
+            SQuery_Set_Group set_group_query = new SQuery_Set_Group(comboBoxGroups.SelectedIndex + 1);
+            SQuery_GetSchedules query = new SQuery_GetSchedules();
             set_group_query.run(Data.DataManager._connection);
             query.run(Data.DataManager._connection);
             Dictionary<string, object> da = query.getFormatData();

@@ -96,8 +96,6 @@
             this.SchedulesDayData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.SchedulesDayData.Size = new System.Drawing.Size(246, 184);
             this.SchedulesDayData.TabIndex = 21;
-            this.SchedulesDayData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SchedulesDayData_CellContentClick);
-            this.SchedulesDayData.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.SchedulesDayData_EditingControlShowing);
             // 
             // Number
             // 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AppLogMySQL.Components.MySql.SelectQuerys
+namespace AppLogMySQL.Components.MySql.SetQuerys
 {
     class SQuery_Set_Group : BasicSetQuery
     {

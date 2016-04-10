@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AppLogMySQL.Components.MySql.SelectQuerys
+namespace AppLogMySQL.Components.MySql.InsertQuerys
 {
-    class IQuery_Insert_in_schedule : BasicSetQuery
+    class IQuery_Insert_in_schedule : BasicInsertQuery
     {
         public override bool run(MySQLManager _connection)
         {

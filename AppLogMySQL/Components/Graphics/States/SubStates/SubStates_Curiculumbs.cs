@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
+using AppLogMySQL.Components.MySql.SetQuerys;
+using AppLogMySQL.Components.MySql.SelectQuerys;
 
 namespace AppLogMySQL.Components.Graphics.States.SubStates
 {
@@ -29,9 +31,9 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
 
         private void comboBoxGroups_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MySql.SelectQuerys.SQuery_Set_Group set_group_query = new MySql.SelectQuerys.SQuery_Set_Group(comboBoxGroups.SelectedIndex + 1);
+            SQuery_Set_Group set_group_query = new SQuery_Set_Group(comboBoxGroups.SelectedIndex + 1);
 
-            MySql.SelectQuerys.SQuery_GetAffordableDisciplineByGroup query = new MySql.SelectQuerys.SQuery_GetAffordableDisciplineByGroup();
+            SQuery_GetAffordableDisciplineByGroup query = new SQuery_GetAffordableDisciplineByGroup();
             set_group_query.run(Data.DataManager._connection);
             query.run(Data.DataManager._connection);
             Dictionary<string, object> da = query.getFormatData();
@@ -41,7 +43,7 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
 
         private void SubStates_Schedules_Load(object sender, EventArgs e)
         {
-            MySql.SelectQuerys.SQuery_GetAllGroups query = new MySql.SelectQuerys.SQuery_GetAllGroups();
+            SQuery_GetAllGroups query = new SQuery_GetAllGroups();
             query.run(Data.DataManager._connection);
             groups = query.getFormatData();
             foreach (KeyValuePair<string, object> val in groups)

@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using AppLogMySQL.Components.MySql;
 
-namespace AppLogMySQL.Components.MySql.SelectQuerys
+namespace AppLogMySQL.Components.MySql.SetQuerys
 {
     abstract class BasicSetQuery
     {

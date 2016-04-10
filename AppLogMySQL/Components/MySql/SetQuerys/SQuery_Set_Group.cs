@@ -18,6 +18,10 @@ namespace AppLogMySQL.Components.MySql.SetQuerys
             {
                 group = value;
             }
+            get
+            {
+                return group;
+            }
         }
         public override bool run(MySQLManager _connection)
         {

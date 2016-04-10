@@ -29,31 +29,15 @@ namespace AppLogMySQL.Components.Graphics.Windows
         IQuery_Insert_in_schedule insert_isch;
 
 
-        Dictionary<string, object> Disciplines;
+        //Dictionary<string, object> Disciplines;
         Dictionary<string, object> Disciplines_OldData;
         Dictionary<int, Dictionary<string, object>> ComboBoxINT;
 
         public int group;
-        public int sch_day;
+        public int weekday;
 
         private bool showHideOption;
-
-        List<string> getItemsComboBOXGrid(Dictionary<string, object> d)
-        {
-            List<string> stringlist = new List<string>();
-            stringlist.Add("Пустой урок");
-            foreach (KeyValuePair<string, object> val in d)
-                stringlist.Add(val.Value.ToString());
-            return stringlist;
-        }
-
-        List<string> getItemsComboBOXTeacher(Dictionary<string, object> d)
-        {
-            List<string> stringlist = new List<string>();
-            foreach (KeyValuePair<string, object> val in d)
-                stringlist.Add(val.Value.ToString());
-            return stringlist;
-        }
+        private bool on_show;
 
         List<string> FormatInsertQuerys()
         {
@@ -61,13 +45,12 @@ namespace AppLogMySQL.Components.Graphics.Windows
 
             foreach (DataGridViewRow row in SchedulesDayData.Rows)
             {
-                if (getSelectedIndex((DataGridViewComboBoxCell)row.Cells[1]) > 0)
-                {
-                    var item = Disciplines.ElementAt(getSelectedIndex((DataGridViewComboBoxCell)row.Cells[1]) - 1);
-                    stringlist.Add(item.Key.ToString());
-                }
-                else
-                    stringlist.Add("");
+                    if (((DataGridViewComboBoxCell)row.Cells[1]).Value != null && int.Parse(((DataGridViewComboBoxCell)row.Cells[1]).Value.ToString()) > 0)
+                    {
+                        stringlist.Add(((DataGridViewComboBoxCell)row.Cells[1]).Value.ToString());
+                    }
+                    else
+                        stringlist.Add("");
             }
             return stringlist;
         }
@@ -104,12 +87,12 @@ namespace AppLogMySQL.Components.Graphics.Windows
             };
 
             ComboBoxINT = new Dictionary<int,Dictionary<string,object>>();
-            Disciplines = new Dictionary<string,object>();
+            
             Disciplines_OldData = new Dictionary<string, object>();
 
             query_s = new SQuery_GetSchedules();
             query_g = new SQuery_Set_Group(group);
-            query_wd = new SQuery_Set_WeekDay(sch_day);
+            query_wd = new SQuery_Set_WeekDay(weekday);
             query_p = new SQuery_Set_Para(0);
             query_d = new SQuery_Set_Discipline(0);
             query_t = new SQuery_Set_Teacher(0);
@@ -124,104 +107,176 @@ namespace AppLogMySQL.Components.Graphics.Windows
         }
 
         void fillDataGrid() {
-            query_g.run(Data.DataManager._connection);
-            query_s.run(Data.DataManager._connection);
-            query_ADBG.run(AppLogMySQL.Components.Data.DataManager._connection);
 
-            Disciplines = query_ADBG.getFormatData();
-            Disciplines_OldData = query_s.getFormatData();
+            this.query_g.run(Data.DataManager._connection);
+            this.query_wd.Weekday = weekday;
+            this.query_wd.run(DataManager._connection);
+            this.query_s.run(Data.DataManager._connection);
+            this.query_ADBG.run(AppLogMySQL.Components.Data.DataManager._connection);
 
-            ((DataGridViewComboBoxColumn)SchedulesDayData.Columns[1]).DataSource = getItemsComboBOXGrid(Disciplines);
+            DataGridViewComboBoxColumn g = (DataGridViewComboBoxColumn)SchedulesDayData.Columns[1];
 
-            SchedulesDayData.Rows.Clear();
-            for (int i = 1; i <= 7; i++)
-                SchedulesDayData.Rows.Add(i.ToString(), "");
-            for (int i = 0; i <= 6; i++)
-                setSelectedIndex((DataGridViewComboBoxCell)SchedulesDayData.Rows[i].Cells[1], 0);
+            g.DataSource = query_ADBG.dataset.Tables[0];
+            g.DisplayMember = "name";
+            g.ValueMember = "id";
+            g.ValueType = typeof(int);
 
-            IDictionary RowDiscipline = Disciplines_OldData as IDictionary;
-            bool ifki = false;
-            foreach (KeyValuePair<string, object> val in Disciplines_OldData)
-                if (val.Key == sch_day.ToString())
-                {
-                    RowDiscipline = (IDictionary)val.Value;
-                    ifki = true;
-                }
-            if (ifki)
-                foreach (DictionaryEntry vals in RowDiscipline)
-                    setSelectedIndex((DataGridViewComboBoxCell)SchedulesDayData.Rows[int.Parse(vals.Key.ToString()) - 1].Cells[1], vals.Value);
-
+            DataTable dt = ((DataTable)query_s.dataset.Tables[0]);
+            try
+            {
+                for (int i = 1; i <= 7; i++)
+                    this.SchedulesDayData.Rows.Add(i.ToString(), Convert.ToInt32(dt.Rows[i - 1].ItemArray[0].ToString()));
+            }
+            catch(IndexOutOfRangeException)
+            {
+                this.SchedulesDayData.Rows.Clear();
+                for (int i = 1; i <= 7; i++)
+                    this.SchedulesDayData.Rows.Add(i.ToString(), 0);
+            }
         }
 
         void fillComboBoxes()
         {
-            query_g.run(Data.DataManager._connection);
-            for (int i = 0; i < 7; i++)
+            if (this.showHideOption)
             {
-                ComboBox c = (this.Controls.Find(string.Format("comboBox{0}", (i + 1)), false)[0]) as ComboBox;
-                if (getSelectedIndex((DataGridViewComboBoxCell)SchedulesDayData.Rows[i].Cells[1]) > 0)
+                this.query_g.run(Data.DataManager._connection);
+                for (int i = 0; i < 7; i++)
                 {
-                    query_d.Discipline = int.Parse(Disciplines.ElementAt(getSelectedIndex((DataGridViewComboBoxCell)SchedulesDayData.Rows[i].Cells[1]) - 1).Key);
-                    query_d.run(Data.DataManager._connection);
-                    query_lp.run(Data.DataManager._connection);
-                    c.DataSource = getItemsComboBOXTeacher(query_lp.getFormatData());
+                    ComboBox c = ((ComboBox)this.Controls.Find(string.Format("comboBox{0}", (i + 1)), false)[0]);
+                        c.Enabled = true;
+                        var v = ((DataGridViewComboBoxCell)this.SchedulesDayData.Rows[i].Cells[1]).Value;
+                        if (v != null)
+                        {
+                            this.query_d.Discipline = int.Parse(v.ToString());
+                            this.query_d.run(Data.DataManager._connection);
+                            this.query_lp.run(Data.DataManager._connection);
+                            c.DataSource = this.query_lp.dataset.Tables[0];
+
+                            c.DisplayMember = "name";
+                            c.ValueMember = "id";
+                            try
+                            {
+                                if (((DataTable)c.DataSource).Select(string.Format("id = {0}", query_s.dataset.Tables[0].Rows[i].ItemArray[4])).Count() > 0)
+                                {
+                                    c.SelectedValue = int.Parse(query_s.dataset.Tables[0].Rows[i].ItemArray[4].ToString());
+                                }
+                                else
+                                {
+                                    c.ValueMember = "is_default";
+                                    c.SelectedValue = 1;
+                                    c.ValueMember = "id";
+                                }
+                            }
+                            catch(IndexOutOfRangeException)
+                            {
+                                c.ValueMember = "is_default";
+                                c.SelectedValue = 1;
+                                c.ValueMember = "id";
+                                //c.SelectedValue = 0;
+
+                            }
+                        }
+                        else
+                        {
+                            ((DataGridViewComboBoxCell)this.SchedulesDayData.Rows[i].Cells[1]).Value = 0;
+                            c.DataSource = null;
+                            c.SelectedValue = 0;
+                            c.Enabled = false;
+                            c.Items.Clear();
+                        }
                 }
+                this.Invalidate();
             }
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            Close();
+            this.on_show = false;
+            this.Close();
         }
-
                
         private void button2_Click(object sender, EventArgs e)
         {
-                Accept(FormatInsertQuerys());
-                Close();
+            this.on_show = false;
+            this.Accept(this.FormatInsertQuerys());
+            this.Close();
         }
 
         void Accept(List<string> stringlist)
         {
-            query_g.run(DataManager._connection);
-            query_wd.run(DataManager._connection);
+            this.query_g.run(DataManager._connection);
+            this.query_wd.run(DataManager._connection);
+            this.query_g.Group = group;
+            this.query_wd.Weekday = weekday;
             for (int i = 0; i < 7; i++)
             {
+                ComboBox c = ((ComboBox)this.Controls.Find(string.Format("comboBox{0}", (i + 1)), false)[0]);
                 if (stringlist[i] != "")
                 {
-                    
-                    query_d.Discipline = int.Parse(stringlist[i]);
-                    query_p.Para = i + 1;
+                    if (!this.showHideOption)
+                        this.query_t.Teacher = -1;
+                    else
+                    {
+                        if (((DataRowView)c.SelectedItem) != null)
+                        {
+                            this.query_t.Teacher = int.Parse(((DataRowView)c.SelectedItem).Row.ItemArray[0].ToString());
+                        }
+                        else
+                        {
+                            this.query_t.Teacher = 0;
+                        }
+                    }
+                    this.query_d.Discipline = int.Parse(stringlist[i]);
+                    this.query_p.Para = i + 1;
                 }
                 else
                 {
-                    query_d.Discipline = 0;
-                    query_p.Para = i + 1;
+                    this.query_d.Discipline = 0;
+                    this.query_p.Para = i + 1;
                 }
-                query_t.run(DataManager._connection);
-                query_p.run(DataManager._connection);
-                query_d.run(DataManager._connection);
-                insert_isch.run(DataManager._connection);
+                this.query_t.run(DataManager._connection);
+                this.query_p.run(DataManager._connection);
+                this.query_d.run(DataManager._connection);
+                this.insert_isch.run(DataManager._connection);
             }
         }
 
         private void EditSchedulesDateOfWeek_Shown(object sender, EventArgs e)
         {
-            showHideOption = false;
-            query_g.Group = group;
-            query_wd.Weekday = sch_day;
-            fillDataGrid();
-            fillComboBoxes();
-            Width = 250;
+            this.showHideOption = false;
+            this.query_g.Group = this.group;
+            this.query_wd.Weekday = this.weekday;
+            this.Width = this.MinimumSize.Width;
+            this.SchedulesDayData.Rows.Clear();
+            this.fillDataGrid();
+            this.on_show = true;
+        }
+        private void noEditGrid()
+        {
+            for (int i = 0; i < 7; i++)
+                ((DataGridViewComboBoxCell)this.SchedulesDayData.Rows[i].Cells[1]).ReadOnly = true;
+            EditButton2.Enabled = false;
         }
 
         private void EditButton2_Click(object sender, EventArgs e)
         {
-            showHideOption = !showHideOption;
-            if (showHideOption)
-                this.Width = 500;
-            else
-                this.Width = 250;
+            if (MessageBox.Show(null, "Будет недоcтупно изменение предметов. Согласны?", "Предупреждение", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                noEditGrid();
+                this.showHideOption = !this.showHideOption;
+                if (this.showHideOption)
+                    this.Width = this.MinimumSize.Width * 2;
+                else
+                    this.Width = this.MinimumSize.Width;
+                this.fillComboBoxes();
+            }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.on_show = false;
+            this.Close();
+        }
+
     }
 }

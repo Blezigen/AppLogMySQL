@@ -18,6 +18,10 @@ namespace AppLogMySQL.Components.MySql.SetQuerys
             {
                 para = value;
             }
+            get
+            {
+                return para;
+            }
         }
         public override bool run(MySQLManager _connection)
         {

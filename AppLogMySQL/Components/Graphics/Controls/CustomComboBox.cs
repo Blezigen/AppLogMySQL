@@ -13,20 +13,17 @@ namespace AppLogMySQL.Components.Graphics.Controls
 {
     [System.ComponentModel.DesignerCategory("Code")]
     //[Designer(typeof(CustomComboBoxDesigner))]
-    public class CustomComboBox : DataGridViewComboBoxCell
+    public class CustomComboBox : ComboBox
     {
         public CustomComboBox()
         {
+            
         }
 
-        public int getSelectedIndex(){
-            return this.Items.IndexOf(this.Value);
-        }
-
-        public void setSelectedIndex(int value)
+        public void AddItem(int id, object value)
         {
-            this.Value = this.Items[value];
-        } 
+            this.Items.Add(value.ToString());
+        }
     }
     /*internal class CustomComboBoxDesigner : ControlDesigner
     {

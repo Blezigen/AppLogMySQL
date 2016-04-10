@@ -15,6 +15,10 @@ namespace AppLogMySQL.Components.MySql.SetQuerys
             set {
                 teacher = value;
             }
+            get
+            {
+                return teacher;
+            }
         }
         public override bool run(MySQLManager _connection) {
             query_str = string.Format("select_teacher({0})", this.teacher);

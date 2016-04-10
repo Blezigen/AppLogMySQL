@@ -38,8 +38,10 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
 
         }
         void fill() {
+            SQuery_Set_WeekDay query_wd = new SQuery_Set_WeekDay(-1);
             SQuery_Set_Group set_group_query = new SQuery_Set_Group(comboBoxGroups.SelectedIndex + 1);
             SQuery_GetSchedules query = new SQuery_GetSchedules();
+            query_wd.run(Data.DataManager._connection);
             set_group_query.run(Data.DataManager._connection);
             query.run(Data.DataManager._connection);
             Dictionary<string, object> da = query.getFormatData();
@@ -99,7 +101,7 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
         {
             Windows.EditSchedulesDateOfWeek ev = new Windows.EditSchedulesDateOfWeek();
             ev.group = comboBoxGroups.SelectedIndex + 1;
-            ev.sch_day = weekday;
+            ev.weekday = weekday;
             ev.ShowDialog();
         }
 
@@ -137,6 +139,11 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
         {
             showEdit(6);
             fill();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -3,7 +3,6 @@ D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.exe
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.pdb
 D:\Projects\AppLogMySQL\AppLogMySQL\bin\Debug\AppLogMySQL.exe
 D:\Projects\AppLogMySQL\AppLogMySQL\bin\Debug\AppLogMySQL.pdb
-D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.csprojResolveAssemblyReference.cache
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.StateManager.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.State_UserAuthorization.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_Curiculumbs.resources
@@ -19,3 +18,4 @@ D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.St
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Properties.Resources.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.ResourceApplication.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.csproj.GenerateResource.Cache
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.csprojResolveAssemblyReference.cache

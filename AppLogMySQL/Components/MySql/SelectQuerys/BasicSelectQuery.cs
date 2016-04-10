@@ -10,18 +10,24 @@ namespace AppLogMySQL.Components.MySql.SelectQuerys
     abstract class BasicSelectQuery
     {
         protected string query_str;
-        protected DataTable answerData;
+        protected DataSet answerData;
 
         public virtual Dictionary<string, object> getFormatData()
         {
             var returnData = new Dictionary<string, object>();
-            foreach (DataColumn column in answerData.Columns)
+            foreach (DataColumn column in answerData.Tables[0].Columns)
             {
-                returnData[column.ColumnName] = answerData.Rows[0][column.ColumnName];
+                returnData[column.ColumnName] = answerData.Tables[0].Rows[0][column.ColumnName];
             }
             return returnData;
         }
-
+        public DataSet dataset
+        {
+            get
+            {
+                return answerData;
+            }
+        }
         public virtual bool run(MySQLManager _connection)
         {
             try
@@ -29,12 +35,13 @@ namespace AppLogMySQL.Components.MySql.SelectQuerys
                 answerData = _connection.sqlQueryGetData(query_str);
                 return true;
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 if (e.Message == "FALSE PERMISION")
                 {
                     throw new Exception("У приложения нет доступа!!!");
                 }
-                return false; 
+                return false;
             }
             finally { }
         }

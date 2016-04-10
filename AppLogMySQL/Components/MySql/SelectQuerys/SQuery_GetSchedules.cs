@@ -16,9 +16,9 @@ namespace AppLogMySQL.Components.MySql.SelectQuerys
         public override Dictionary<string, object> getFormatData()
         {
             var returnData = new Dictionary<string, object>();
-            foreach (DataRow row in answerData.Rows)
+            foreach (DataRow row in answerData.Tables[0].Rows)
             {
-                foreach (DataColumn column in answerData.Columns)
+                foreach (DataColumn column in answerData.Tables[0].Columns)
                 {
                     if (!returnData.ContainsKey(row["day"].ToString()))
                     {

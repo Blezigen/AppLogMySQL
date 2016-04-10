@@ -51,11 +51,11 @@ namespace AppLogMySQL.Components.MySql
             return true;
         }
 
-        public DataTable sqlQueryGetData(String query/* Format String */)
+        public DataSet sqlQueryGetData(String query/* Format String */)
         {
             MySqlCommand sqlCom = new MySqlCommand(query, Connection);
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sqlCom);
-            DataTable dataValues = new DataTable();
+            DataSet dataValues = new DataSet();
             try
             {
                 Connection.Open();

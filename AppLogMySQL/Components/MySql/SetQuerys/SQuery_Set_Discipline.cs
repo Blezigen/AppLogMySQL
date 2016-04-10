@@ -18,6 +18,10 @@ namespace AppLogMySQL.Components.MySql.SetQuerys
             {
                 discipline = value;
             }
+            get
+            {
+                return discipline;
+            }
         }
         public override bool run(MySQLManager _connection)
         {

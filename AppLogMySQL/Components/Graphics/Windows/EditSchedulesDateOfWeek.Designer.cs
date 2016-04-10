@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.SchedulesDayData = new System.Windows.Forms.DataGridView();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panelTitle = new System.Windows.Forms.Panel();
@@ -48,6 +47,7 @@
             this.EditButton2 = new System.Windows.Forms.Button();
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.logoPicture = new AppLogMySQL.UC_Panels.UC_TransparentControl();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discipline = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.SchedulesDayData)).BeginInit();
             this.panelTitle.SuspendLayout();
@@ -97,16 +97,6 @@
             this.SchedulesDayData.Size = new System.Drawing.Size(246, 184);
             this.SchedulesDayData.TabIndex = 21;
             // 
-            // Number
-            // 
-            this.Number.FillWeight = 30F;
-            this.Number.HeaderText = "№";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
-            this.Number.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Number.Width = 30;
-            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -116,6 +106,7 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "Отменить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -291,6 +282,16 @@
             this.logoPicture.TabIndex = 25;
             this.logoPicture.TranspKey = System.Drawing.Color.White;
             // 
+            // Number
+            // 
+            this.Number.FillWeight = 30F;
+            this.Number.HeaderText = "№";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Number.Width = 30;
+            // 
             // Discipline
             // 
             this.Discipline.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -319,6 +320,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SchedulesDayData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(250, 280);
             this.Name = "EditSchedulesDateOfWeek";
             this.Text = "EditSchedulesDateOfWeek";
             this.Load += new System.EventHandler(this.EditSchedulesDateOfWeek_Load);
@@ -341,8 +343,6 @@
         private System.Windows.Forms.PictureBox CloseButton;
         private UC_Panels.UC_TransparentControl logoPicture;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Discipline;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
@@ -352,5 +352,7 @@
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button EditButton2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Discipline;
     }
 }

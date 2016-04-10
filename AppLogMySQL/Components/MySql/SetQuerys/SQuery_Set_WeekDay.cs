@@ -18,6 +18,10 @@ namespace AppLogMySQL.Components.MySql.SetQuerys
             {
                 weekday = value;
             }
+            get
+            {
+                return weekday;
+            }
         }
         public override bool run(MySQLManager _connection)
         {

@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.IO;
 using System.Drawing;
+using AppLogMySQL.Components.MySql.SetQuerys;
 
 namespace AppLogMySQL.Components.Data
 {
@@ -44,7 +45,7 @@ namespace AppLogMySQL.Components.Data
         public bool FillData()
         {
             SetDefault();
-            MySql.SelectQuerys.SQuery_GetBasicAccountData query = new MySql.SelectQuerys.SQuery_GetBasicAccountData();
+            MySql.SelectQuerys.SQuery_Get_Account_Data query = new MySql.SelectQuerys.SQuery_Get_Account_Data();
             query.run(DataManager._connection);
             data = query.getFormatData();
             try
@@ -60,7 +61,7 @@ namespace AppLogMySQL.Components.Data
 
         public Dictionary<string, object> login(string login, string password)
         {
-            MySql.SelectQuerys.SQuery_LoginAccount query = new MySql.SelectQuerys.SQuery_LoginAccount();
+            SQuery_Set_Account query = new SQuery_Set_Account();
             query.login = login;
             query.password = password;
             query.run(DataManager._connection);

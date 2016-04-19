@@ -25,8 +25,8 @@ namespace AppLogMySQL.Components.MySql.SetQuerys
         }
         public override bool run(MySQLManager _connection)
         {
-            query_str = string.Format("select_para({0})", this.para);
- 	         return base.run(_connection);
+            query_str = string.Format("set_para({0})", this.para);
+ 	        return base.run(_connection);
         }
     }
 }

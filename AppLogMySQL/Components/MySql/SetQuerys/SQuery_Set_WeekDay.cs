@@ -1,4 +1,5 @@
-﻿using System;
+﻿#define DEBUG
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,8 +26,8 @@ namespace AppLogMySQL.Components.MySql.SetQuerys
         }
         public override bool run(MySQLManager _connection)
         {
-            query_str = string.Format("select_weekday({0})", this.weekday);
- 	         return base.run(_connection);
+            query_str = string.Format("set_weekday({0})", this.weekday);
+ 	        return base.run(_connection);
         }
     }
 }

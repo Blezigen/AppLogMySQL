@@ -25,7 +25,7 @@ namespace AppLogMySQL.Components.MySql.SetQuerys
         }
         public override bool run(MySQLManager _connection)
         {
-            query_str = string.Format("selectGroup({0})", group);
+            query_str = string.Format("set_group({0})", group);
  	        return base.run(_connection);
         }
     }

@@ -16,14 +16,16 @@ namespace AppLogMySQL.Components.Graphics.States
             InitializeComponent();
             this.Dock = DockStyle.Fill;
             Data.DataManager.substate_states = panelControlls;
-            panelControlls.add_State("Schedules", new SubStates_Schedules());
+            //panelControlls.add_State("Schedules", new SubStates_Schedules());
             panelControlls.add_State("UserProfile", new SubStates_UserProfile());
-
+            panelControlls.add_State("Disciplines", new SubStates_Disciplines());
         }
 
         private void buttonShowLogs_Click(object sender, EventArgs e)
         {
-            this.panelLogFilter.Visible = !this.panelLogFilter.Visible;
+            Window.Window_Log win = new Window.Window_Log();
+            win.ShowDialog();
+            //this.panelLogFilter.Visible = !this.panelLogFilter.Visible;
         }
 
         private void buttonClearD_Click(object sender, EventArgs e)
@@ -51,7 +53,19 @@ namespace AppLogMySQL.Components.Graphics.States
         }
         private void buttonShowWeekLog_Click(object sender, EventArgs e)
         {
-            panelControlls.state_Change("Schedules");
+            Window.Window_Schedules win = new Window.Window_Schedules();
+            win.ShowDialog();
+        }
+
+        private void buttonShowCuriculumb_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Window.Window_Disciplines win = new Window.Window_Disciplines();
+            win.ShowDialog();
         }
     }
 }

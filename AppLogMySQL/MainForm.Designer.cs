@@ -120,6 +120,7 @@
             // 
             // stateManager
             // 
+            this.stateManager.BackColor = System.Drawing.SystemColors.Control;
             this.stateManager.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stateManager.Location = new System.Drawing.Point(0, 30);
             this.stateManager.Name = "stateManager";

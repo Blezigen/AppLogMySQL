@@ -33,10 +33,16 @@ namespace AppLogMySQL.Components.MySql.SelectQuerys
             try
             {
                 answerData = _connection.sqlQueryGetData(query_str);
+                #if (DEBUG)
+                    Console.WriteLine(string.Format("{0} run {1}", query_str,true));
+                #endif
                 return true;
             }
             catch (Exception e)
             {
+                #if (DEBUG)
+                    Console.WriteLine(string.Format("{0} run {1}", query_str, false));
+                #endif
                 if (e.Message == "FALSE PERMISION")
                 {
                     throw new Exception("У приложения нет доступа!!!");

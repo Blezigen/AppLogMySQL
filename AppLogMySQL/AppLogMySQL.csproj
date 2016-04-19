@@ -63,6 +63,13 @@
     <Compile Include="Components\Data\AccountManager.cs" />
     <Compile Include="Components\Data\DataManager.cs" />
     <Compile Include="Components\Graphics\Controls\CustomComboBox.cs" />
+    <Compile Include="Components\Graphics\Controls\DataGridViewImageButtonCell.cs" />
+    <Compile Include="Components\Graphics\Dialog\Dialog_Add_Edit_Discipline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Dialog\Dialog_Add_Edit_Discipline.Designer.cs">
+      <DependentUpon>Dialog_Add_Edit_Discipline.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Graphics\StateManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,35 +82,62 @@
     <Compile Include="Components\Graphics\States\State_UserAuthorization.Designer.cs">
       <DependentUpon>State_UserAuthorization.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Graphics\States\SubStates\SubStates_Curiculumbs.cs">
+    <Compile Include="Components\Graphics\States\SubStates\SubStates_Disciplines.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Graphics\States\SubStates\SubStates_Curiculumbs.Designer.cs">
-      <DependentUpon>SubStates_Curiculumbs.cs</DependentUpon>
+    <Compile Include="Components\Graphics\States\SubStates\SubStates_Disciplines.Designer.cs">
+      <DependentUpon>SubStates_Disciplines.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Graphics\States\SubStates\SubStates_Schedules.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Components\Graphics\States\SubStates\SubStates_Schedules.Designer.cs">
-      <DependentUpon>SubStates_Schedules.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Components\Graphics\Windows\EditSchedulesDateOfWeek.cs">
+    <Compile Include="Components\Graphics\Dialog\Dialog_Add_Edit_Schedules_Day_Week.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\Graphics\Windows\EditSchedulesDateOfWeek.Designer.cs">
-      <DependentUpon>EditSchedulesDateOfWeek.cs</DependentUpon>
+    <Compile Include="Components\Graphics\Dialog\Dialog_Add_Edit_Schedules_Day_Week.Designer.cs">
+      <DependentUpon>Dialog_Add_Edit_Schedules_Day_Week.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Window_Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Window_Log.Designer.cs">
+      <DependentUpon>Window_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Window_Specialization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Window_Specialization.Designer.cs">
+      <DependentUpon>Window_Specialization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Window_Disciplines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Window_Disciplines.Designer.cs">
+      <DependentUpon>Window_Disciplines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Window_Group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Window_Group.Designer.cs">
+      <DependentUpon>Window_Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Window_Schedules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Window_Schedules.Designer.cs">
+      <DependentUpon>Window_Schedules.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\MySql\InsertQuerys\BasicInsertQuery.cs" />
-    <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_in_schedule.cs" />
+    <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Discipline.cs" />
+    <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Schedule.cs" />
     <Compile Include="Components\MySql\MySQLManager.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Disciplines.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Log.cs" />
     <Compile Include="Components\MySql\SetQuerys\BasicSetQuery.cs" />
     <Compile Include="Components\MySql\SelectQuerys\BasicSelectQuery.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_GetAffordableDisciplineByGroup.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_GetLoadPolitic.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_GetSchedules.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_GetAllGroups.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_LoginAccount.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_GetBasicAccountData.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Affordable_Discipline_By_Group.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Load_Politic.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Schedules.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Groups_All.cs" />
+    <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Account.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Account_Data.cs" />
     <Compile Include="Components\Graphics\Controls\CustomPanel.cs" />
     <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Teacher.cs" />
     <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Para.cs" />
@@ -136,18 +170,6 @@
     <Compile Include="Components\Graphics\Controls\UC_TransparentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Graphics\States\SubStates\SubStates_LogList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Components\Graphics\States\SubStates\SubStates_LogList.Designer.cs">
-      <DependentUpon>SubStates_LogList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Components\Graphics\States\SubStates\SubStates_SelectedLog.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Components\Graphics\States\SubStates\SubStates_SelectedLog.Designer.cs">
-      <DependentUpon>SubStates_SelectedLog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Components\Graphics\States\SubStates\SubStates_UserProfile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,20 +178,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_Add_Edit_Discipline.resx">
+      <DependentUpon>Dialog_Add_Edit_Discipline.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\StateManager.resx">
       <DependentUpon>StateManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\States\State_UserAuthorization.resx">
       <DependentUpon>State_UserAuthorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Graphics\States\SubStates\SubStates_Curiculumbs.resx">
-      <DependentUpon>SubStates_Curiculumbs.cs</DependentUpon>
+    <EmbeddedResource Include="Components\Graphics\States\SubStates\SubStates_Disciplines.resx">
+      <DependentUpon>SubStates_Disciplines.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Graphics\States\SubStates\SubStates_Schedules.resx">
-      <DependentUpon>SubStates_Schedules.cs</DependentUpon>
+    <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_Add_Edit_Schedules_Day_Week.resx">
+      <DependentUpon>Dialog_Add_Edit_Schedules_Day_Week.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Graphics\Windows\EditSchedulesDateOfWeek.resx">
-      <DependentUpon>EditSchedulesDateOfWeek.cs</DependentUpon>
+    <EmbeddedResource Include="Components\Graphics\Window\Window_Log.resx">
+      <DependentUpon>Window_Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\Window\Window_Specialization.resx">
+      <DependentUpon>Window_Specialization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\Window\Window_Disciplines.resx">
+      <DependentUpon>Window_Disciplines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\Window\Window_Group.resx">
+      <DependentUpon>Window_Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\Window\Window_Schedules.resx">
+      <DependentUpon>Window_Schedules.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -182,12 +219,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\States\State_ControllPanel.resx">
       <DependentUpon>State_ControllPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Components\Graphics\States\SubStates\SubStates_LogList.resx">
-      <DependentUpon>SubStates_LogList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Components\Graphics\States\SubStates\SubStates_SelectedLog.resx">
-      <DependentUpon>SubStates_SelectedLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\States\SubStates\SubStates_UserProfile.resx">
       <DependentUpon>SubStates_UserProfile.cs</DependentUpon>
@@ -240,9 +271,17 @@
   <ItemGroup>
     <None Include="Resources\DefaulAvatar.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\EditLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add15x15.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -15,3 +15,27 @@ C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQ
 C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.ControllPanel.UserControls.CP_LogList.resources
 C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.ControllPanel.UserControls.CP_SelectedLog.resources
 C:\Users\Ильяс\Documents\Visual Studio 2013\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.ControllPanel.UserControls.CP_UserProfile.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\bin\Release\AppLogMySQL.exe.config
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.exe
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.pdb
+D:\Projects\AppLogMySQL\AppLogMySQL\bin\Release\AppLogMySQL.exe
+D:\Projects\AppLogMySQL\AppLogMySQL\bin\Release\AppLogMySQL.pdb
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.csprojResolveAssemblyReference.cache
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Dialog.Dialog_Add_Edit_Discipline.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.States.StateManager.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.States.State_UserAuthorization.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_Disciplines.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Windows.Dialog_Add_Edit_Schedules_Day_Week.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Window_Log.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Window_Specialization.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Window_Disciplines.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Window_Group.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Window_Schedules.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.MainForm.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.UC_Panels.UC_AnimatorPanel.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.UC_Panels.UC_CustomDataGridView.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.States.State_ControllPanel.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_UserProfile.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Properties.Resources.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.ResourceApplication.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.csproj.GenerateResource.Cache

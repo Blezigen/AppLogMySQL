@@ -16,8 +16,8 @@ namespace AppLogMySQL.Components.Graphics.Window.Show_all
 {
     public partial class Windows_Groups : Form
     {
-        private SQuery_Get_Groups query_get_d;
-        private SQuery_Set_Group query_set_d;
+        private SQuery_Get_Groups query_get_g;
+        private SQuery_Set_Group query_set_g;
 
         private DataTable groups_data;
         private DataGridViewImageButtonEditColumn edit;
@@ -62,8 +62,8 @@ namespace AppLogMySQL.Components.Graphics.Window.Show_all
         private void InitializeVars()
         {
             
-            this.query_get_d = new MySql.SelectQuerys.SQuery_Get_Groups();
-            this.query_set_d = new SQuery_Set_Group(-1);
+            this.query_get_g = new SQuery_Get_Groups();
+            this.query_set_g = new SQuery_Set_Group(-1);
             this.groups_data = new DataTable();
 
             this.edit = new DataGridViewImageButtonEditColumn();
@@ -81,11 +81,12 @@ namespace AppLogMySQL.Components.Graphics.Window.Show_all
             #if (DEBUG)
                         Console.WriteLine("Заполнение элементов");
             #endif
-            this.query_set_d.run(Data.DataManager._connection);
+            this.query_set_g.run(Data.DataManager._connection);
+
             this.GeneralDataGrid.AutoGenerateColumns = false;
-            this.query_get_d.run(Data.DataManager._connection);
-            this.groups_data = this.query_get_d.dataset.Tables[0];
-            this.GeneralDataGrid.DataSource = this.groups_data;
+
+            this.query_get_g.run(Data.DataManager._connection);
+            this.GeneralDataGrid.DataSource = this.query_get_g.dataset.Tables[0];
         }
 
         private void Window_Disciplines_Load(object sender, EventArgs e)
@@ -143,8 +144,8 @@ namespace AppLogMySQL.Components.Graphics.Window.Show_all
         {
             if ((e.RowIndex > -1) && (e.ColumnIndex > -1))
             {
-                if ((GeneralDataGrid.Columns[e.ColumnIndex].GetType().Equals(typeof(DataGridViewImageButtonEditColumn))))// ||
-                  //  (GeneralDataGrid.Columns[e.ColumnIndex].GetType().Equals(typeof(DataGridViewImageButtonPrintColumn))))
+                if ((GeneralDataGrid.Columns[e.ColumnIndex].GetType().Equals(typeof(DataGridViewImageButtonEditColumn))) ||
+                    (GeneralDataGrid.Columns[e.ColumnIndex].GetType().Equals(typeof(DataGridViewImageButtonDeleteColumn))))
                 {
                     DataGridViewImageButtonCell buttonCell =
                         (DataGridViewImageButtonCell)GeneralDataGrid.
@@ -155,18 +156,15 @@ namespace AppLogMySQL.Components.Graphics.Window.Show_all
                         switch (e.ColumnIndex)
                         {
                             case 2:
-                                // In a real application you would code some real work here.
-                                //txtStatusMsg.Text = "Button Clicked: Save " + GeneralDataGrid.
-                                   // Rows[e.RowIndex].Cells["Text"].Value.ToString();
-                                Dialog.Dialog_SAE_Group dialog = new Dialog.Dialog_SAE_Group();
-                                dialog.Show((int)query_get_d.dataset.Tables[0].Rows[e.RowIndex].ItemArray[1]);
+                                Dialog.Dialog_SAE_Group edit = new Dialog.Dialog_SAE_Group();
+                                edit.Show((int)query_get_g.dataset.Tables[0].Rows[e.RowIndex]["id"], 1);
                                 this.FillControls();
                                 break;
 
                             case 3:
-                                // In a real application you would code some real work here.
-                               // txtStatusMsg.Text = "Button Clicked: Print " + GeneralDataGrid.
-                                    //Rows[e.RowIndex].Cells["Text"].Value.ToString();
+                                Dialog.Dialog_SAE_Group read = new Dialog.Dialog_SAE_Group();
+                                read.Show((int)query_get_g.dataset.Tables[0].Rows[e.RowIndex]["id"], 0);
+                                this.FillControls();
                                 break;
                         }
                     }
@@ -232,8 +230,8 @@ namespace AppLogMySQL.Components.Graphics.Window.Show_all
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            Dialog.Dialog_Add_Edit_Discipline dialog = new Dialog.Dialog_Add_Edit_Discipline();
-            dialog.Show(-1);
+            Dialog.Dialog_SAE_Group dialog = new Dialog.Dialog_SAE_Group();
+            dialog.Show(-1,2);
             this.FillControls();
         }
     }

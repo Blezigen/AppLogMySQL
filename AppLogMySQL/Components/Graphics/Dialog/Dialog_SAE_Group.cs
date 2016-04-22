@@ -18,19 +18,55 @@ namespace AppLogMySQL.Components.Graphics.Dialog
         SQuery_Set_Group query_set_g;
         SQuery_Set_Specialization query_set_s;
         SQuery_Get_Specializations query_get_s;
-
         SQuery_Set_Curator query_set_c;
         SQuery_Get_Curator query_get_c;
-
         SQuery_Get_Students query_get_students;
-
         SQuery_Set_WeekDay query_set_weekday;
-        //SQuery_Set_Group set_group_query = new SQuery_Set_Group(comboBoxGroups.SelectedIndex + 1);
         SQuery_Get_Schedules query_get_schedules;
 
         private bool fullscreen = false;
         private int id = -1;
+        private int state = 0;
 
+
+        void State_read()
+        {
+            this.Width = 550;
+            this.Height = 332;
+            buttonOK.Visible = false;
+            buttonCancel.Visible = false;
+            groupBox1.Visible = true;
+            groupBox2.Visible = true;
+            name_group.Enabled = false;
+            comboBoxSpecialization.Enabled = false;
+            comboBoxTeacher.Enabled = false;
+            buttonEditStudent.Enabled = false;
+            SizeChanger.Visible = true;
+        }
+        void State_edit()
+        {
+            this.Width = 550;
+            this.Height = 332;
+            buttonOK.Visible = false;
+            buttonCancel.Visible = false;
+            groupBox1.Visible = true;
+            groupBox2.Visible = true;
+            name_group.Enabled = true;
+            comboBoxSpecialization.Enabled = true;
+            comboBoxTeacher.Enabled = true;
+            buttonEditStudent.Enabled = true;
+            SizeChanger.Visible = true;
+        }
+        void State_add()
+        {
+            SizeChanger.Visible = false;
+            this.Width = 550;
+            this.Height = 145;
+            buttonOK.Visible = true;
+            buttonCancel.Visible = true;
+            groupBox1.Visible = false;
+            groupBox2.Visible = false;
+        }
 
         private void InitializeVars()
         {
@@ -50,6 +86,8 @@ namespace AppLogMySQL.Components.Graphics.Dialog
             this.query_set_c.Curator = -1;
             this.query_set_s.Specialization = -1;
 
+            this.dataGridStudents.AutoGenerateColumns = false;
+            this.SchedulesDay.AutoGenerateColumns = false;
         }
 
         public Dialog_SAE_Group()
@@ -65,9 +103,17 @@ namespace AppLogMySQL.Components.Graphics.Dialog
 
         }
 
-        public bool Show(int _id) {
+        public bool Show(int _id=-1,int type = 0) {
             this.id = _id;
             this.fullscreen = false;
+            switch (type)
+            {
+                case 0: State_read(); break;
+                case 1: State_edit(); break;
+                case 2: State_add(); break;
+                default: return false;
+            }
+            state=type;
             this.FillControls();
             this.ShowDialog();
             return true;
@@ -85,7 +131,7 @@ namespace AppLogMySQL.Components.Graphics.Dialog
             };
             this.SizeChanger.MouseUp += delegate
             {
-                if (fullscreen)
+                if (!fullscreen)
                 {
                     SizeChanger.Image = ResourceApplication.Normalizate;
                     WindowState = FormWindowState.Maximized;
@@ -116,29 +162,31 @@ namespace AppLogMySQL.Components.Graphics.Dialog
                 this.query_get_s.run(DataManager._connection);
                 this.query_set_c.run(DataManager._connection);
                 this.query_get_c.run(DataManager._connection);
-                this.query_get_students.run(DataManager._connection);
-                this.query_set_weekday.run(DataManager._connection);
-                this.query_get_schedules.run(DataManager._connection);
-
-
-                this.name_group.Text = query_get_g.dataset.Tables[0].Rows[0]["name"].ToString();
 
                 this.comboBoxSpecialization.DataSource = query_get_s.dataset.Tables[0];
                 this.comboBoxSpecialization.DisplayMember = "name";
                 this.comboBoxSpecialization.ValueMember = "id";
-                this.comboBoxSpecialization.SelectedValue = int.Parse(query_get_g.dataset.Tables[0].Rows[0]["spec"].ToString());
-
-
                 this.comboBoxTeacher.DataSource = query_get_c.dataset.Tables[0];
                 this.comboBoxTeacher.DisplayMember = "name";
                 this.comboBoxTeacher.ValueMember = "id";
-                this.comboBoxTeacher.SelectedValue = int.Parse(query_get_g.dataset.Tables[0].Rows[0]["curator"].ToString());
 
-                this.dataGridStudents.AutoGenerateColumns = false;
-                this.dataGridStudents.DataSource = query_get_students.dataset.Tables[0];
+                if (state != 2)
+                {
+                    this.query_get_students.run(DataManager._connection);
+                    this.query_set_weekday.run(DataManager._connection);
+                    this.query_get_schedules.run(DataManager._connection);
+                    this.name_group.Text = query_get_g.dataset.Tables[0].Rows[0]["name"].ToString();
 
-                this.SchedulesDay.AutoGenerateColumns = false;
-                this.SchedulesDay.DataSource = query_get_schedules.dataset.Tables[0];
+                    this.comboBoxSpecialization.SelectedValue = int.Parse(query_get_g.dataset.Tables[0].Rows[0]["spec"].ToString());
+                    this.comboBoxTeacher.SelectedValue = int.Parse(query_get_g.dataset.Tables[0].Rows[0]["curator"].ToString());
+
+                    this.dataGridStudents.DataSource = query_get_students.dataset.Tables[0];
+                    this.SchedulesDay.DataSource = query_get_schedules.dataset.Tables[0];
+                }
+
+               
+                
+
         }
         private void Window_Load(object sender, EventArgs e)
         {
@@ -158,6 +206,16 @@ namespace AppLogMySQL.Components.Graphics.Dialog
             Dialog.Dialog_SAE_Students win = new Dialog_SAE_Students();
             win.Show(1);
             this.FillControls();
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void buttonOK_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

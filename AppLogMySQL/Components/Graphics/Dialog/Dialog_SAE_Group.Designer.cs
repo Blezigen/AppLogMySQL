@@ -46,12 +46,14 @@
             this.comboBoxSpecialization = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonEditStudent = new System.Windows.Forms.Button();
             this.dataGridStudents = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.logoPicture = new AppLogMySQL.UC_Panels.UC_TransparentControl();
             this.SizeChanger = new System.Windows.Forms.PictureBox();
+            this.buttonOK = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SchedulesDay)).BeginInit();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
@@ -65,6 +67,7 @@
             // 
             this.comboBoxTeacher.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxTeacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTeacher.FormattingEnabled = true;
             this.comboBoxTeacher.Location = new System.Drawing.Point(96, 99);
             this.comboBoxTeacher.Name = "comboBoxTeacher";
@@ -122,6 +125,7 @@
             this.SchedulesDay.MaximumSize = new System.Drawing.Size(225, 184);
             this.SchedulesDay.MultiSelect = false;
             this.SchedulesDay.Name = "SchedulesDay";
+            this.SchedulesDay.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Proxima Nova Rg", 8.25F);
@@ -134,6 +138,7 @@
             this.SchedulesDay.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.SchedulesDay.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.SchedulesDay.RowTemplate.Height = 23;
+            this.SchedulesDay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.SchedulesDay.Size = new System.Drawing.Size(225, 184);
             this.SchedulesDay.TabIndex = 84;
             // 
@@ -143,6 +148,7 @@
             this.Number.FillWeight = 30F;
             this.Number.HeaderText = "№";
             this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
             this.Number.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Number.Width = 30;
@@ -153,6 +159,7 @@
             this.Discipline.DataPropertyName = "discipline";
             this.Discipline.HeaderText = "Предмет";
             this.Discipline.Name = "Discipline";
+            this.Discipline.ReadOnly = true;
             this.Discipline.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Discipline.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
@@ -229,6 +236,7 @@
             // 
             this.comboBoxSpecialization.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxSpecialization.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSpecialization.FormattingEnabled = true;
             this.comboBoxSpecialization.Location = new System.Drawing.Point(96, 75);
             this.comboBoxSpecialization.Name = "comboBoxSpecialization";
@@ -252,26 +260,26 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.buttonEditStudent);
             this.groupBox2.Controls.Add(this.dataGridStudents);
             this.groupBox2.Location = new System.Drawing.Point(2, 125);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(313, 204);
+            this.groupBox2.Size = new System.Drawing.Size(313, 225);
             this.groupBox2.TabIndex = 127;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Список студентов:";
             // 
-            // button1
+            // buttonEditStudent
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(200, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 21);
-            this.button1.TabIndex = 115;
-            this.button1.Text = "Редактировать";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonEditStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonEditStudent.FlatAppearance.BorderSize = 0;
+            this.buttonEditStudent.Location = new System.Drawing.Point(200, 17);
+            this.buttonEditStudent.Name = "buttonEditStudent";
+            this.buttonEditStudent.Size = new System.Drawing.Size(92, 21);
+            this.buttonEditStudent.TabIndex = 115;
+            this.buttonEditStudent.Text = "Редактировать";
+            this.buttonEditStudent.UseVisualStyleBackColor = true;
+            this.buttonEditStudent.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridStudents
             // 
@@ -290,6 +298,7 @@
             this.dataGridStudents.Margin = new System.Windows.Forms.Padding(20, 5, 20, 5);
             this.dataGridStudents.MultiSelect = false;
             this.dataGridStudents.Name = "dataGridStudents";
+            this.dataGridStudents.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Proxima Nova Rg", 8.25F);
@@ -302,7 +311,8 @@
             this.dataGridStudents.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridStudents.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridStudents.RowTemplate.Height = 23;
-            this.dataGridStudents.Size = new System.Drawing.Size(307, 185);
+            this.dataGridStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridStudents.Size = new System.Drawing.Size(307, 206);
             this.dataGridStudents.TabIndex = 84;
             // 
             // dataGridViewTextBoxColumn3
@@ -311,6 +321,7 @@
             this.dataGridViewTextBoxColumn3.FillWeight = 30F;
             this.dataGridViewTextBoxColumn3.HeaderText = "№";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dataGridViewTextBoxColumn3.Width = 30;
@@ -321,6 +332,7 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "name";
             this.dataGridViewTextBoxColumn4.HeaderText = "ФИО";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
@@ -349,11 +361,35 @@
             this.SizeChanger.TabIndex = 4;
             this.SizeChanger.TabStop = false;
             // 
+            // buttonOK
+            // 
+            this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOK.Location = new System.Drawing.Point(400, 329);
+            this.buttonOK.Name = "buttonOK";
+            this.buttonOK.Size = new System.Drawing.Size(75, 23);
+            this.buttonOK.TabIndex = 128;
+            this.buttonOK.Text = "Добавить";
+            this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCancel.Location = new System.Drawing.Point(475, 329);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 129;
+            this.buttonCancel.Text = "Отменить";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
             // Dialog_SAE_Group
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 332);
+            this.ClientSize = new System.Drawing.Size(550, 353);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBoxSpecialization);
@@ -366,8 +402,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxTeacher);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(550, 332);
-            this.MinimumSize = new System.Drawing.Size(550, 128);
+            this.MinimumSize = new System.Drawing.Size(550, 145);
             this.Name = "Dialog_SAE_Group";
             this.Text = "Window_Group";
             ((System.ComponentModel.ISupportInitialize)(this.SchedulesDay)).EndInit();
@@ -399,12 +434,14 @@
         private System.Windows.Forms.ComboBox comboBoxSpecialization;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonEditStudent;
         private System.Windows.Forms.DataGridView dataGridStudents;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discipline;
         private System.Windows.Forms.PictureBox SizeChanger;
+        private System.Windows.Forms.Button buttonOK;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }

@@ -45,7 +45,7 @@
             this.PatrtnerLogoPicture.BackColor = System.Drawing.Color.Transparent;
             this.PatrtnerLogoPicture.Image = global::AppLogMySQL.ResourceApplication.Logo_Partner;
             this.PatrtnerLogoPicture.InitialImage = null;
-            this.PatrtnerLogoPicture.Location = new System.Drawing.Point(3, 619);
+            this.PatrtnerLogoPicture.Location = new System.Drawing.Point(3, 414);
             this.PatrtnerLogoPicture.MaximumSize = new System.Drawing.Size(48, 48);
             this.PatrtnerLogoPicture.MinimumSize = new System.Drawing.Size(48, 48);
             this.PatrtnerLogoPicture.Name = "PatrtnerLogoPicture";
@@ -67,13 +67,13 @@
             this.panel1.Location = new System.Drawing.Point(200, 50);
             this.panel1.MinimumSize = new System.Drawing.Size(200, 300);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(700, 570);
+            this.panel1.Size = new System.Drawing.Size(329, 365);
             this.panel1.TabIndex = 6;
             // 
             // loginButton
             // 
             this.loginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loginButton.Location = new System.Drawing.Point(260, 335);
+            this.loginButton.Location = new System.Drawing.Point(74, 232);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(180, 28);
             this.loginButton.TabIndex = 2;
@@ -85,7 +85,7 @@
             // 
             this.loginEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginEdit.Font = new System.Drawing.Font("HelveticaNeueCyr", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginEdit.Location = new System.Drawing.Point(260, 273);
+            this.loginEdit.Location = new System.Drawing.Point(74, 170);
             this.loginEdit.Name = "loginEdit";
             this.loginEdit.Size = new System.Drawing.Size(180, 25);
             this.loginEdit.TabIndex = 0;
@@ -94,7 +94,7 @@
             // 
             this.passwordEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passwordEdit.Font = new System.Drawing.Font("HelveticaNeueCyr", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passwordEdit.Location = new System.Drawing.Point(260, 305);
+            this.passwordEdit.Location = new System.Drawing.Point(74, 202);
             this.passwordEdit.Name = "passwordEdit";
             this.passwordEdit.PasswordChar = '*';
             this.passwordEdit.Size = new System.Drawing.Size(180, 25);
@@ -106,7 +106,7 @@
             this.logoPicture.BackColor = System.Drawing.Color.Transparent;
             this.logoPicture.Image = global::AppLogMySQL.ResourceApplication.logo;
             this.logoPicture.InitialImage = null;
-            this.logoPicture.Location = new System.Drawing.Point(286, 135);
+            this.logoPicture.Location = new System.Drawing.Point(100, 32);
             this.logoPicture.MaximumSize = new System.Drawing.Size(128, 128);
             this.logoPicture.MinimumSize = new System.Drawing.Size(128, 128);
             this.logoPicture.Name = "logoPicture";
@@ -122,7 +122,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PatrtnerLogoPicture);
             this.Name = "State_UserAuthorization";
-            this.Size = new System.Drawing.Size(1100, 670);
+            this.Size = new System.Drawing.Size(729, 465);
             ((System.ComponentModel.ISupportInitialize)(this.PatrtnerLogoPicture)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

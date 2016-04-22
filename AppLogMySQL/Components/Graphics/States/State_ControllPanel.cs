@@ -14,57 +14,64 @@ namespace AppLogMySQL.Components.Graphics.States
         public State_ControllPanel()
         {
             InitializeComponent();
+            InitializeFunction();
+            InitializeVars();
+
+            
+        }
+
+        private void InitializeFunction()
+        {
+            this.Load += new System.EventHandler(this.On_Load);
+            this.buttonExitSystem.Click += new System.EventHandler(this.Logut);
+
+            this.buttonExitSystem.Click += new System.EventHandler(this.Logut);
+            this.buttonGroups.Click += new System.EventHandler(this.Show_All_Group);
+            this.buttonSpecialization.Click += new System.EventHandler(this.Show_All_Specialization);
+            this.buttonDiscipline.Click += new System.EventHandler(this.Show_All_Discipline);
+            this.buttonCuriculumb.Click += new System.EventHandler(this.Show_All_Curriculumb);
+        }
+
+        private void InitializeVars()
+        {
             this.Dock = DockStyle.Fill;
             Data.DataManager.substate_states = panelControlls;
-            //panelControlls.add_State("Schedules", new SubStates_Schedules());
             panelControlls.add_State("UserProfile", new SubStates_UserProfile());
-            panelControlls.add_State("Disciplines", new SubStates_Disciplines());
         }
 
-        private void buttonShowLogs_Click(object sender, EventArgs e)
-        {
-            Window.Window_Log win = new Window.Window_Log();
-            win.ShowDialog();
-            //this.panelLogFilter.Visible = !this.panelLogFilter.Visible;
-        }
-
-        private void buttonClearD_Click(object sender, EventArgs e)
-        {
-            comboBoxDiscipline.SelectedIndex = -1;
-        }
-
-        private void buttonClearG_Click(object sender, EventArgs e)
-        {
-            comboBoxGroup.SelectedIndex = -1;
-        }
-
-        private void buttonExitSystem_Click(object sender, EventArgs e)
-        {
-            
-            Components.Data.DataManager.generalForm.labelTitle.Text = string.Format("Электронный журнал успеваемости");
-            Components.Data.DataManager.global_states.back();
-            panelControlls.state_Change("UserProfile");
-        }
-
-        private void UC_ControllPanel_Load(object sender, EventArgs e)
+        private void On_Load(object sender, EventArgs e)
         {
             AppLogMySQL.Components.Data.DataManager._account.FillData();
             panelControlls.state_Change("UserProfile");
         }
-        private void buttonShowWeekLog_Click(object sender, EventArgs e)
+        
+        private void Logut(object sender, EventArgs e)
         {
-            Window.Window_Schedules win = new Window.Window_Schedules();
+            Components.Data.DataManager.generalForm.labelTitle.Text = string.Format("Электронный журнал успеваемости");
+            Components.Data.DataManager.global_states.state_Change("Authorization");
+        }
+
+        private void Show_All_Curriculumb(object sender, EventArgs e)
+        {
+            Window.Show_all.Window_Curriculumbs win = new Window.Show_all.Window_Curriculumbs();
             win.ShowDialog();
         }
 
-        private void buttonShowCuriculumb_Click(object sender, EventArgs e)
+        private void Show_All_Discipline(object sender, EventArgs e)
         {
-           
+            Window.Show_all.Window_Disciplines win = new Window.Show_all.Window_Disciplines();
+            win.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Show_All_Group(object sender, EventArgs e)
         {
-            Window.Window_Disciplines win = new Window.Window_Disciplines();
+            Window.Show_all.Windows_Groups win = new Window.Show_all.Windows_Groups();
+            win.ShowDialog();
+        }
+
+        private void Show_All_Specialization(object sender, EventArgs e)
+        {
+            Window.Show_all.Window_Specializations win = new Window.Show_all.Window_Specializations();
             win.ShowDialog();
         }
     }

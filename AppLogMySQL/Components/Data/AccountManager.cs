@@ -16,7 +16,7 @@ namespace AppLogMySQL.Components.Data
     {
         private Byte[] Avatar;
         public Dictionary<string, object> data = new Dictionary<string, object>();
-
+        public DataSet _dataset;
         public void SetDefault()
         {
             data.Clear();
@@ -47,6 +47,7 @@ namespace AppLogMySQL.Components.Data
             SetDefault();
             MySql.SelectQuerys.SQuery_Get_Account_Data query = new MySql.SelectQuerys.SQuery_Get_Account_Data();
             query.run(DataManager._connection);
+            _dataset = query.dataset;
             data = query.getFormatData();
             try
             {

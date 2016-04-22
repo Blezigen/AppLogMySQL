@@ -13,7 +13,7 @@ using System.Windows.Forms.VisualStyles;
 using System.IO;
 using AppLogMySQL.Components.Graphics.Controls;
 
-namespace AppLogMySQL.Components.Graphics.Window
+namespace AppLogMySQL.Components.Graphics.Window.Show_all
 {
     public partial class Window_Disciplines : Form
     {

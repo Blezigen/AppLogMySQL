@@ -6,7 +6,7 @@ using System.Data;
 
 namespace AppLogMySQL.Components.MySql.SelectQuerys
 {
-    class SQuery_Get_Groups_All : BasicSelectQuery
+    class SQuery_Get_Groups : BasicSelectQuery
     {
 
         public override Dictionary<string, object> getFormatData()
@@ -24,7 +24,7 @@ namespace AppLogMySQL.Components.MySql.SelectQuerys
 
         public override bool run(MySQLManager _connection)
         {
-            query_str = "get_groups_all()";
+            query_str = "get_groups()";
             return base.run(_connection);
         }
     }

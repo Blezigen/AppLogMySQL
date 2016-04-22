@@ -70,6 +70,12 @@
     <Compile Include="Components\Graphics\Dialog\Dialog_Add_Edit_Discipline.Designer.cs">
       <DependentUpon>Dialog_Add_Edit_Discipline.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Graphics\Dialog\Dialog_SAE_Students.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Dialog\Dialog_SAE_Students.Designer.cs">
+      <DependentUpon>Dialog_SAE_Students.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Graphics\StateManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -82,17 +88,29 @@
     <Compile Include="Components\Graphics\States\State_UserAuthorization.Designer.cs">
       <DependentUpon>State_UserAuthorization.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Graphics\States\SubStates\SubStates_Disciplines.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Components\Graphics\States\SubStates\SubStates_Disciplines.Designer.cs">
-      <DependentUpon>SubStates_Disciplines.cs</DependentUpon>
-    </Compile>
     <Compile Include="Components\Graphics\Dialog\Dialog_Add_Edit_Schedules_Day_Week.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Components\Graphics\Dialog\Dialog_Add_Edit_Schedules_Day_Week.Designer.cs">
       <DependentUpon>Dialog_Add_Edit_Schedules_Day_Week.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Show_all\Windows_Groups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Show_all\Windows_Groups.Designer.cs">
+      <DependentUpon>Windows_Groups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Show_all\Window_Curriculumbs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Show_all\Window_Curriculumbs.Designer.cs">
+      <DependentUpon>Window_Curriculumbs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Show_all\Window_Specializations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Show_all\Window_Specializations.Designer.cs">
+      <DependentUpon>Window_Specializations.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\Graphics\Window\Window_Log.cs">
       <SubType>Form</SubType>
@@ -106,17 +124,17 @@
     <Compile Include="Components\Graphics\Window\Window_Specialization.Designer.cs">
       <DependentUpon>Window_Specialization.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Graphics\Window\Window_Disciplines.cs">
+    <Compile Include="Components\Graphics\Window\Show_all\Window_Disciplines.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\Graphics\Window\Window_Disciplines.Designer.cs">
+    <Compile Include="Components\Graphics\Window\Show_all\Window_Disciplines.Designer.cs">
       <DependentUpon>Window_Disciplines.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Graphics\Window\Window_Group.cs">
+    <Compile Include="Components\Graphics\Dialog\Dialog_SAE_Group.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\Graphics\Window\Window_Group.Designer.cs">
-      <DependentUpon>Window_Group.cs</DependentUpon>
+    <Compile Include="Components\Graphics\Dialog\Dialog_SAE_Group.Designer.cs">
+      <DependentUpon>Dialog_SAE_Group.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\Graphics\Window\Window_Schedules.cs">
       <SubType>Form</SubType>
@@ -125,17 +143,23 @@
       <DependentUpon>Window_Schedules.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\MySql\InsertQuerys\BasicInsertQuery.cs" />
+    <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Student_In_Group.cs" />
     <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Discipline.cs" />
     <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Schedule.cs" />
     <Compile Include="Components\MySql\MySQLManager.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Disciplines.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Curator.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Students.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Specializations.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Log.cs" />
     <Compile Include="Components\MySql\SetQuerys\BasicSetQuery.cs" />
     <Compile Include="Components\MySql\SelectQuerys\BasicSelectQuery.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Affordable_Discipline_By_Group.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Load_Politic.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Schedules.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Groups_All.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Groups.cs" />
+    <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Curator.cs" />
+    <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Specialization.cs" />
     <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Account.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Account_Data.cs" />
     <Compile Include="Components\Graphics\Controls\CustomPanel.cs" />
@@ -181,17 +205,26 @@
     <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_Add_Edit_Discipline.resx">
       <DependentUpon>Dialog_Add_Edit_Discipline.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_SAE_Students.resx">
+      <DependentUpon>Dialog_SAE_Students.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\StateManager.resx">
       <DependentUpon>StateManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\States\State_UserAuthorization.resx">
       <DependentUpon>State_UserAuthorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Graphics\States\SubStates\SubStates_Disciplines.resx">
-      <DependentUpon>SubStates_Disciplines.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_Add_Edit_Schedules_Day_Week.resx">
       <DependentUpon>Dialog_Add_Edit_Schedules_Day_Week.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\Window\Show_all\Windows_Groups.resx">
+      <DependentUpon>Windows_Groups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\Window\Show_all\Window_Curriculumbs.resx">
+      <DependentUpon>Window_Curriculumbs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\Window\Show_all\Window_Specializations.resx">
+      <DependentUpon>Window_Specializations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\Window\Window_Log.resx">
       <DependentUpon>Window_Log.cs</DependentUpon>
@@ -199,11 +232,11 @@
     <EmbeddedResource Include="Components\Graphics\Window\Window_Specialization.resx">
       <DependentUpon>Window_Specialization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Graphics\Window\Window_Disciplines.resx">
+    <EmbeddedResource Include="Components\Graphics\Window\Show_all\Window_Disciplines.resx">
       <DependentUpon>Window_Disciplines.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Graphics\Window\Window_Group.resx">
-      <DependentUpon>Window_Group.cs</DependentUpon>
+    <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_SAE_Group.resx">
+      <DependentUpon>Dialog_SAE_Group.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\Window\Window_Schedules.resx">
       <DependentUpon>Window_Schedules.cs</DependentUpon>

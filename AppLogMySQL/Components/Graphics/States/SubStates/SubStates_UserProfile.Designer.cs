@@ -29,66 +29,115 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubStates_UserProfile));
-            this.labelTitle = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ProfileImage = new System.Windows.Forms.PictureBox();
-            this.ListDataProfile = new AppLogMySQL.Components.Graphics.Controls.CustomPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GeneralDataGrid = new System.Windows.Forms.DataGridView();
+            this.param = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ProfileImage)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GeneralDataGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Proxima Nova Rg", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(12, 12);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(299, 33);
-            this.labelTitle.TabIndex = 61;
-            this.labelTitle.Text = "Персональные данные";
             // 
             // ProfileImage
             // 
-            this.ProfileImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ProfileImage.Image = ((System.Drawing.Image)(resources.GetObject("ProfileImage.Image")));
-            this.ProfileImage.Location = new System.Drawing.Point(627, 62);
+            this.ProfileImage.Location = new System.Drawing.Point(6, 20);
             this.ProfileImage.Name = "ProfileImage";
             this.ProfileImage.Size = new System.Drawing.Size(230, 230);
             this.ProfileImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProfileImage.TabIndex = 86;
             this.ProfileImage.TabStop = false;
             // 
-            // ListDataProfile
+            // groupBox1
             // 
-            this.ListDataProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.groupBox1.Controls.Add(this.GeneralDataGrid);
+            this.groupBox1.Controls.Add(this.ProfileImage);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Proxima Nova Rg", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(597, 307);
+            this.groupBox1.TabIndex = 87;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Персональные данные";
+            // 
+            // GeneralDataGrid
+            // 
+            this.GeneralDataGrid.AllowUserToAddRows = false;
+            this.GeneralDataGrid.AllowUserToDeleteRows = false;
+            this.GeneralDataGrid.AllowUserToResizeColumns = false;
+            this.GeneralDataGrid.AllowUserToResizeRows = false;
+            this.GeneralDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListDataProfile.BorderColor = System.Drawing.Color.Transparent;
-            this.ListDataProfile.Location = new System.Drawing.Point(18, 62);
-            this.ListDataProfile.Name = "ListDataProfile";
-            this.ListDataProfile.Size = new System.Drawing.Size(594, 531);
-            this.ListDataProfile.TabIndex = 0;
+            this.GeneralDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GeneralDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.GeneralDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.param,
+            this.Value});
+            this.GeneralDataGrid.Location = new System.Drawing.Point(241, 20);
+            this.GeneralDataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.GeneralDataGrid.MultiSelect = false;
+            this.GeneralDataGrid.Name = "GeneralDataGrid";
+            this.GeneralDataGrid.ReadOnly = true;
+            this.GeneralDataGrid.RowHeadersVisible = false;
+            this.GeneralDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.GeneralDataGrid.RowTemplate.Height = 23;
+            this.GeneralDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GeneralDataGrid.Size = new System.Drawing.Size(351, 282);
+            this.GeneralDataGrid.TabIndex = 113;
+            // 
+            // param
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.param.DefaultCellStyle = dataGridViewCellStyle1;
+            this.param.HeaderText = "Param";
+            this.param.MinimumWidth = 150;
+            this.param.Name = "param";
+            this.param.ReadOnly = true;
+            this.param.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.param.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.param.Width = 150;
+            // 
+            // Value
+            // 
+            this.Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Value.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Value.HeaderText = "Value";
+            this.Value.Name = "Value";
+            this.Value.ReadOnly = true;
+            this.Value.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Value.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // SubStates_UserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ListDataProfile);
-            this.Controls.Add(this.ProfileImage);
-            this.Controls.Add(this.labelTitle);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("HelveticaNeueCyr", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MinimumSize = new System.Drawing.Size(597, 307);
             this.Name = "SubStates_UserProfile";
-            this.Size = new System.Drawing.Size(869, 611);
+            this.Size = new System.Drawing.Size(597, 307);
             this.Load += new System.EventHandler(this.SubStates_UserProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProfileImage)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GeneralDataGrid)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private AppLogMySQL.Components.Graphics.Controls.CustomPanel ListDataProfile;
         private System.Windows.Forms.PictureBox ProfileImage;
-        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView GeneralDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn param;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
 
     }
 }

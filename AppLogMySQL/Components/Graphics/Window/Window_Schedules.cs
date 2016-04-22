@@ -9,12 +9,16 @@ using System.Windows.Forms;
 using System.Collections;
 using AppLogMySQL.Components.MySql.SelectQuerys;
 using AppLogMySQL.Components.MySql.SetQuerys;
+using AppLogMySQL.Components.Graphics.Dialog;
+using AppLogMySQL.Components.Data;
 
 namespace AppLogMySQL.Components.Graphics.Window
 {
     public partial class Window_Schedules : Form
     {
-        Dictionary<string, object> groups;
+        SQuery_Set_WeekDay query_set_weekday;
+        SQuery_Get_Schedules query_get_schedules;
+
         void REVERT(bool V) {
             SchedulesDayData1.Enabled = V;
             EditButton1.Enabled = V;
@@ -29,15 +33,24 @@ namespace AppLogMySQL.Components.Graphics.Window
             SchedulesDayData6.Enabled = V;
             EditButton6.Enabled = V;
         }
+
+        public bool Show(int _id)
+        {
+            
+            this.ShowDialog();
+            REVERT(false);
+            return true;
+        }
+
         public Window_Schedules()
         {
             InitializeComponent();
+            InitializeFunction();
+            InitializeVars();
+        }
 
-            REVERT(false);
-
-            labelTitle.Font = Components.Data.DataManager.PROXIMA_NOVA_9R;
-            labelTitle.ForeColor = Color.FromArgb(243, 237, 210);
-
+        void InitializeFunction()
+        {
             this.labelTitle.MouseDown += delegate
             {
                 this.labelTitle.Capture = false;
@@ -47,38 +60,66 @@ namespace AppLogMySQL.Components.Graphics.Window
             };
         }
 
-        private void fillContainer(DataGridView d, IDictionary rowa)
+        void InitializeVars()
         {
-            foreach (DictionaryEntry vals in rowa)
-            {
-                d.Rows[int.Parse(vals.Key.ToString()) - 1].Cells[1].Value = vals.Value.ToString();
-            }
+            REVERT(true);
+            labelTitle.Font = Components.Data.DataManager.PROXIMA_NOVA_9R;
+            labelTitle.ForeColor = Color.FromArgb(243, 237, 210);
+            this.query_set_weekday = new SQuery_Set_WeekDay(-1);
+            this.query_get_schedules = new SQuery_Get_Schedules();
+            FillControls();
         }
 
-        private void ClearContainer(DataGridView d)
+        void FillControls()
         {
-            d.Rows.Clear();
-            for (int i = 1; i <= 7; i++)
-                d.Rows.Add(i.ToString(), string.Empty);
+            this.query_set_weekday.run(DataManager._connection);
+            this.query_get_schedules.run(DataManager._connection);
 
+            DataView weekday1 = new DataView(query_get_schedules.dataset.Tables[0]);
+            weekday1.RowFilter = "day = 1";
+            weekday1.Sort = "para";
+            DataView weekday2 = new DataView(query_get_schedules.dataset.Tables[0]);
+            weekday2.RowFilter = "day = 2";
+            weekday2.Sort = "para";
+            DataView weekday3 = new DataView(query_get_schedules.dataset.Tables[0]);
+            weekday3.RowFilter = "day = 3";
+            weekday3.Sort = "para";
+            DataView weekday4 = new DataView(query_get_schedules.dataset.Tables[0]);
+            weekday4.RowFilter = "day = 4";
+            weekday4.Sort = "para";
+            DataView weekday5 = new DataView(query_get_schedules.dataset.Tables[0]);
+            weekday5.RowFilter = "day = 5";
+            weekday5.Sort = "para";
+            DataView weekday6 = new DataView(query_get_schedules.dataset.Tables[0]);
+            weekday6.RowFilter = "day = 6";
+            weekday6.Sort = "para";
+
+            this.SchedulesDayData1.AutoGenerateColumns = false;
+            this.SchedulesDayData2.AutoGenerateColumns = false;
+            this.SchedulesDayData3.AutoGenerateColumns = false;
+            this.SchedulesDayData4.AutoGenerateColumns = false;
+            this.SchedulesDayData5.AutoGenerateColumns = false;
+            this.SchedulesDayData6.AutoGenerateColumns = false;
+
+            this.SchedulesDayData1.DataSource = weekday1;
+            this.SchedulesDayData2.DataSource = weekday2;
+            this.SchedulesDayData3.DataSource = weekday3;
+            this.SchedulesDayData4.DataSource = weekday4;
+            this.SchedulesDayData5.DataSource = weekday5;
+            this.SchedulesDayData6.DataSource = weekday6;
         }
+
         void fill()
         {
             SQuery_Set_WeekDay query_wd = new SQuery_Set_WeekDay(-1);
-            SQuery_Set_Group set_group_query = new SQuery_Set_Group(comboBoxGroups.SelectedIndex + 1);
+            //SQuery_Set_Group set_group_query = new SQuery_Set_Group(comboBoxGroups.SelectedIndex + 1);
             SQuery_Get_Schedules query = new SQuery_Get_Schedules();
             query_wd.run(Data.DataManager._connection);
-            set_group_query.run(Data.DataManager._connection);
+            //set_group_query.run(Data.DataManager._connection);
             query.run(Data.DataManager._connection);
             Dictionary<string, object> da = query.getFormatData();
 
-            ClearContainer(SchedulesDayData1);
-            ClearContainer(SchedulesDayData2);
-            ClearContainer(SchedulesDayData3);
-            ClearContainer(SchedulesDayData4);
-            ClearContainer(SchedulesDayData5);
-            ClearContainer(SchedulesDayData6);
-            foreach (KeyValuePair<string, object> val in da)
+            /*foreach (KeyValuePair<string, object> val in da)
             {
                 switch (val.Key)
                 {
@@ -90,7 +131,7 @@ namespace AppLogMySQL.Components.Graphics.Window
                     case "6": { fillContainer(SchedulesDayData6, (IDictionary)val.Value); break; }
                 }
 
-            }
+            }*/
         }
         private void comboBoxGroups_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -101,10 +142,10 @@ namespace AppLogMySQL.Components.Graphics.Window
 
         void showEdit(int weekday)
         {
-            Windows.Dialog_Add_Edit_Schedules_Day_Week ev = new Windows.Dialog_Add_Edit_Schedules_Day_Week();
-            ev.group = comboBoxGroups.SelectedIndex + 1;
+            Dialog_Add_Edit_Schedules_Day_Week ev = new Dialog_Add_Edit_Schedules_Day_Week();
             ev.weekday = weekday;
             ev.ShowDialog();
+            FillControls();
         }
 
         private void EditButton1_Click(object sender, EventArgs e)
@@ -145,19 +186,14 @@ namespace AppLogMySQL.Components.Graphics.Window
 
         private void Window_Schedules_Load(object sender, EventArgs e)
         {
-            MySql.SelectQuerys.SQuery_Get_Groups_All query = new MySql.SelectQuerys.SQuery_Get_Groups_All();
+            MySql.SelectQuerys.SQuery_Get_Groups query = new MySql.SelectQuerys.SQuery_Get_Groups();
             query.run(Data.DataManager._connection);
-            groups = query.getFormatData();
-            foreach (KeyValuePair<string, object> val in groups)
-            {
-                comboBoxGroups.Items.Add(val.Value.ToString());
-            }
-            ClearContainer(SchedulesDayData1);
-            ClearContainer(SchedulesDayData2);
-            ClearContainer(SchedulesDayData3);
-            ClearContainer(SchedulesDayData4);
-            ClearContainer(SchedulesDayData5);
-            ClearContainer(SchedulesDayData6);
+            //groups = query.getFormatData();
+            //foreach (KeyValuePair<string, object> val in groups)
+            //{
+                //comboBoxGroups.Items.Add(val.Value.ToString());
+            //}
+
         }
 
         private void CloseButton_Click(object sender, EventArgs e)

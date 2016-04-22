@@ -12,13 +12,13 @@ using AppLogMySQL.Components.MySql.SetQuerys;
 using AppLogMySQL.Components.MySql.InsertQuerys;
 using AppLogMySQL.Components.Data;
 
-namespace AppLogMySQL.Components.Graphics.Windows
+namespace AppLogMySQL.Components.Graphics.Dialog
 {
     public partial class Dialog_Add_Edit_Schedules_Day_Week : Form
     {
         SQuery_Get_Load_Politic query_lp;
 
-        SQuery_Set_Group query_g;
+       // SQuery_Set_Group query_g;
         SQuery_Set_Discipline query_d;
         SQuery_Set_WeekDay query_wd;
         SQuery_Set_Para query_p;
@@ -91,7 +91,7 @@ namespace AppLogMySQL.Components.Graphics.Windows
             Disciplines_OldData = new Dictionary<string, object>();
 
             query_s = new SQuery_Get_Schedules();
-            query_g = new SQuery_Set_Group(group);
+            //query_g = new SQuery_Set_Group(group);
             query_wd = new SQuery_Set_WeekDay(weekday);
             query_p = new SQuery_Set_Para(0);
             query_d = new SQuery_Set_Discipline(0);
@@ -108,7 +108,7 @@ namespace AppLogMySQL.Components.Graphics.Windows
 
         void fillDataGrid() {
 
-            this.query_g.run(Data.DataManager._connection);
+            //this.query_g.run(Data.DataManager._connection);
             this.query_wd.Weekday = weekday;
             this.query_wd.run(DataManager._connection);
             this.query_s.run(Data.DataManager._connection);
@@ -139,7 +139,7 @@ namespace AppLogMySQL.Components.Graphics.Windows
         {
             if (this.showHideOption)
             {
-                this.query_g.run(Data.DataManager._connection);
+                //this.query_g.run(Data.DataManager._connection);
                 for (int i = 0; i < 7; i++)
                 {
                     ComboBox c = ((ComboBox)this.Controls.Find(string.Format("comboBox{0}", (i + 1)), false)[0]);
@@ -208,9 +208,9 @@ namespace AppLogMySQL.Components.Graphics.Windows
             Console.WriteLine(string.Format("<=============================================================================== Start [INSERT] Schedules =="));
                 Console.WriteLine(string.Format("<============================================================ Start [INIT] Option =="));
             #endif
-            this.query_g.run(DataManager._connection);
+           // this.query_g.run(DataManager._connection);
             this.query_wd.run(DataManager._connection);
-            this.query_g.Group = group;
+            //this.query_g.Group = group;
             this.query_wd.Weekday = weekday;
             #if (DEBUG)
             Console.WriteLine(string.Format("<============================================================ End [INIT] Option =="));
@@ -264,7 +264,7 @@ namespace AppLogMySQL.Components.Graphics.Windows
         private void EditSchedulesDateOfWeek_Shown(object sender, EventArgs e)
         {
             this.showHideOption = false;
-            this.query_g.Group = this.group;
+           // this.query_g.Group = this.group;
             this.query_wd.Weekday = this.weekday;
             this.Width = this.MinimumSize.Width;
             this.SchedulesDayData.Rows.Clear();

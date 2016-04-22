@@ -1,4 +1,4 @@
-﻿namespace AppLogMySQL.Components.Graphics.Windows
+﻿namespace AppLogMySQL.Components.Graphics.Dialog
 {
     partial class Dialog_Add_Edit_Schedules_Day_Week
     {

@@ -32,7 +32,6 @@
             this.buttonHelp = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
             this.buttonSpecialization = new System.Windows.Forms.Button();
-            this.buttonCuriculumb = new System.Windows.Forms.Button();
             this.buttonDiscipline = new System.Windows.Forms.Button();
             this.buttonGroups = new System.Windows.Forms.Button();
             this.panelControlls = new AppLogMySQL.Components.Graphics.States.StateManager();
@@ -76,22 +75,12 @@
             // buttonSpecialization
             // 
             this.buttonSpecialization.Font = new System.Drawing.Font("Proxima Nova Rg", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSpecialization.Location = new System.Drawing.Point(298, 29);
+            this.buttonSpecialization.Location = new System.Drawing.Point(199, 29);
             this.buttonSpecialization.Name = "buttonSpecialization";
             this.buttonSpecialization.Size = new System.Drawing.Size(100, 23);
             this.buttonSpecialization.TabIndex = 42;
             this.buttonSpecialization.Text = "Специальности";
             this.buttonSpecialization.UseVisualStyleBackColor = true;
-            // 
-            // buttonCuriculumb
-            // 
-            this.buttonCuriculumb.Font = new System.Drawing.Font("Proxima Nova Rg", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCuriculumb.Location = new System.Drawing.Point(199, 29);
-            this.buttonCuriculumb.Name = "buttonCuriculumb";
-            this.buttonCuriculumb.Size = new System.Drawing.Size(100, 23);
-            this.buttonCuriculumb.TabIndex = 38;
-            this.buttonCuriculumb.Text = "У. планы";
-            this.buttonCuriculumb.UseVisualStyleBackColor = true;
             // 
             // buttonDiscipline
             // 
@@ -130,7 +119,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(234)))));
             this.Controls.Add(this.buttonSpecialization);
-            this.Controls.Add(this.buttonCuriculumb);
             this.Controls.Add(this.buttonDiscipline);
             this.Controls.Add(this.buttonGroups);
             this.Controls.Add(this.panelControlls);
@@ -152,7 +140,6 @@
         private System.Windows.Forms.Label labelTitle;
         private StateManager panelControlls;
         private System.Windows.Forms.Button buttonSpecialization;
-        private System.Windows.Forms.Button buttonCuriculumb;
         private System.Windows.Forms.Button buttonDiscipline;
         private System.Windows.Forms.Button buttonGroups;
     }

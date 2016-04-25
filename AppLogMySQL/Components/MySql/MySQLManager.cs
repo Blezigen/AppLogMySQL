@@ -75,7 +75,7 @@ namespace AppLogMySQL.Components.MySql
 
         public bool sqlQuerySetData(String query/* Format String */)
         {
-            MySqlCommand sqlCom = new MySqlCommand(query, Connection);
+            MySqlCommand sqlCom = new MySqlCommand(string.Format("call {0}", query), Connection);
             try
             {
                 Connection.Open();
@@ -87,7 +87,8 @@ namespace AppLogMySQL.Components.MySql
             }
             finally
             {
-                Connection.Close();
+               Connection.Close();
+
             }
             return true;
         }

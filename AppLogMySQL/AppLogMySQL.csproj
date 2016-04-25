@@ -70,6 +70,12 @@
     <Compile Include="Components\Graphics\Dialog\Dialog_Add_Edit_Discipline.Designer.cs">
       <DependentUpon>Dialog_Add_Edit_Discipline.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Graphics\Dialog\Dialog_SAE_Discilines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Dialog\Dialog_SAE_Discilines.Designer.cs">
+      <DependentUpon>Dialog_SAE_Discilines.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Graphics\Dialog\Dialog_SAE_Students.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,23 +148,36 @@
     <Compile Include="Components\Graphics\Window\Window_Schedules.Designer.cs">
       <DependentUpon>Window_Schedules.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Graphics\Window\Window_Curriculumb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Window_Curriculumb.Designer.cs">
+      <DependentUpon>Window_Curriculumb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\MySql\InsertQuerys\BasicInsertQuery.cs" />
+    <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Curriculumb_Part.cs" />
+    <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Specialization.cs" />
+    <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Curriculumb_Part_Discipline.cs" />
+    <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Сгurriculumb_Term.cs" />
+    <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Group.cs" />
     <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Student_In_Group.cs" />
     <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Discipline.cs" />
     <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Schedule.cs" />
     <Compile Include="Components\MySql\MySQLManager.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Disciplines.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Curator.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Curriculum.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Students.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Specializations.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Log.cs" />
     <Compile Include="Components\MySql\SetQuerys\BasicSetQuery.cs" />
     <Compile Include="Components\MySql\SelectQuerys\BasicSelectQuery.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Affordable_Discipline_By_Group.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Affordable_Discipline_By_Specialization.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Load_Politic.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Schedules.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Groups.cs" />
     <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Curator.cs" />
+    <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Curriculum.cs" />
     <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Specialization.cs" />
     <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Account.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Account_Data.cs" />
@@ -205,6 +224,9 @@
     <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_Add_Edit_Discipline.resx">
       <DependentUpon>Dialog_Add_Edit_Discipline.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_SAE_Discilines.resx">
+      <DependentUpon>Dialog_SAE_Discilines.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_SAE_Students.resx">
       <DependentUpon>Dialog_SAE_Students.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\Window\Window_Schedules.resx">
       <DependentUpon>Window_Schedules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\Window\Window_Curriculumb.resx">
+      <DependentUpon>Window_Curriculumb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

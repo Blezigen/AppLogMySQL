@@ -32,12 +32,12 @@
             this.CloseButton = new System.Windows.Forms.PictureBox();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.GeneralDataGrid = new System.Windows.Forms.DataGridView();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discipline = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Into_the_group = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.logoPicture = new AppLogMySQL.UC_Panels.UC_TransparentControl();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discipline = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Into_the_group = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GeneralDataGrid)).BeginInit();
@@ -105,39 +105,6 @@
             this.GeneralDataGrid.Size = new System.Drawing.Size(377, 428);
             this.GeneralDataGrid.TabIndex = 112;
             // 
-            // Number
-            // 
-            this.Number.DataPropertyName = "numberx";
-            this.Number.FillWeight = 30F;
-            this.Number.Frozen = true;
-            this.Number.HeaderText = "№";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
-            this.Number.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Number.Width = 30;
-            // 
-            // Discipline
-            // 
-            this.Discipline.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Discipline.DataPropertyName = "name";
-            this.Discipline.HeaderText = "Имя";
-            this.Discipline.Name = "Discipline";
-            this.Discipline.ReadOnly = true;
-            this.Discipline.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Discipline.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Into_the_group
-            // 
-            this.Into_the_group.DataPropertyName = "id_group";
-            this.Into_the_group.FalseValue = "1";
-            this.Into_the_group.HeaderText = "";
-            this.Into_the_group.MinimumWidth = 23;
-            this.Into_the_group.Name = "Into_the_group";
-            this.Into_the_group.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Into_the_group.TrueValue = "null";
-            this.Into_the_group.Width = 23;
-            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -174,6 +141,38 @@
             this.logoPicture.Size = new System.Drawing.Size(44, 47);
             this.logoPicture.TabIndex = 90;
             this.logoPicture.TranspKey = System.Drawing.Color.White;
+            // 
+            // Number
+            // 
+            this.Number.DataPropertyName = "numberx";
+            this.Number.FillWeight = 30F;
+            this.Number.Frozen = true;
+            this.Number.HeaderText = "№";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Number.Width = 30;
+            // 
+            // Discipline
+            // 
+            this.Discipline.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Discipline.DataPropertyName = "name";
+            this.Discipline.HeaderText = "Имя";
+            this.Discipline.Name = "Discipline";
+            this.Discipline.ReadOnly = true;
+            this.Discipline.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Into_the_group
+            // 
+            this.Into_the_group.DataPropertyName = "id_group";
+            this.Into_the_group.FalseValue = "1";
+            this.Into_the_group.HeaderText = "";
+            this.Into_the_group.MinimumWidth = 23;
+            this.Into_the_group.Name = "Into_the_group";
+            this.Into_the_group.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Into_the_group.TrueValue = "null";
+            this.Into_the_group.Width = 23;
             // 
             // Dialog_SAE_Students
             // 

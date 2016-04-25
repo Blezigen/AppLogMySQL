@@ -92,7 +92,7 @@
             // 
             this.ButtonAdd.FlatAppearance.BorderSize = 0;
             this.ButtonAdd.Image = global::AppLogMySQL.ResourceApplication.Add15x15;
-            this.ButtonAdd.Location = new System.Drawing.Point(92, 59);
+            this.ButtonAdd.Location = new System.Drawing.Point(782, 59);
             this.ButtonAdd.MaximumSize = new System.Drawing.Size(21, 21);
             this.ButtonAdd.MinimumSize = new System.Drawing.Size(21, 21);
             this.ButtonAdd.Name = "ButtonAdd";

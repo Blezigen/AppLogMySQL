@@ -39,8 +39,9 @@
             this.Discipline = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTitleForm = new System.Windows.Forms.Label();
             this.panelTitle = new System.Windows.Forms.Panel();
-            this.labelTitle = new System.Windows.Forms.Label();
+            this.SizeChanger = new System.Windows.Forms.PictureBox();
             this.CloseButton = new System.Windows.Forms.PictureBox();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.name_group = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxSpecialization = new System.Windows.Forms.ComboBox();
@@ -48,19 +49,18 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonEditStudent = new System.Windows.Forms.Button();
             this.dataGridStudents = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.logoPicture = new AppLogMySQL.UC_Panels.UC_TransparentControl();
-            this.SizeChanger = new System.Windows.Forms.PictureBox();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.SchedulesDay)).BeginInit();
             this.panelTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SizeChanger)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SizeChanger)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxTeacher
@@ -187,6 +187,26 @@
             this.panelTitle.Size = new System.Drawing.Size(550, 30);
             this.panelTitle.TabIndex = 117;
             // 
+            // SizeChanger
+            // 
+            this.SizeChanger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SizeChanger.Image = global::AppLogMySQL.ResourceApplication.Maximaze;
+            this.SizeChanger.Location = new System.Drawing.Point(497, 3);
+            this.SizeChanger.Name = "SizeChanger";
+            this.SizeChanger.Size = new System.Drawing.Size(24, 24);
+            this.SizeChanger.TabIndex = 4;
+            this.SizeChanger.TabStop = false;
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseButton.Image = global::AppLogMySQL.ResourceApplication.Close;
+            this.CloseButton.Location = new System.Drawing.Point(523, 3);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(24, 24);
+            this.CloseButton.TabIndex = 2;
+            this.CloseButton.TabStop = false;
+            // 
             // labelTitle
             // 
             this.labelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -201,16 +221,6 @@
             this.labelTitle.TabIndex = 3;
             this.labelTitle.Text = "Редактор";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseButton.Image = global::AppLogMySQL.ResourceApplication.Close;
-            this.CloseButton.Location = new System.Drawing.Point(523, 3);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(24, 24);
-            this.CloseButton.TabIndex = 2;
-            this.CloseButton.TabStop = false;
             // 
             // name_group
             // 
@@ -315,27 +325,6 @@
             this.dataGridStudents.Size = new System.Drawing.Size(307, 206);
             this.dataGridStudents.TabIndex = 84;
             // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "numberx";
-            this.dataGridViewTextBoxColumn3.FillWeight = 30F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "№";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn3.Width = 30;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn4.HeaderText = "ФИО";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // logoPicture
             // 
             this.logoPicture.BackColor = System.Drawing.Color.Transparent;
@@ -350,16 +339,6 @@
             this.logoPicture.Size = new System.Drawing.Size(44, 47);
             this.logoPicture.TabIndex = 116;
             this.logoPicture.TranspKey = System.Drawing.Color.White;
-            // 
-            // SizeChanger
-            // 
-            this.SizeChanger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SizeChanger.Image = global::AppLogMySQL.ResourceApplication.Maximaze;
-            this.SizeChanger.Location = new System.Drawing.Point(497, 3);
-            this.SizeChanger.Name = "SizeChanger";
-            this.SizeChanger.Size = new System.Drawing.Size(24, 24);
-            this.SizeChanger.TabIndex = 4;
-            this.SizeChanger.TabStop = false;
             // 
             // buttonOK
             // 
@@ -382,6 +361,26 @@
             this.buttonCancel.Text = "Отменить";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "numberx";
+            this.dataGridViewTextBoxColumn3.FillWeight = 30F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "№";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn3.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn4.HeaderText = "ФИО";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Dialog_SAE_Group
             // 
@@ -407,11 +406,11 @@
             this.Text = "Window_Group";
             ((System.ComponentModel.ISupportInitialize)(this.SchedulesDay)).EndInit();
             this.panelTitle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SizeChanger)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SizeChanger)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,12 +435,12 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button buttonEditStudent;
         private System.Windows.Forms.DataGridView dataGridStudents;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discipline;
         private System.Windows.Forms.PictureBox SizeChanger;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

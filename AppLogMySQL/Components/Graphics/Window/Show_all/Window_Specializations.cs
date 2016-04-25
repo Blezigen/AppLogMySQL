@@ -6,19 +6,20 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using AppLogMySQL.Components.MySql.SetQuerys;
-using AppLogMySQL.Components.MySql.SelectQuerys;
 using System.Windows.Forms.VisualStyles;
 using System.IO;
 using AppLogMySQL.Components.Graphics.Controls;
 using AppLogMySQL.Components.Graphics.Dialog;
+using AppLogMySQL.Components.MySql.SetQuerys;
+using AppLogMySQL.Components.MySql.SelectQuerys;
+using AppLogMySQL.Components.Data;
 
 namespace AppLogMySQL.Components.Graphics.Window.Show_all
 {
     public partial class Window_Specializations : Form
     {
-        private SQuery_Get_Disciplines query_get_d;
-        private SQuery_Set_Discipline query_set_d;
+        private SQuery_Get_Specializations query_get_s;
+        private SQuery_Set_Specialization query_set_s;
         private DataTable disciplines_data;
         private DataGridViewImageButtonEditColumn edit;
         private DataGridViewImageButtonDeleteColumn delete;
@@ -60,30 +61,31 @@ namespace AppLogMySQL.Components.Graphics.Window.Show_all
         }
         private void InitializeVars()
         {
-
-            this.query_get_d = new MySql.SelectQuerys.SQuery_Get_Disciplines();
-            this.query_set_d = new SQuery_Set_Discipline(-1);
+            
+            this.query_get_s = new SQuery_Get_Specializations();
+            this.query_set_s = new SQuery_Set_Specialization();
             this.disciplines_data = new DataTable();
 
             this.edit = new DataGridViewImageButtonEditColumn();
             this.delete = new DataGridViewImageButtonDeleteColumn();
 
-
+            this.query_set_s.Specialization = -1;
             this.GeneralDataGrid.Columns.Add(this.edit);
             this.GeneralDataGrid.Columns.Add(this.delete);
-
+            this.GeneralDataGrid.AutoGenerateColumns = false;
         }
 
 
         private void FillControls()
         {
-#if (DEBUG)
-            Console.WriteLine("Заполнение элементов");
-#endif
-            this.query_set_d.run(Data.DataManager._connection);
-            this.GeneralDataGrid.AutoGenerateColumns = false;
-            this.query_get_d.run(Data.DataManager._connection);
-            this.disciplines_data = this.query_get_d.dataset.Tables[0];
+            #if (DEBUG)
+                Console.WriteLine("Заполнение элементов");
+            #endif
+
+            this.query_set_s.run(Data.DataManager._connection);
+            this.query_get_s.run(Data.DataManager._connection);
+
+            this.disciplines_data = this.query_get_s.dataset.Tables[0];
             this.GeneralDataGrid.DataSource = this.disciplines_data;
         }
 
@@ -142,8 +144,8 @@ namespace AppLogMySQL.Components.Graphics.Window.Show_all
         {
             if ((e.RowIndex > -1) && (e.ColumnIndex > -1))
             {
-                if ((GeneralDataGrid.Columns[e.ColumnIndex].GetType().Equals(typeof(DataGridViewImageButtonEditColumn))))// ||
-                //  (GeneralDataGrid.Columns[e.ColumnIndex].GetType().Equals(typeof(DataGridViewImageButtonPrintColumn))))
+                if ((GeneralDataGrid.Columns[e.ColumnIndex].GetType().Equals(typeof(DataGridViewImageButtonEditColumn))) ||
+                  (GeneralDataGrid.Columns[e.ColumnIndex].GetType().Equals(typeof(DataGridViewImageButtonDeleteColumn))))
                 {
                     DataGridViewImageButtonCell buttonCell =
                         (DataGridViewImageButtonCell)GeneralDataGrid.
@@ -153,19 +155,15 @@ namespace AppLogMySQL.Components.Graphics.Window.Show_all
                     {
                         switch (e.ColumnIndex)
                         {
-                            case 2:
-                                // In a real application you would code some real work here.
-                                //txtStatusMsg.Text = "Button Clicked: Save " + GeneralDataGrid.
-                                // Rows[e.RowIndex].Cells["Text"].Value.ToString();
-                                Dialog_Add_Edit_Discipline dialog = new Dialog.Dialog_Add_Edit_Discipline();
-                                dialog.Show((int)query_get_d.dataset.Tables[0].Rows[e.RowIndex].ItemArray[1]);
+                            case 3:
+                                Window.Window_Specialization dialog = new Window.Window_Specialization();
+                                dialog.Show((int)query_get_s.dataset.Tables[0].Rows[e.RowIndex]["id"],1);
                                 this.FillControls();
                                 break;
-
-                            case 3:
-                                // In a real application you would code some real work here.
-                                // txtStatusMsg.Text = "Button Clicked: Print " + GeneralDataGrid.
-                                //Rows[e.RowIndex].Cells["Text"].Value.ToString();
+                            case 4:
+                                Window.Window_Specialization dialog2 = new Window.Window_Specialization();
+                                dialog2.Show((int)query_get_s.dataset.Tables[0].Rows[e.RowIndex]["id"],0);
+                                this.FillControls();
                                 break;
                         }
                     }
@@ -228,8 +226,8 @@ namespace AppLogMySQL.Components.Graphics.Window.Show_all
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            Dialog.Dialog_Add_Edit_Discipline dialog = new Dialog.Dialog_Add_Edit_Discipline();
-            dialog.Show(-1);
+            Window.Window_Specialization dialog = new Window.Window_Specialization();
+            dialog.Show(-1, 2);
             this.FillControls();
         }
     }

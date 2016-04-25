@@ -70,7 +70,7 @@ namespace AppLogMySQL.Components.Graphics.Window.Show_all
 
 
             this.GeneralDataGrid.Columns.Add(this.edit);
-            this.GeneralDataGrid.Columns.Add(this.delete);
+            //this.GeneralDataGrid.Columns.Add(this.delete);
 
         }
 

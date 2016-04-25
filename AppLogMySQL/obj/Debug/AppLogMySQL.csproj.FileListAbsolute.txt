@@ -17,7 +17,6 @@ D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Di
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Window.Window_Specialization.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Window.Window_Log.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Window.Window_Schedules.resources
-D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.csprojResolveAssemblyReference.cache
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Window.Show_all.Windows_Groups.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Window.Show_all.Window_Disciplines.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Window.Show_all.Window_Specializations.resources
@@ -25,3 +24,6 @@ D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Wi
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Dialog.Dialog_Add_Edit_Schedules_Day_Week.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Dialog.Dialog_SAE_Group.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Dialog.Dialog_SAE_Students.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Window.Window_Curriculumb.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.csprojResolveAssemblyReference.cache
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Dialog.Dialog_SAE_Discilines.resources

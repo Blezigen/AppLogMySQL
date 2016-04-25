@@ -29,7 +29,7 @@ namespace AppLogMySQL.Components.Graphics.States
             this.buttonGroups.Click += new System.EventHandler(this.Show_All_Group);
             this.buttonSpecialization.Click += new System.EventHandler(this.Show_All_Specialization);
             this.buttonDiscipline.Click += new System.EventHandler(this.Show_All_Discipline);
-            this.buttonCuriculumb.Click += new System.EventHandler(this.Show_All_Curriculumb);
+            //this.buttonCuriculumb.Click += new System.EventHandler(this.Show_All_Curriculumb);
         }
 
         private void InitializeVars()

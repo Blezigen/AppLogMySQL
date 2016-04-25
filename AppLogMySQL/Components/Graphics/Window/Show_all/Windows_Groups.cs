@@ -155,13 +155,13 @@ namespace AppLogMySQL.Components.Graphics.Window.Show_all
                     {
                         switch (e.ColumnIndex)
                         {
-                            case 2:
+                            case 3:
                                 Dialog.Dialog_SAE_Group edit = new Dialog.Dialog_SAE_Group();
                                 edit.Show((int)query_get_g.dataset.Tables[0].Rows[e.RowIndex]["id"], 1);
                                 this.FillControls();
                                 break;
 
-                            case 3:
+                            case 4:
                                 Dialog.Dialog_SAE_Group read = new Dialog.Dialog_SAE_Group();
                                 read.Show((int)query_get_g.dataset.Tables[0].Rows[e.RowIndex]["id"], 0);
                                 this.FillControls();

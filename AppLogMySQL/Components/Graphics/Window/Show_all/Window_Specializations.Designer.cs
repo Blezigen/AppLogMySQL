@@ -156,6 +156,7 @@
             // 
             // Code
             // 
+            this.Code.DataPropertyName = "code";
             this.Code.HeaderText = "Код";
             this.Code.Name = "Code";
             // 

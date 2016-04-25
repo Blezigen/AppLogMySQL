@@ -1,6 +1,6 @@
-﻿namespace AppLogMySQL.Components.Graphics.Window.Show_all
+﻿namespace AppLogMySQL.Components.Graphics.Dialog
 {
-    partial class Windows_Groups
+    partial class Dialog_SAE_Discilines
     {
         /// <summary>
         /// Required designer variable.
@@ -28,29 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.PictureBox();
             this.panelTitle = new System.Windows.Forms.Panel();
-            this.ButtonAdd = new System.Windows.Forms.Button();
             this.GeneralDataGrid = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.logoPicture = new AppLogMySQL.UC_Panels.UC_TransparentControl();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discipline = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Spec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Into_the_group = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GeneralDataGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(48, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(738, 22);
-            this.label1.TabIndex = 111;
-            this.label1.Text = "Список групп:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelTitle
             // 
@@ -62,16 +53,16 @@
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(106)))), ((int)(((byte)(97)))));
             this.labelTitle.Location = new System.Drawing.Point(47, 3);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(726, 24);
+            this.labelTitle.Size = new System.Drawing.Size(301, 24);
             this.labelTitle.TabIndex = 3;
-            this.labelTitle.Text = "Группы";
+            this.labelTitle.Text = "Выберите дисциплину:";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CloseButton
             // 
             this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CloseButton.Image = global::AppLogMySQL.ResourceApplication.Close;
-            this.CloseButton.Location = new System.Drawing.Point(779, 3);
+            this.CloseButton.Location = new System.Drawing.Point(354, 3);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(24, 24);
             this.CloseButton.TabIndex = 2;
@@ -86,21 +77,8 @@
             this.panelTitle.Location = new System.Drawing.Point(0, 0);
             this.panelTitle.Margin = new System.Windows.Forms.Padding(0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(806, 30);
+            this.panelTitle.Size = new System.Drawing.Size(381, 30);
             this.panelTitle.TabIndex = 91;
-            // 
-            // ButtonAdd
-            // 
-            this.ButtonAdd.FlatAppearance.BorderSize = 0;
-            this.ButtonAdd.Image = global::AppLogMySQL.ResourceApplication.Add15x15;
-            this.ButtonAdd.Location = new System.Drawing.Point(782, 59);
-            this.ButtonAdd.MaximumSize = new System.Drawing.Size(21, 21);
-            this.ButtonAdd.MinimumSize = new System.Drawing.Size(21, 21);
-            this.ButtonAdd.Name = "ButtonAdd";
-            this.ButtonAdd.Size = new System.Drawing.Size(21, 21);
-            this.ButtonAdd.TabIndex = 113;
-            this.ButtonAdd.UseVisualStyleBackColor = true;
-            this.ButtonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
             // GeneralDataGrid
             // 
@@ -110,14 +88,13 @@
             this.GeneralDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GeneralDataGrid.BackgroundColor = System.Drawing.SystemColors.Window;
             this.GeneralDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GeneralDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.GeneralDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Number,
             this.Discipline,
-            this.Spec});
-            this.GeneralDataGrid.Location = new System.Drawing.Point(2, 58);
+            this.Into_the_group});
+            this.GeneralDataGrid.Location = new System.Drawing.Point(2, 45);
             this.GeneralDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.GeneralDataGrid.MultiSelect = false;
             this.GeneralDataGrid.Name = "GeneralDataGrid";
@@ -125,8 +102,30 @@
             this.GeneralDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GeneralDataGrid.RowTemplate.Height = 23;
             this.GeneralDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GeneralDataGrid.Size = new System.Drawing.Size(802, 431);
+            this.GeneralDataGrid.Size = new System.Drawing.Size(377, 428);
             this.GeneralDataGrid.TabIndex = 112;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Location = new System.Drawing.Point(1, 474);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 113;
+            this.button1.Text = "Приминить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(305, 474);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 114;
+            this.button2.Text = "Отмена";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // logoPicture
             // 
@@ -152,44 +151,44 @@
             this.Number.Name = "Number";
             this.Number.ReadOnly = true;
             this.Number.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.Number.Width = 30;
             // 
             // Discipline
             // 
+            this.Discipline.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Discipline.DataPropertyName = "name";
-            this.Discipline.HeaderText = "Название";
-            this.Discipline.MinimumWidth = 150;
+            this.Discipline.HeaderText = "Наименование";
             this.Discipline.Name = "Discipline";
             this.Discipline.ReadOnly = true;
             this.Discipline.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Discipline.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Discipline.Width = 150;
             // 
-            // Spec
+            // Into_the_group
             // 
-            this.Spec.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Spec.DataPropertyName = "spec";
-            this.Spec.HeaderText = "Специальность";
-            this.Spec.Name = "Spec";
-            this.Spec.ReadOnly = true;
-            this.Spec.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Spec.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Into_the_group.DataPropertyName = "check";
+            this.Into_the_group.FalseValue = "0";
+            this.Into_the_group.HeaderText = "";
+            this.Into_the_group.MinimumWidth = 23;
+            this.Into_the_group.Name = "Into_the_group";
+            this.Into_the_group.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Into_the_group.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Into_the_group.TrueValue = "1";
+            this.Into_the_group.Width = 23;
             // 
-            // Windows_Groups
+            // Dialog_SAE_Discilines
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 491);
-            this.Controls.Add(this.ButtonAdd);
-            this.Controls.Add(this.GeneralDataGrid);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(381, 498);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.logoPicture);
             this.Controls.Add(this.panelTitle);
+            this.Controls.Add(this.GeneralDataGrid);
             this.Font = new System.Drawing.Font("Proxima Nova Rg", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Windows_Groups";
-            this.Text = "Windows_Groups";
+            this.Name = "Dialog_SAE_Discilines";
+            this.Text = "Window_Disciplines";
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
             this.panelTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GeneralDataGrid)).EndInit();
@@ -199,15 +198,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private UC_Panels.UC_TransparentControl logoPicture;
         public System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.PictureBox CloseButton;
         private System.Windows.Forms.Panel panelTitle;
-        private System.Windows.Forms.Button ButtonAdd;
         private System.Windows.Forms.DataGridView GeneralDataGrid;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discipline;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Spec;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Into_the_group;
+
     }
 }

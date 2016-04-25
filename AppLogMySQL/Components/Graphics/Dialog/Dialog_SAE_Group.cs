@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using AppLogMySQL.Components.MySql.SelectQuerys;
 using AppLogMySQL.Components.MySql.SetQuerys;
+using AppLogMySQL.Components.MySql.InsertQuerys;
 using AppLogMySQL.Components.Data;
 
 namespace AppLogMySQL.Components.Graphics.Dialog
@@ -23,6 +24,8 @@ namespace AppLogMySQL.Components.Graphics.Dialog
         SQuery_Get_Students query_get_students;
         SQuery_Set_WeekDay query_set_weekday;
         SQuery_Get_Schedules query_get_schedules;
+
+        IQuery_Insert_Group iquery_g;
 
         private bool fullscreen = false;
         private int id = -1;
@@ -46,9 +49,9 @@ namespace AppLogMySQL.Components.Graphics.Dialog
         void State_edit()
         {
             this.Width = 550;
-            this.Height = 332;
-            buttonOK.Visible = false;
-            buttonCancel.Visible = false;
+            this.Height = 353;
+            buttonOK.Visible = true;
+            buttonCancel.Visible = true;
             groupBox1.Visible = true;
             groupBox2.Visible = true;
             name_group.Enabled = true;
@@ -56,6 +59,8 @@ namespace AppLogMySQL.Components.Graphics.Dialog
             comboBoxTeacher.Enabled = true;
             buttonEditStudent.Enabled = true;
             SizeChanger.Visible = true;
+
+            buttonOK.Text = "Изменить";
         }
         void State_add()
         {
@@ -63,6 +68,7 @@ namespace AppLogMySQL.Components.Graphics.Dialog
             this.Width = 550;
             this.Height = 145;
             buttonOK.Visible = true;
+            buttonOK.Text = "OK";
             buttonCancel.Visible = true;
             groupBox1.Visible = false;
             groupBox2.Visible = false;
@@ -88,6 +94,8 @@ namespace AppLogMySQL.Components.Graphics.Dialog
 
             this.dataGridStudents.AutoGenerateColumns = false;
             this.SchedulesDay.AutoGenerateColumns = false;
+
+            this.iquery_g = new IQuery_Insert_Group();
         }
 
         public Dialog_SAE_Group()
@@ -95,11 +103,11 @@ namespace AppLogMySQL.Components.Graphics.Dialog
             #if (DEBUG)
                 Console.WriteLine("Инициализация");
             #endif
-            InitializeComponent();
+            this.InitializeComponent();
             this.labelTitle.Font = Components.Data.DataManager.PROXIMA_NOVA_9R;
             this.labelTitle.ForeColor = Color.FromArgb(243, 237, 210);
-            InitializeFunction();
-            InitializeVars();
+            this.InitializeFunction();
+            this.InitializeVars();
 
         }
 
@@ -113,7 +121,7 @@ namespace AppLogMySQL.Components.Graphics.Dialog
                 case 2: State_add(); break;
                 default: return false;
             }
-            state=type;
+            this.state = type;
             this.FillControls();
             this.ShowDialog();
             return true;
@@ -127,21 +135,21 @@ namespace AppLogMySQL.Components.Graphics.Dialog
                 this.labelTitle.Capture = false;
                 var msg = Message.Create(this.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
                 this.WndProc(ref msg);
-                Invalidate();
+                this.Invalidate();
             };
             this.SizeChanger.MouseUp += delegate
             {
-                if (!fullscreen)
+                if (!this.fullscreen)
                 {
-                    SizeChanger.Image = ResourceApplication.Normalizate;
-                    WindowState = FormWindowState.Maximized;
+                    this.SizeChanger.Image = ResourceApplication.Normalizate;
+                    this.WindowState = FormWindowState.Maximized;
                 }
                 else
                 {
-                    SizeChanger.Image = ResourceApplication.Maximaze;
-                    WindowState = FormWindowState.Normal;
+                    this.SizeChanger.Image = ResourceApplication.Maximaze;
+                    this.WindowState = FormWindowState.Normal;
                 }
-                fullscreen = !fullscreen;
+                this.fullscreen = !this.fullscreen;
             };
             this.CloseButton.MouseUp += delegate
             {
@@ -163,10 +171,11 @@ namespace AppLogMySQL.Components.Graphics.Dialog
                 this.query_set_c.run(DataManager._connection);
                 this.query_get_c.run(DataManager._connection);
 
-                this.comboBoxSpecialization.DataSource = query_get_s.dataset.Tables[0];
+                this.comboBoxSpecialization.DataSource = this.query_get_s.dataset.Tables[0];
                 this.comboBoxSpecialization.DisplayMember = "name";
                 this.comboBoxSpecialization.ValueMember = "id";
-                this.comboBoxTeacher.DataSource = query_get_c.dataset.Tables[0];
+
+                this.comboBoxTeacher.DataSource = this.query_get_c.dataset.Tables[0];
                 this.comboBoxTeacher.DisplayMember = "name";
                 this.comboBoxTeacher.ValueMember = "id";
 
@@ -175,13 +184,13 @@ namespace AppLogMySQL.Components.Graphics.Dialog
                     this.query_get_students.run(DataManager._connection);
                     this.query_set_weekday.run(DataManager._connection);
                     this.query_get_schedules.run(DataManager._connection);
-                    this.name_group.Text = query_get_g.dataset.Tables[0].Rows[0]["name"].ToString();
+                    this.name_group.Text = this.query_get_g.dataset.Tables[0].Rows[0]["name"].ToString();
 
-                    this.comboBoxSpecialization.SelectedValue = int.Parse(query_get_g.dataset.Tables[0].Rows[0]["spec"].ToString());
-                    this.comboBoxTeacher.SelectedValue = int.Parse(query_get_g.dataset.Tables[0].Rows[0]["curator"].ToString());
+                    this.comboBoxSpecialization.SelectedValue = int.Parse(this.query_get_g.dataset.Tables[0].Rows[0]["spec"].ToString());
+                    this.comboBoxTeacher.SelectedValue = int.Parse(this.query_get_g.dataset.Tables[0].Rows[0]["curator"].ToString());
 
-                    this.dataGridStudents.DataSource = query_get_students.dataset.Tables[0];
-                    this.SchedulesDay.DataSource = query_get_schedules.dataset.Tables[0];
+                    this.dataGridStudents.DataSource = this.query_get_students.dataset.Tables[0];
+                    this.SchedulesDay.DataSource = this.query_get_schedules.dataset.Tables[0];
                 }
 
                
@@ -210,12 +219,19 @@ namespace AppLogMySQL.Components.Graphics.Dialog
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            Close();
+            if (this.state == 1)
+                query_set_g.Group = id;
+            else
+                query_set_g.Group = -1;
+            query_set_g.run(DataManager._connection);
+            iquery_g.Set_Insert_Data(name_group.Text,(int)comboBoxSpecialization.SelectedValue,(int)comboBoxTeacher.SelectedValue);
+            iquery_g.run(DataManager._connection);
+            this.Close();
         }
     }
 }

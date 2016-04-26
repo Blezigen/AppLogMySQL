@@ -6,11 +6,12 @@ using System.Data;
 
 namespace AppLogMySQL.Components.MySql.SelectQuerys
 {
-    class SQuery_Get_Affordable_Discipline_By_Group : BasicSelectQuery
+    class SQuery_Get_Teachers : BasicSelectQuery
     {
+
         public override bool run(MySQLManager _connection)
         {
-            query_str = "get_affordable_discipline_by_specialization()";
+            query_str = "get_teachers()";
             return base.run(_connection);
         }
     }

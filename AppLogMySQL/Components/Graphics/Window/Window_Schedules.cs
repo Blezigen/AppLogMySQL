@@ -19,6 +19,8 @@ namespace AppLogMySQL.Components.Graphics.Window
         SQuery_Set_WeekDay query_set_weekday;
         SQuery_Get_Schedules query_get_schedules;
 
+        int group;
+
         void REVERT(bool V) {
             SchedulesDayData1.Enabled = V;
             EditButton1.Enabled = V;
@@ -36,9 +38,9 @@ namespace AppLogMySQL.Components.Graphics.Window
 
         public bool Show(int _id)
         {
-            
+            group = _id;
+            REVERT(true);
             this.ShowDialog();
-            REVERT(false);
             return true;
         }
 
@@ -143,45 +145,39 @@ namespace AppLogMySQL.Components.Graphics.Window
         void showEdit(int weekday)
         {
             Dialog_Add_Edit_Schedules_Day_Week ev = new Dialog_Add_Edit_Schedules_Day_Week();
-            ev.weekday = weekday;
-            ev.ShowDialog();
+            ev.Group = group;
+            ev.Show(weekday);
             FillControls();
         }
 
         private void EditButton1_Click(object sender, EventArgs e)
         {
             showEdit(1);
-            fill();
         }
 
         private void EditButton2_Click(object sender, EventArgs e)
         {
             showEdit(2);
-            fill();
         }
 
         private void EditButton3_Click(object sender, EventArgs e)
         {
             showEdit(3);
-            fill();
         }
 
         private void EditButton4_Click(object sender, EventArgs e)
         {
             showEdit(4);
-            fill();
         }
 
         private void EditButton5_Click(object sender, EventArgs e)
         {
             showEdit(5);
-            fill();
         }
 
         private void EditButton6_Click(object sender, EventArgs e)
         {
             showEdit(6);
-            fill();
         }
 
         private void Window_Schedules_Load(object sender, EventArgs e)

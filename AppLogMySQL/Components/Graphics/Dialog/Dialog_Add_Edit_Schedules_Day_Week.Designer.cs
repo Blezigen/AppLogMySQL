@@ -36,19 +36,11 @@
             this.panelTitle = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.EditButton2 = new System.Windows.Forms.Button();
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.logoPicture = new AppLogMySQL.UC_Panels.UC_TransparentControl();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discipline = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Teachers = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.SchedulesDayData)).BeginInit();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
@@ -74,7 +66,8 @@
             this.SchedulesDayData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.SchedulesDayData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Number,
-            this.Discipline});
+            this.Discipline,
+            this.Teachers});
             this.SchedulesDayData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.SchedulesDayData.Location = new System.Drawing.Point(2, 63);
             this.SchedulesDayData.Margin = new System.Windows.Forms.Padding(20, 5, 20, 5);
@@ -94,7 +87,7 @@
             this.SchedulesDayData.RowTemplate.Height = 23;
             this.SchedulesDayData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.SchedulesDayData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.SchedulesDayData.Size = new System.Drawing.Size(246, 184);
+            this.SchedulesDayData.Size = new System.Drawing.Size(495, 184);
             this.SchedulesDayData.TabIndex = 21;
             // 
             // button1
@@ -106,7 +99,6 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "Отменить";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -155,107 +147,6 @@
             this.CloseButton.Size = new System.Drawing.Size(24, 24);
             this.CloseButton.TabIndex = 2;
             this.CloseButton.TabStop = false;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(252, 86);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(242, 21);
-            this.comboBox1.TabIndex = 27;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(252, 110);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(242, 21);
-            this.comboBox2.TabIndex = 28;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(252, 133);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(242, 21);
-            this.comboBox3.TabIndex = 29;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(252, 156);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(242, 21);
-            this.comboBox4.TabIndex = 30;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(252, 179);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(242, 21);
-            this.comboBox5.TabIndex = 31;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(252, 202);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(242, 21);
-            this.comboBox6.TabIndex = 32;
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(252, 225);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(242, 21);
-            this.comboBox7.TabIndex = 33;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Location = new System.Drawing.Point(252, 63);
-            this.label2.Margin = new System.Windows.Forms.Padding(0, 6, 0, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(242, 19);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Преподаватели";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // EditButton2
-            // 
-            this.EditButton2.Font = new System.Drawing.Font("Proxima Nova Rg", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditButton2.Location = new System.Drawing.Point(155, 64);
-            this.EditButton2.Name = "EditButton2";
-            this.EditButton2.Size = new System.Drawing.Size(93, 20);
-            this.EditButton2.TabIndex = 65;
-            this.EditButton2.Text = "Редактировать";
-            this.EditButton2.UseVisualStyleBackColor = true;
-            this.EditButton2.Click += new System.EventHandler(this.EditButton2_Click);
             // 
             // dataGridViewComboBoxColumn1
             // 
@@ -284,6 +175,7 @@
             // 
             // Number
             // 
+            this.Number.DataPropertyName = "para";
             this.Number.FillWeight = 30F;
             this.Number.HeaderText = "№";
             this.Number.Name = "Number";
@@ -295,24 +187,23 @@
             // Discipline
             // 
             this.Discipline.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Discipline.DataPropertyName = "id_disp";
             this.Discipline.HeaderText = "Предмет";
             this.Discipline.Name = "Discipline";
             this.Discipline.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // EditSchedulesDateOfWeek
+            // Teachers
+            // 
+            this.Teachers.DataPropertyName = "teacher";
+            this.Teachers.HeaderText = "Преподаватели";
+            this.Teachers.Name = "Teachers";
+            this.Teachers.Width = 200;
+            // 
+            // Dialog_Add_Edit_Schedules_Day_Week
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 280);
-            this.Controls.Add(this.EditButton2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox7);
-            this.Controls.Add(this.comboBox6);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.logoPicture);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.button2);
@@ -321,10 +212,8 @@
             this.Controls.Add(this.SchedulesDayData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(250, 280);
-            this.Name = "EditSchedulesDateOfWeek";
+            this.Name = "Dialog_Add_Edit_Schedules_Day_Week";
             this.Text = "EditSchedulesDateOfWeek";
-            this.Load += new System.EventHandler(this.EditSchedulesDateOfWeek_Load);
-            this.Shown += new System.EventHandler(this.EditSchedulesDateOfWeek_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.SchedulesDayData)).EndInit();
             this.panelTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
@@ -343,16 +232,8 @@
         private System.Windows.Forms.PictureBox CloseButton;
         private UC_Panels.UC_TransparentControl logoPicture;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button EditButton2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewComboBoxColumn Discipline;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Teachers;
     }
 }

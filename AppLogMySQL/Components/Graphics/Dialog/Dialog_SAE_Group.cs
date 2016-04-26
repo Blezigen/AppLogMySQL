@@ -206,7 +206,7 @@ namespace AppLogMySQL.Components.Graphics.Dialog
         private void EditButton1_Click(object sender, EventArgs e)
         {
             Window.Window_Schedules win = new Window.Window_Schedules();
-            win.Show(1);
+            win.Show((int)this.query_get_g.dataset.Tables[0].Rows[0]["id"]);
             this.FillControls();
         }
 

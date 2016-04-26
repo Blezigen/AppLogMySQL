@@ -164,6 +164,7 @@
     <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Discipline.cs" />
     <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Schedule.cs" />
     <Compile Include="Components\MySql\MySQLManager.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Teachers.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Disciplines.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Curator.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Curriculum.cs" />
@@ -172,7 +173,7 @@
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Log.cs" />
     <Compile Include="Components\MySql\SetQuerys\BasicSetQuery.cs" />
     <Compile Include="Components\MySql\SelectQuerys\BasicSelectQuery.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Affordable_Discipline_By_Specialization.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Affordable_Discipline.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Load_Politic.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Schedules.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Groups.cs" />

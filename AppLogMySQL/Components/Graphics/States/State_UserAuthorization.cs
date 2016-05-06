@@ -28,6 +28,7 @@ namespace AppLogMySQL.Components.Graphics.States
             else if (resultLogin["validator"].ToString() == "1")
             {
                 DataManager.global_states.state_Change("ControllPanel");
+                //DataManager.global_states.states["ControllPanel"].Load();
             }
             else
                 MessageBox.Show((string)resultLogin["message"]);

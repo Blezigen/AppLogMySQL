@@ -11,6 +11,7 @@ namespace AppLogMySQL.Components.Graphics.States
 {
     public partial class State_ControllPanel : UserControl
     {
+        string Permision = "";
         public State_ControllPanel()
         {
             InitializeComponent();
@@ -18,6 +19,28 @@ namespace AppLogMySQL.Components.Graphics.States
             InitializeVars();
 
             
+        }
+
+
+        private void formingAdmin() {
+            buttonDiscipline.Enabled = true;
+            buttonGroups.Enabled = true;
+            buttonSpecialization.Enabled = true;
+            buttonLogs.Enabled = true;
+        }
+
+        private void formingTeacher(){
+            buttonDiscipline.Enabled = false;
+            buttonGroups.Enabled = false;
+            buttonSpecialization.Enabled = false;
+            buttonLogs.Enabled = true;
+        }
+
+        private void formingStudents(){
+            buttonDiscipline.Enabled = false;
+            buttonGroups.Enabled = false;
+            buttonSpecialization.Enabled = false;
+            buttonLogs.Enabled = false;
         }
 
         private void InitializeFunction()
@@ -41,8 +64,8 @@ namespace AppLogMySQL.Components.Graphics.States
 
         private void On_Load(object sender, EventArgs e)
         {
-            AppLogMySQL.Components.Data.DataManager._account.FillData();
             panelControlls.state_Change("UserProfile");
+
         }
         
         private void Logut(object sender, EventArgs e)
@@ -73,6 +96,32 @@ namespace AppLogMySQL.Components.Graphics.States
         {
             Window.Show_all.Window_Specializations win = new Window.Show_all.Window_Specializations();
             win.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dialog.Window_Open_Logs win = new Dialog.Window_Open_Logs();
+            win.ShowDialog();
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            AppLogMySQL.Components.Data.DataManager._account.FillData();
+            Permision = AppLogMySQL.Components.Data.DataManager._account._dataset.Tables[0].Rows[0]["Права доступа:"].ToString();
+
+            switch (Permision)
+            {
+                case "Администратор": formingAdmin(); break;
+                case "Преподаватель": formingTeacher(); break;
+                case "Студент": formingStudents(); break;
+                default: break;
+            }
+            base.OnPaint(e);
+        }
+
+        private void buttonExitSystem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

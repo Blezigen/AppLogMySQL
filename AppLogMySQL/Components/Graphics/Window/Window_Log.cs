@@ -15,12 +15,28 @@ namespace AppLogMySQL.Components.Graphics.Window
     {
         private SQuery_Set_Discipline query_set_d;
         private SQuery_Set_Group query_set_g;
-        private SQuery_Get_Log query_get_l;
+        private SQuery_Set_Log_Month query_set_month;
+        private SQuery_Set_Log_Year query_set_year;
+
+        private SQuery_Get_Logs query_get_l;
         private DataTable _data;
 
         private DataGridViewTextBoxColumn Number;
         private DataGridViewTextBoxColumn hide_id;
         private DataGridViewTextBoxColumn Full_Name;
+
+
+        public int Discipline
+        {
+            get { return query_set_d.Discipline; }
+            set { query_set_d.Discipline = value; }
+        }
+
+        public int Group
+        {
+            get { return query_set_g.Group; }
+            set { query_set_g.Group = value; }
+        }
 
         public Window_Log()
         {
@@ -54,7 +70,10 @@ namespace AppLogMySQL.Components.Graphics.Window
         {
             this.query_set_g = new SQuery_Set_Group(-1);
             this.query_set_d = new SQuery_Set_Discipline(-1);
-            this.query_get_l = new SQuery_Get_Log();
+            this.query_get_l = new SQuery_Get_Logs();
+            this.query_set_month = new SQuery_Set_Log_Month();
+            this.query_set_year = new SQuery_Set_Log_Year(); 
+
             this._data = new DataTable();
 
             this.Number = new DataGridViewTextBoxColumn();
@@ -100,14 +119,11 @@ namespace AppLogMySQL.Components.Graphics.Window
 
 
             this.GeneralDataGrid.AutoGenerateColumns = false;
-            this.query_set_d.Discipline = 1;
-            this.query_set_g.Group = 2;
-            this.query_get_l.Year = 2016;
-            this.query_get_l.Month = 4;
+
+            this.query_set_year.Year = 2015;
+            this.query_set_month.Month = 9;
             
          }
-
-
         private void FillControls()
         {
             #if (DEBUG)
@@ -118,6 +134,8 @@ namespace AppLogMySQL.Components.Graphics.Window
             this._data.Columns.Clear();
             this.GeneralDataGrid.Columns.Clear();
 
+            this.query_set_month.run(Data.DataManager._connection);
+            this.query_set_year.run(Data.DataManager._connection);
             this.query_set_d.run(Data.DataManager._connection);
             this.query_set_g.run(Data.DataManager._connection);
             this.query_get_l.run(Data.DataManager._connection);
@@ -130,7 +148,7 @@ namespace AppLogMySQL.Components.Graphics.Window
 
             for (int l = 3; l < this._data.Columns.Count; l++)
             {
-                DataGridViewTextBoxColumn data = new DataGridViewTextBoxColumn();
+                DataGridViewButtonColumn data = new DataGridViewButtonColumn();
                     data.DataPropertyName = this._data.Columns[l].ColumnName;
                     data.HeaderText = this._data.Columns[l].ColumnName;
                     data.Name = string.Format("column_{0}", this._data.Columns[l].ColumnName);
@@ -160,7 +178,6 @@ namespace AppLogMySQL.Components.Graphics.Window
         }
         private void Window_Load(object sender, EventArgs e)
         {
-            this.FillControls();
         }
 
         private void TabControll_SelectedIndexChanged(object sender, EventArgs e)
@@ -168,21 +185,49 @@ namespace AppLogMySQL.Components.Graphics.Window
 
         }
 
+        private void GeneralDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((e.RowIndex > -1) && (e.ColumnIndex > -1))
+            {
+                if ((GeneralDataGrid.Columns[e.ColumnIndex].GetType().Equals(typeof(DataGridViewButtonColumn))))
+                {
+                    //Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    Dialog.Dialog_SAE_Log_Value d = new Dialog.Dialog_SAE_Log_Value();
+
+                    int yea = query_set_year.Year;
+                    int mon = query_set_month.Month;
+                    int day = int.Parse(GeneralDataGrid.Columns[e.ColumnIndex].HeaderText);
+                    string v = _data.Rows[e.RowIndex][e.ColumnIndex].ToString();
+                    d.Show((int)_data.Rows[e.RowIndex]["id_account"],query_set_d.Discipline, yea, mon, day, v);
+                    FillControls();
+                }
+            }
+        }
+
+        public bool Show(int i)
+        {
+
+            FillControls();
+            this.ShowDialog();
+            return true;
+        }
+
+
         private void TabControll_Selected(object sender, TabControlEventArgs e)
         {
             switch (e.TabPageIndex)
             {
-                case 0: this.query_get_l.Month = 9; break;
-                case 1: this.query_get_l.Month = 10; break;
-                case 2: this.query_get_l.Month = 11; break;
-                case 3: this.query_get_l.Month = 12; break;
-                case 4: this.query_get_l.Month = 1; break;
-                case 5: this.query_get_l.Month = 2; break;
-                case 6: this.query_get_l.Month = 3; break;
-                case 7: this.query_get_l.Month = 4; break;
-                case 8: this.query_get_l.Month = 5; break;
-                case 9: this.query_get_l.Month = 6; break;
-                case 10: this.query_get_l.Month = 7; break;
+                case 0: this.query_set_month.Month = 9; this.query_set_year.Year = 2015; break;
+                case 1: this.query_set_month.Month = 10; this.query_set_year.Year = 2015; break;
+                case 2: this.query_set_month.Month = 11; this.query_set_year.Year = 2015; break;
+                case 3: this.query_set_month.Month = 12; this.query_set_year.Year = 2015; break;
+                case 4: this.query_set_month.Month = 1; this.query_set_year.Year = 2016; break;
+                case 5: this.query_set_month.Month = 2; this.query_set_year.Year = 2016; break;
+                case 6: this.query_set_month.Month = 3; this.query_set_year.Year = 2016; break;
+                case 7: this.query_set_month.Month = 4; this.query_set_year.Year = 2016; break;
+                case 8: this.query_set_month.Month = 5; this.query_set_year.Year = 2016; break;
+                case 9: this.query_set_month.Month = 6; this.query_set_year.Year = 2016; break;
+                case 10: this.query_set_month.Month = 7; this.query_set_year.Year = 2016; break;
             }
             this.FillControls();
             

@@ -35,7 +35,7 @@ namespace AppLogMySQL.Components.Graphics.Dialog
         void State_read()
         {
             this.Width = 550;
-            this.Height = 332;
+            this.Height = 355;
             buttonOK.Visible = false;
             buttonCancel.Visible = false;
             groupBox1.Visible = true;
@@ -49,7 +49,7 @@ namespace AppLogMySQL.Components.Graphics.Dialog
         void State_edit()
         {
             this.Width = 550;
-            this.Height = 353;
+            this.Height = 375;
             buttonOK.Visible = true;
             buttonCancel.Visible = true;
             groupBox1.Visible = true;
@@ -232,6 +232,12 @@ namespace AppLogMySQL.Components.Graphics.Dialog
             iquery_g.Set_Insert_Data(name_group.Text,(int)comboBoxSpecialization.SelectedValue,(int)comboBoxTeacher.SelectedValue);
             iquery_g.run(DataManager._connection);
             this.Close();
+        }
+
+        private void buttonOpenLog_Click(object sender, EventArgs e)
+        {
+            Window.Window_Log win = new Window.Window_Log();
+            win.ShowDialog();
         }
     }
 }

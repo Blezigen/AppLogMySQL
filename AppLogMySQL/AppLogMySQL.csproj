@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -27,7 +42,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -35,11 +50,29 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>AppLogMySQL.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>Resources\AppIco.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
@@ -62,6 +95,8 @@
   <ItemGroup>
     <Compile Include="Components\Data\AccountManager.cs" />
     <Compile Include="Components\Data\DataManager.cs" />
+    <Compile Include="Components\Graphics\Controls\DataGridViewImageButtonDeleteColumn.cs" />
+    <Compile Include="Components\Graphics\Controls\DataGridViewImageButtonEditColumn.cs" />
     <Compile Include="Components\Graphics\Controls\CustomComboBox.cs" />
     <Compile Include="Components\Graphics\Controls\DataGridViewImageButtonCell.cs" />
     <Compile Include="Components\Graphics\Dialog\Dialog_Add_Edit_Discipline.cs">
@@ -75,6 +110,12 @@
     </Compile>
     <Compile Include="Components\Graphics\Dialog\Dialog_SAE_Discilines.Designer.cs">
       <DependentUpon>Dialog_SAE_Discilines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Graphics\Dialog\Dialog_SAE_Log_Value.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Dialog\Dialog_SAE_Log_Value.Designer.cs">
+      <DependentUpon>Dialog_SAE_Log_Value.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\Graphics\Dialog\Dialog_SAE_Students.cs">
       <SubType>Form</SubType>
@@ -99,6 +140,12 @@
     </Compile>
     <Compile Include="Components\Graphics\Dialog\Dialog_Add_Edit_Schedules_Day_Week.Designer.cs">
       <DependentUpon>Dialog_Add_Edit_Schedules_Day_Week.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Window_Open_Logs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Window\Window_Open_Logs.Designer.cs">
+      <DependentUpon>Window_Open_Logs.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\Graphics\Window\Show_all\Windows_Groups.cs">
       <SubType>Form</SubType>
@@ -155,6 +202,7 @@
       <DependentUpon>Window_Curriculumb.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\MySql\InsertQuerys\BasicInsertQuery.cs" />
+    <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Log_Value.cs" />
     <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Curriculumb_Part.cs" />
     <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Specialization.cs" />
     <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Curriculumb_Part_Discipline.cs" />
@@ -170,7 +218,7 @@
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Curriculum.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Students.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Specializations.cs" />
-    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Log.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Logs.cs" />
     <Compile Include="Components\MySql\SetQuerys\BasicSetQuery.cs" />
     <Compile Include="Components\MySql\SelectQuerys\BasicSelectQuery.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Affordable_Discipline.cs" />
@@ -179,6 +227,9 @@
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Groups.cs" />
     <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Curator.cs" />
     <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Curriculum.cs" />
+    <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Log_Year.cs" />
+    <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Log_Month.cs" />
+    <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Student.cs" />
     <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Specialization.cs" />
     <Compile Include="Components\MySql\SetQuerys\SQuery_Set_Account.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Account_Data.cs" />
@@ -228,6 +279,9 @@
     <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_SAE_Discilines.resx">
       <DependentUpon>Dialog_SAE_Discilines.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_SAE_Log_Value.resx">
+      <DependentUpon>Dialog_SAE_Log_Value.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_SAE_Students.resx">
       <DependentUpon>Dialog_SAE_Students.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_Add_Edit_Schedules_Day_Week.resx">
       <DependentUpon>Dialog_Add_Edit_Schedules_Day_Week.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\Window\Window_Open_Logs.resx">
+      <DependentUpon>Window_Open_Logs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\Window\Show_all\Windows_Groups.resx">
       <DependentUpon>Windows_Groups.cs</DependentUpon>
@@ -341,6 +398,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Add15x15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

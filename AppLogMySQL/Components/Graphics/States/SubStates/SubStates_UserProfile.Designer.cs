@@ -63,6 +63,7 @@
             this.groupBox1.TabIndex = 87;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Персональные данные";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // GeneralDataGrid
             // 

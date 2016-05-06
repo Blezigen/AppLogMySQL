@@ -26,3 +26,6 @@ D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Di
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Dialog.Dialog_SAE_Students.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Window.Window_Curriculumb.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Dialog.Dialog_SAE_Discilines.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.csprojResolveAssemblyReference.cache
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Dialog.Window_Open_Logs.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Debug\AppLogMySQL.Components.Graphics.Dialog.Dialog_SAE_Log_Value.resources

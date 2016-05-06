@@ -12,8 +12,6 @@ using AppLogMySQL.Components.MySql.SelectQuerys;
 using System.Windows.Forms.VisualStyles;
 using System.IO;
 using AppLogMySQL.Components.Graphics.Controls;
-using AppLogMySQL.Components.MySql.SetQuerys;
-using AppLogMySQL.Components.MySql.SelectQuerys;
 using AppLogMySQL.Components.MySql.InsertQuerys;
 using AppLogMySQL.Components.Data;
 
@@ -109,7 +107,7 @@ namespace AppLogMySQL.Components.Graphics.Dialog
             FillControls();
             Close();
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             Close();

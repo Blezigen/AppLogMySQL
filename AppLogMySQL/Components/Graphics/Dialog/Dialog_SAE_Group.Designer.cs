@@ -49,11 +49,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonEditStudent = new System.Windows.Forms.Button();
             this.dataGridStudents = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.logoPicture = new AppLogMySQL.UC_Panels.UC_TransparentControl();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.SchedulesDay)).BeginInit();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SizeChanger)).BeginInit();
@@ -274,7 +274,7 @@
             this.groupBox2.Controls.Add(this.dataGridStudents);
             this.groupBox2.Location = new System.Drawing.Point(2, 125);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(313, 225);
+            this.groupBox2.Size = new System.Drawing.Size(313, 226);
             this.groupBox2.TabIndex = 127;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Список студентов:";
@@ -322,45 +322,8 @@
             this.dataGridStudents.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridStudents.RowTemplate.Height = 23;
             this.dataGridStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridStudents.Size = new System.Drawing.Size(307, 206);
+            this.dataGridStudents.Size = new System.Drawing.Size(307, 207);
             this.dataGridStudents.TabIndex = 84;
-            // 
-            // logoPicture
-            // 
-            this.logoPicture.BackColor = System.Drawing.Color.Transparent;
-            this.logoPicture.BackImage = global::AppLogMySQL.ResourceApplication.EditLogo;
-            this.logoPicture.FillColor = System.Drawing.Color.White;
-            this.logoPicture.GlassColor = System.Drawing.Color.Transparent;
-            this.logoPicture.GlassMode = true;
-            this.logoPicture.LineWidth = 0;
-            this.logoPicture.Location = new System.Drawing.Point(0, 0);
-            this.logoPicture.Name = "logoPicture";
-            this.logoPicture.Opacity = 100;
-            this.logoPicture.Size = new System.Drawing.Size(44, 47);
-            this.logoPicture.TabIndex = 116;
-            this.logoPicture.TranspKey = System.Drawing.Color.White;
-            // 
-            // buttonOK
-            // 
-            this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOK.Location = new System.Drawing.Point(400, 329);
-            this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(75, 23);
-            this.buttonOK.TabIndex = 128;
-            this.buttonOK.Text = "Добавить";
-            this.buttonOK.UseVisualStyleBackColor = true;
-            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancel.Location = new System.Drawing.Point(475, 329);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 129;
-            this.buttonCancel.Text = "Отменить";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -382,11 +345,48 @@
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // logoPicture
+            // 
+            this.logoPicture.BackColor = System.Drawing.Color.Transparent;
+            this.logoPicture.BackImage = global::AppLogMySQL.ResourceApplication.EditLogo;
+            this.logoPicture.FillColor = System.Drawing.Color.White;
+            this.logoPicture.GlassColor = System.Drawing.Color.Transparent;
+            this.logoPicture.GlassMode = true;
+            this.logoPicture.LineWidth = 0;
+            this.logoPicture.Location = new System.Drawing.Point(0, 0);
+            this.logoPicture.Name = "logoPicture";
+            this.logoPicture.Opacity = 100;
+            this.logoPicture.Size = new System.Drawing.Size(44, 47);
+            this.logoPicture.TabIndex = 116;
+            this.logoPicture.TranspKey = System.Drawing.Color.White;
+            // 
+            // buttonOK
+            // 
+            this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOK.Location = new System.Drawing.Point(400, 330);
+            this.buttonOK.Name = "buttonOK";
+            this.buttonOK.Size = new System.Drawing.Size(75, 23);
+            this.buttonOK.TabIndex = 128;
+            this.buttonOK.Text = "Добавить";
+            this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCancel.Location = new System.Drawing.Point(475, 330);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 129;
+            this.buttonCancel.Text = "Отменить";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
             // Dialog_SAE_Group
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 353);
+            this.ClientSize = new System.Drawing.Size(550, 354);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.groupBox2);

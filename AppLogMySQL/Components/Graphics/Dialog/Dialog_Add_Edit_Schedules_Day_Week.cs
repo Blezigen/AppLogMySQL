@@ -136,6 +136,12 @@ namespace AppLogMySQL.Components.Graphics.Dialog
                 this.iquery_isch.run(DataManager._connection);
             
             }
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
     }

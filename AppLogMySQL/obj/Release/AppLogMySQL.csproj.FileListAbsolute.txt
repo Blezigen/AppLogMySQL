@@ -24,12 +24,8 @@ D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.csprojResolveAssembl
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Dialog.Dialog_Add_Edit_Discipline.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.States.StateManager.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.States.State_UserAuthorization.resources
-D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.States.SubStates.SubStates_Disciplines.resources
-D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Windows.Dialog_Add_Edit_Schedules_Day_Week.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Window_Log.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Window_Specialization.resources
-D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Window_Disciplines.resources
-D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Window_Group.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Window_Schedules.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.MainForm.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.UC_Panels.UC_AnimatorPanel.resources
@@ -39,3 +35,13 @@ D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Properties.Resources.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.ResourceApplication.resources
 D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.csproj.GenerateResource.Cache
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Dialog.Dialog_SAE_Discilines.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Dialog.Dialog_SAE_Students.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Dialog.Dialog_Add_Edit_Schedules_Day_Week.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Dialog.Window_Open_Logs.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Show_all.Windows_Groups.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Show_all.Window_Curriculumbs.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Show_all.Window_Specializations.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Show_all.Window_Disciplines.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Dialog.Dialog_SAE_Group.resources
+D:\Projects\AppLogMySQL\AppLogMySQL\obj\Release\AppLogMySQL.Components.Graphics.Window.Window_Curriculumb.resources

@@ -31,6 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.SchedulesDayData = new System.Windows.Forms.DataGridView();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discipline = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Teachers = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panelTitle = new System.Windows.Forms.Panel();
@@ -38,9 +41,6 @@
             this.CloseButton = new System.Windows.Forms.PictureBox();
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.logoPicture = new AppLogMySQL.UC_Panels.UC_TransparentControl();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discipline = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Teachers = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.SchedulesDayData)).BeginInit();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
@@ -90,6 +90,32 @@
             this.SchedulesDayData.Size = new System.Drawing.Size(495, 184);
             this.SchedulesDayData.TabIndex = 21;
             // 
+            // Number
+            // 
+            this.Number.DataPropertyName = "para";
+            this.Number.FillWeight = 30F;
+            this.Number.HeaderText = "№";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Number.Width = 30;
+            // 
+            // Discipline
+            // 
+            this.Discipline.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Discipline.DataPropertyName = "id_disp";
+            this.Discipline.HeaderText = "Предмет";
+            this.Discipline.Name = "Discipline";
+            this.Discipline.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Teachers
+            // 
+            this.Teachers.DataPropertyName = "teacher";
+            this.Teachers.HeaderText = "Преподаватели";
+            this.Teachers.Name = "Teachers";
+            this.Teachers.Width = 200;
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -99,6 +125,7 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "Отменить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -172,32 +199,6 @@
             this.logoPicture.Size = new System.Drawing.Size(44, 47);
             this.logoPicture.TabIndex = 25;
             this.logoPicture.TranspKey = System.Drawing.Color.White;
-            // 
-            // Number
-            // 
-            this.Number.DataPropertyName = "para";
-            this.Number.FillWeight = 30F;
-            this.Number.HeaderText = "№";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
-            this.Number.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Number.Width = 30;
-            // 
-            // Discipline
-            // 
-            this.Discipline.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Discipline.DataPropertyName = "id_disp";
-            this.Discipline.HeaderText = "Предмет";
-            this.Discipline.Name = "Discipline";
-            this.Discipline.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Teachers
-            // 
-            this.Teachers.DataPropertyName = "teacher";
-            this.Teachers.HeaderText = "Преподаватели";
-            this.Teachers.Name = "Teachers";
-            this.Teachers.Width = 200;
             // 
             // Dialog_Add_Edit_Schedules_Day_Week
             // 

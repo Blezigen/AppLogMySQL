@@ -35,6 +35,7 @@
             this.buttonDiscipline = new System.Windows.Forms.Button();
             this.buttonGroups = new System.Windows.Forms.Button();
             this.panelControlls = new AppLogMySQL.Components.Graphics.States.StateManager();
+            this.buttonLogs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonExitSystem
@@ -47,6 +48,7 @@
             this.buttonExitSystem.TabIndex = 33;
             this.buttonExitSystem.Text = "Выход";
             this.buttonExitSystem.UseVisualStyleBackColor = true;
+            this.buttonExitSystem.Click += new System.EventHandler(this.buttonExitSystem_Click);
             // 
             // buttonHelp
             // 
@@ -113,11 +115,23 @@
             this.panelControlls.Size = new System.Drawing.Size(593, 250);
             this.panelControlls.TabIndex = 35;
             // 
+            // buttonLogs
+            // 
+            this.buttonLogs.Font = new System.Drawing.Font("Proxima Nova Rg", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogs.Location = new System.Drawing.Point(298, 29);
+            this.buttonLogs.Name = "buttonLogs";
+            this.buttonLogs.Size = new System.Drawing.Size(100, 23);
+            this.buttonLogs.TabIndex = 43;
+            this.buttonLogs.Text = "Журналы";
+            this.buttonLogs.UseVisualStyleBackColor = true;
+            this.buttonLogs.Click += new System.EventHandler(this.button1_Click);
+            // 
             // State_ControllPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(234)))));
+            this.Controls.Add(this.buttonLogs);
             this.Controls.Add(this.buttonSpecialization);
             this.Controls.Add(this.buttonDiscipline);
             this.Controls.Add(this.buttonGroups);
@@ -142,5 +156,6 @@
         private System.Windows.Forms.Button buttonSpecialization;
         private System.Windows.Forms.Button buttonDiscipline;
         private System.Windows.Forms.Button buttonGroups;
+        private System.Windows.Forms.Button buttonLogs;
     }
 }

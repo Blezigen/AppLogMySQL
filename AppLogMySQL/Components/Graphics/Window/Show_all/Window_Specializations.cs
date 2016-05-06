@@ -175,55 +175,6 @@ namespace AppLogMySQL.Components.Graphics.Window.Show_all
             }
         }
 
-        public class DataGridViewImageButtonEditColumn : DataGridViewButtonColumn
-        {
-            public class DataGridViewImageButtonEditCell : DataGridViewImageButtonCell
-            {
-                public override void LoadImages()
-                {
-                    _buttonImageNormal = AppLogMySQL.ResourceApplication.Edit;
-
-                    _buttonImageDisabled = AppLogMySQL.ResourceApplication.Edit;
-                    _buttonImagePressed = AppLogMySQL.ResourceApplication.Edit;
-                    _buttonImageHot = AppLogMySQL.ResourceApplication.Edit;
-                    this.ButtonState = PushButtonState.Normal;
-                }
-            }
-
-            public DataGridViewImageButtonEditColumn()
-            {
-                this.CellTemplate = new DataGridViewImageButtonEditCell();
-                this.Width = 23;
-                this.Resizable = DataGridViewTriState.False;
-                this.Name = "EditButtons";
-                this.HeaderText = "";
-                this.ReadOnly = false;
-            }
-        }
-        public class DataGridViewImageButtonDeleteColumn : DataGridViewButtonColumn
-        {
-            public class DataGridViewImageButtonDeleteCell : DataGridViewImageButtonCell
-            {
-                public override void LoadImages()
-                {
-                    _buttonImageNormal = AppLogMySQL.ResourceApplication.Delete;
-
-                    _buttonImageDisabled = AppLogMySQL.ResourceApplication.Delete;
-                    _buttonImagePressed = AppLogMySQL.ResourceApplication.Delete;
-                    _buttonImageHot = AppLogMySQL.ResourceApplication.Delete;
-                }
-            }
-            public DataGridViewImageButtonDeleteColumn()
-            {
-                this.CellTemplate = new DataGridViewImageButtonDeleteCell();
-                this.Width = 23;
-                this.Resizable = DataGridViewTriState.False;
-                this.Name = "DeleteButtons";
-                this.HeaderText = "";
-                this.ReadOnly = false;
-            }
-        }
-
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
             Window.Window_Specialization dialog = new Window.Window_Specialization();

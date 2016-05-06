@@ -20,6 +20,7 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
 
         public void LoadProfile()
         {
+            GeneralDataGrid.Rows.Clear();
             if (DataManager._account.getAvatar()!=null)
             {
                 this.ProfileImage.Image = DataManager._account.getAvatar();
@@ -40,10 +41,19 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
                 //AddNewRow(row.Key.ToString(),row.Value.ToString());
             }
         }
-
-        private void SubStates_UserProfile_Load(object sender, EventArgs e)
+        protected override void OnPaint(PaintEventArgs e)
         {
             LoadProfile();
+            base.OnPaint(e);
+        }
+        private void SubStates_UserProfile_Load(object sender, EventArgs e)
+        {
+            //LoadProfile();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+            //LoadProfile();
         }
     }
 }

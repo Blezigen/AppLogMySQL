@@ -84,7 +84,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTitle.BackColor = System.Drawing.Color.Transparent;
             this.labelTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelTitle.Font = new System.Drawing.Font("Proxima Nova Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(106)))), ((int)(((byte)(97)))));
             this.labelTitle.Location = new System.Drawing.Point(47, 3);
             this.labelTitle.Name = "labelTitle";
@@ -115,7 +115,7 @@
             this.GeneralDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Proxima Nova Rg", 8.25F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -124,7 +124,7 @@
             this.GeneralDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Proxima Nova Rg", 8.25F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -141,6 +141,7 @@
             this.GeneralDataGrid.Size = new System.Drawing.Size(900, 444);
             this.GeneralDataGrid.TabIndex = 115;
             this.GeneralDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GeneralDataGrid_CellClick);
+            this.GeneralDataGrid.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GeneralDataGrid_CellContentDoubleClick);
             // 
             // logoPicture
             // 
@@ -170,7 +171,7 @@
             this.TabControll.Controls.Add(this.MAY);
             this.TabControll.Controls.Add(this.JUN);
             this.TabControll.Controls.Add(this.JUL);
-            this.TabControll.Font = new System.Drawing.Font("Proxima Nova Rg", 9F);
+            this.TabControll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TabControll.ItemSize = new System.Drawing.Size(74, 20);
             this.TabControll.Location = new System.Drawing.Point(2, 53);
             this.TabControll.Name = "TabControll";
@@ -301,7 +302,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logoPicture);
             this.Controls.Add(this.panelTitle);
-            this.Font = new System.Drawing.Font("Proxima Nova Rg", 8.25F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Window_Log";
             this.Text = "Widow_Log";

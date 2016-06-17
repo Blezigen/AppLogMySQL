@@ -28,6 +28,11 @@ namespace AppLogMySQL.Components.Graphics.Window
                 Console.WriteLine("Инициализация");
             #endif
             InitializeComponent();
+
+            this.Text = "Редактирование симестра";
+            this.Icon = global::AppLogMySQL.ResourceApplication.AppIco;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
             this.labelTitle.Font = Components.Data.DataManager.PROXIMA_NOVA_9R;
             this.labelTitle.ForeColor = Color.FromArgb(243, 237, 210);
             InitializeFunction();
@@ -63,6 +68,7 @@ namespace AppLogMySQL.Components.Graphics.Window
         public bool Show(int id)
         {
             curr = id;
+            LabelStudent.Text = string.Format("Настройте семестр {0}:",curr);
             this.FillControls();
             
             this.ShowDialog();

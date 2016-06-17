@@ -47,6 +47,10 @@ namespace AppLogMySQL
         {
             InitializeComponent();
 
+            this.Text = "Главное окно";
+            this.Icon = global::AppLogMySQL.ResourceApplication.AppIco;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
             Components.Data.DataManager.global_states = stateManager;
             Components.Data.DataManager.generalForm = this;
             Components.Data.DataManager.initialisation();

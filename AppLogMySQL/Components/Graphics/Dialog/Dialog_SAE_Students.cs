@@ -53,6 +53,11 @@ namespace AppLogMySQL.Components.Graphics.Dialog
         }
         private void InitializeVars()
         {
+
+            this.Text = "Список студентов для добавления";
+            this.Icon = global::AppLogMySQL.ResourceApplication.AppIco;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
             this.iquery = new IQuery_Insert_Student_In_Group();
             this.query_get_students = new SQuery_Get_Students();
             this.query_get_students.Filter = "show_no_group";

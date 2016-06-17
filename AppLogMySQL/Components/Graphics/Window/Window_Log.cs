@@ -44,6 +44,11 @@ namespace AppLogMySQL.Components.Graphics.Window
                 Console.WriteLine("Инициализация");
             #endif
             InitializeComponent();
+
+            this.Text = "Журнал";
+            this.Icon = global::AppLogMySQL.ResourceApplication.AppIco;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
             this.labelTitle.Font = Components.Data.DataManager.PROXIMA_NOVA_9R;
             this.labelTitle.ForeColor = Color.FromArgb(243, 237, 210);
             InitializeFunction();
@@ -231,6 +236,21 @@ namespace AppLogMySQL.Components.Graphics.Window
             }
             this.FillControls();
             
+        }
+
+        private void GeneralDataGrid_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((e.RowIndex > -1) && (e.ColumnIndex > -1))
+            {
+                if ((GeneralDataGrid.Columns[e.ColumnIndex].GetType().Equals(typeof(DataGridViewTextBoxColumn))))
+                {
+                    if (e.ColumnIndex == 2)
+                    {
+                        Dialog.Dialog_SAE_Log_AVG d = new Dialog.Dialog_SAE_Log_AVG();
+                        d.Show((int)_data.Rows[e.RowIndex]["id_account"]);
+                    }
+                }
+            }
         }
     }
 }

@@ -39,6 +39,11 @@ namespace AppLogMySQL.Components.Graphics.Dialog
         public Dialog_Add_Edit_Schedules_Day_Week()
         {
             this.InitializeComponent();
+
+            this.Text = "Изменение дня недели";
+            this.Icon = global::AppLogMySQL.ResourceApplication.AppIco;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
             this.labelTitle.Font = Components.Data.DataManager.PROXIMA_NOVA_9R;
             this.labelTitle.ForeColor = Color.FromArgb(243, 237, 210);
             this.InitializeFunction();

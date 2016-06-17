@@ -25,6 +25,11 @@ namespace AppLogMySQL.Components.Graphics.Dialog
         public Dialog_SAE_Log_Value()
         {
             this.InitializeComponent();
+
+            this.Text = "Добаление оценки";
+            this.Icon = global::AppLogMySQL.ResourceApplication.AppIco;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
             this.labelTitle.Font = Components.Data.DataManager.PROXIMA_NOVA_9R;
             this.labelTitle.ForeColor = Color.FromArgb(243, 237, 210);
             this.InitializeFunction();
@@ -88,7 +93,7 @@ namespace AppLogMySQL.Components.Graphics.Dialog
                 case 5: buttonValue5.BackColor = selectedColor; this.iquery_log_value.Value = Log_Val.Val_5; break;
                 case 7: buttonN.BackColor = selectedColor; buttonY.BackColor = selectedColor; this.iquery_log_value.Value = Log_Val.Val_tht; break;
                 case 8: buttonN.BackColor = selectedColor; buttonB.BackColor = selectedColor; this.iquery_log_value.Value = Log_Val.Val_ill; break;
-                default: this.iquery_log_value.Value = Log_Val.Val_not; break;
+                default: buttonN.BackColor = selectedColor;  this.iquery_log_value.Value = Log_Val.Val_not; break;
             }
         }
         public bool Show(int student, int disp ,int year,int month, int day ,string value = "5") {
@@ -126,6 +131,7 @@ namespace AppLogMySQL.Components.Graphics.Dialog
                 buttonN.BackColor = selectedColor;
             else
                 buttonN.BackColor = System.Drawing.SystemColors.Control;
+            valChange(9);
         }
 
         private void buttonAccept_Click(object sender, EventArgs e)

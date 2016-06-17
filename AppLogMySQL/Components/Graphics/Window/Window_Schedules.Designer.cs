@@ -562,6 +562,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SchedulesDayData3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchedulesDayData2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchedulesDayData1)).EndInit();
+            this.Icon = ((System.Drawing.Icon)(AppLogMySQL.ResourceApplication.AppIco));
             this.ResumeLayout(false);
 
         }

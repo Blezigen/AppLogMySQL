@@ -30,6 +30,11 @@ namespace AppLogMySQL.Components.Graphics.Dialog
                 Console.WriteLine("Инициализация");
             #endif
             InitializeComponent();
+
+            this.Text = "Список доступных дисциплин для добаления";
+            this.Icon = global::AppLogMySQL.ResourceApplication.AppIco;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
             this.labelTitle.Font = Components.Data.DataManager.PROXIMA_NOVA_9R;
             this.labelTitle.ForeColor = Color.FromArgb(243, 237, 210);
             InitializeFunction();

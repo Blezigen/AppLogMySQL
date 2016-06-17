@@ -105,6 +105,12 @@
     <Compile Include="Components\Graphics\Dialog\Dialog_Add_Edit_Discipline.Designer.cs">
       <DependentUpon>Dialog_Add_Edit_Discipline.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Graphics\Dialog\Dialog_SAE_Log_AVG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Graphics\Dialog\Dialog_SAE_Log_AVG.Designer.cs">
+      <DependentUpon>Dialog_SAE_Log_AVG.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Graphics\Dialog\Dialog_SAE_Discilines.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,7 @@
     <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Discipline.cs" />
     <Compile Include="Components\MySql\InsertQuerys\IQuery_Insert_Schedule.cs" />
     <Compile Include="Components\MySql\MySQLManager.cs" />
+    <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Logs_AVG.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Teachers.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Disciplines.cs" />
     <Compile Include="Components\MySql\SelectQuerys\SQuery_Get_Curator.cs" />
@@ -275,6 +282,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_Add_Edit_Discipline.resx">
       <DependentUpon>Dialog_Add_Edit_Discipline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_SAE_Log_AVG.resx">
+      <DependentUpon>Dialog_SAE_Log_AVG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Graphics\Dialog\Dialog_SAE_Discilines.resx">
       <DependentUpon>Dialog_SAE_Discilines.cs</DependentUpon>

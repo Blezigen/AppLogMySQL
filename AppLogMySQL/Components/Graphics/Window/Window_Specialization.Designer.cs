@@ -90,7 +90,7 @@
             this.GeneralDataGrid.Name = "GeneralDataGrid";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Proxima Nova Rg", 8.25F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -147,7 +147,7 @@
             this.textBoxName.Location = new System.Drawing.Point(3, 34);
             this.textBoxName.MaxLength = 120;
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(256, 21);
+            this.textBoxName.Size = new System.Drawing.Size(256, 20);
             this.textBoxName.TabIndex = 126;
             // 
             // label2
@@ -168,7 +168,7 @@
             this.textBoxCode.Location = new System.Drawing.Point(3, 74);
             this.textBoxCode.MaxLength = 10;
             this.textBoxCode.Name = "textBoxCode";
-            this.textBoxCode.Size = new System.Drawing.Size(256, 21);
+            this.textBoxCode.Size = new System.Drawing.Size(256, 20);
             this.textBoxCode.TabIndex = 128;
             // 
             // labelTitleForm
@@ -200,7 +200,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTitle.BackColor = System.Drawing.Color.Transparent;
             this.labelTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelTitle.Font = new System.Drawing.Font("Proxima Nova Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(106)))), ((int)(((byte)(97)))));
             this.labelTitle.Location = new System.Drawing.Point(47, 3);
             this.labelTitle.Name = "labelTitle";
@@ -295,11 +295,11 @@
             this.Controls.Add(this.labelTitleForm);
             this.Controls.Add(this.logoPicture);
             this.Controls.Add(this.panelTitle);
-            this.Font = new System.Drawing.Font("Proxima Nova Rg", 8.25F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(560, 176);
             this.Name = "Window_Specialization";
-            this.Text = "Curriculumb";
+            this.Text = "Добавление специальности";
             this.Load += new System.EventHandler(this.Window_Specialization_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GeneralDataGrid)).EndInit();
             this.panelTitle.ResumeLayout(false);

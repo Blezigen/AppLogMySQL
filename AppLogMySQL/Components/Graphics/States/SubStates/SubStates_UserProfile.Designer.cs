@@ -36,6 +36,7 @@
             this.GeneralDataGrid = new System.Windows.Forms.DataGridView();
             this.param = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAVG = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ProfileImage)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GeneralDataGrid)).BeginInit();
@@ -53,10 +54,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonAVG);
             this.groupBox1.Controls.Add(this.GeneralDataGrid);
             this.groupBox1.Controls.Add(this.ProfileImage);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Proxima Nova Rg", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(597, 307);
@@ -115,12 +117,22 @@
             this.Value.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Value.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // buttonAVG
+            // 
+            this.buttonAVG.Location = new System.Drawing.Point(6, 256);
+            this.buttonAVG.Name = "buttonAVG";
+            this.buttonAVG.Size = new System.Drawing.Size(230, 23);
+            this.buttonAVG.TabIndex = 114;
+            this.buttonAVG.Text = "Оценки";
+            this.buttonAVG.UseVisualStyleBackColor = true;
+            this.buttonAVG.Click += new System.EventHandler(this.buttonAVG_Click);
+            // 
             // SubStates_UserProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("HelveticaNeueCyr", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MinimumSize = new System.Drawing.Size(597, 307);
             this.Name = "SubStates_UserProfile";
             this.Size = new System.Drawing.Size(597, 307);
@@ -139,6 +151,7 @@
         private System.Windows.Forms.DataGridView GeneralDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn param;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
+        private System.Windows.Forms.Button buttonAVG;
 
     }
 }

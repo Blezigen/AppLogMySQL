@@ -17,21 +17,19 @@ using AppLogMySQL.Components.Data;
 
 namespace AppLogMySQL.Components.Graphics.Dialog
 {
-    public partial class Window_Open_Logs : Form
+    public partial class Dialog_SAE_Log_AVG : Form
     {
-        private SQuery_Set_Discipline query_set_d;
-        private SQuery_Set_Group query_set_g;
+        private SQuery_Set_Student query_set_s;
+        private SQuery_Get_Logs_AVG query_get_avg;
 
-        private SQuery_Get_Logs query_get_logs;
-
-        public Window_Open_Logs()
+        public Dialog_SAE_Log_AVG()
         {
             #if (DEBUG)
                 Console.WriteLine("Инициализация");
             #endif
             InitializeComponent();
 
-            this.Text = "Список журналов";
+            this.Text = "Среднее значение по предметам";
             this.Icon = global::AppLogMySQL.ResourceApplication.AppIco;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 
@@ -45,7 +43,6 @@ namespace AppLogMySQL.Components.Graphics.Dialog
         private void InitializeFunction()
         {
             this.Load += new System.EventHandler(this.Window_Disciplines_Load);
-            this.GeneralDataGrid.CellClick += new DataGridViewCellEventHandler(this.GeneralDataGrid_CellClick);
             this.labelTitle.MouseDown += delegate
             {
                 this.labelTitle.Capture = false;
@@ -60,9 +57,8 @@ namespace AppLogMySQL.Components.Graphics.Dialog
         }
         private void InitializeVars()
         {
-            this.query_set_d = new SQuery_Set_Discipline(-1);
-            this.query_set_g = new SQuery_Set_Group(-1);
-            this.query_get_logs = new SQuery_Get_Logs();
+            this.query_get_avg = new SQuery_Get_Logs_AVG();
+            this.query_set_s = new SQuery_Set_Student();
             //this.query_get_students.Filter = "show_no_group";
 
         }
@@ -73,11 +69,10 @@ namespace AppLogMySQL.Components.Graphics.Dialog
             #if (DEBUG)
                         Console.WriteLine("Заполнение элементов");
             #endif
-            this.query_set_d.run(DataManager._connection);
-            this.query_set_g.run(DataManager._connection);
-            this.query_get_logs.run(DataManager._connection);
+            this.query_set_s.run(DataManager._connection);
+            this.query_get_avg.run(DataManager._connection);
             this.GeneralDataGrid.AutoGenerateColumns = false;
-            this.GeneralDataGrid.DataSource = this.query_get_logs.dataset.Tables[0];
+            this.GeneralDataGrid.DataSource = this.query_get_avg.dataset.Tables[0];
         }
 
         private void Window_Disciplines_Load(object sender, EventArgs e)
@@ -94,8 +89,8 @@ namespace AppLogMySQL.Components.Graphics.Dialog
 
         public bool Show(int i)
         {
-            query_set_d.Discipline = -1;
-            query_set_g.Group = -1;
+            query_set_s.Student = i;
+            //this.Into_the_group.TrueValue = curriculum;//Group;
             this.ShowDialog();
             return true;
         }
@@ -105,36 +100,5 @@ namespace AppLogMySQL.Components.Graphics.Dialog
             Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void GeneralDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if ((e.RowIndex > -1) && (e.ColumnIndex > -1))
-            {
-                if ((GeneralDataGrid.Columns[e.ColumnIndex].GetType().Equals(typeof(DataGridViewButtonColumn))))// ||
-                //  (GeneralDataGrid.Columns[e.ColumnIndex].GetType().Equals(typeof(DataGridViewImageButtonPrintColumn))))
-                {
-                    switch (e.ColumnIndex)
-                    {
-                        case 3:
-                            Window.Window_Log win = new Window.Window_Log();
-                            win.Discipline = (int)query_get_logs.dataset.Tables[0].Rows[e.RowIndex]["id_d"];
-                            win.Group = (int)query_get_logs.dataset.Tables[0].Rows[e.RowIndex]["id_g"];
-                            win.Show(1);
-                            FillControls();
-                            // In a real application you would code some real work here.
-                            //txtStatusMsg.Text = "Button Clicked: Save " + GeneralDataGrid.
-                            // Rows[e.RowIndex].Cells["Text"].Value.ToString();
-                            //Dialog.Dialog_Add_Edit_Discipline dialog = new Dialog.Dialog_Add_Edit_Discipline();
-                            //dialog.Show((int)query_get_d.dataset.Tables[0].Rows[e.RowIndex].ItemArray[1]);
-                            //this.FillControls();
-                            break;
-                    }
-                }
-            }
-        }
     }
 }

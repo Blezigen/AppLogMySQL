@@ -47,6 +47,11 @@ namespace AppLogMySQL.Components.Graphics.Window
         public Window_Schedules()
         {
             InitializeComponent();
+
+            this.Text = "Редактирование расписания";
+            this.Icon = global::AppLogMySQL.ResourceApplication.AppIco;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
             InitializeFunction();
             InitializeVars();
         }

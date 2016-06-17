@@ -44,6 +44,14 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
         protected override void OnPaint(PaintEventArgs e)
         {
             LoadProfile();
+            switch (AppLogMySQL.Components.Data.DataManager._account._dataset.Tables[0].Rows[0]["Права доступа:"].ToString())
+            {
+                case "Администратор": buttonAVG.Visible = false; break;
+                case "Преподаватель": buttonAVG.Visible = false; break;
+                case "Студент": buttonAVG.Visible = true; break;
+                default: buttonAVG.Visible = false; break;
+            }
+
             base.OnPaint(e);
         }
         private void SubStates_UserProfile_Load(object sender, EventArgs e)
@@ -54,6 +62,12 @@ namespace AppLogMySQL.Components.Graphics.States.SubStates
         private void groupBox1_Enter(object sender, EventArgs e)
         {
             //LoadProfile();
+        }
+
+        private void buttonAVG_Click(object sender, EventArgs e)
+        {
+            Dialog.Dialog_SAE_Log_AVG d = new Dialog.Dialog_SAE_Log_AVG();
+            d.Show(int.Parse(DataManager._account._dataset.Tables[0].Rows[0]["id:"].ToString()));
         }
     }
 }

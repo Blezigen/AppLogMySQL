@@ -29,6 +29,11 @@ namespace AppLogMySQL.Components.Graphics.Window.Show_all
                 Console.WriteLine("Инициализация");
             #endif
             InitializeComponent();
+
+            this.Text = "Список групп";
+            this.Icon = global::AppLogMySQL.ResourceApplication.AppIco;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
             this.labelTitle.Font = Components.Data.DataManager.PROXIMA_NOVA_9R;
             this.labelTitle.ForeColor = Color.FromArgb(243, 237, 210);
             InitializeFunction();
